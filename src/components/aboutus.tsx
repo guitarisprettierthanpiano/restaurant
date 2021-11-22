@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const Contact: React.FC = () => {
+const AboutUs: React.FC = () => {
 
     return (
         <>
@@ -8,4 +8,4 @@ const Contact: React.FC = () => {
     )
 }
 
-export default Contact;
+export default AboutUs;

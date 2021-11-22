@@ -1,11 +1,12 @@
 import * as React from 'react';
 
-const Contact: React.FC = () => {
+const Menu: React.FC = () => {
 
     return (
         <>
+        <span>o</span>
         </>
     )
 }
 
-export default Contact;
+export default Menu;

@@ -1,12 +1,69 @@
 * {
-    background-color: rgb(19, 19, 19);
     color: white;
+
     margin: 0px;
     padding: 0px;
+
     outline: none;
     border: none;
+    
+    width: 100%;
 }
 #root{
+    background-color: rgb(19, 19, 19);
     height: 100vh;
     width: 100vw;
+
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+}
+span{
+    text-align: center;
+}
+
+/* BANNER */
+.banner-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    background-color: rgb(164, 0, 0);
+}
+.banner-subcontainer{
+    grid-column: 1;
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+/* NAV */
+.nav-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.nav{
+    grid-column: 2;
+
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+/* HOME */
+.home-container{
+    grid-row: 3;
+
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.landing-container{
+    grid-row: 1;
+
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+}
+.landing-left{
+    grid-column: 1;
+
+    display: grid;
+    grid-template-rows: auto auto auto 1fr;
 }

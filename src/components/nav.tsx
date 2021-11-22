@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import { NavLink } from 'react-router-dom';
 
 const Nav: React.FC = () => {
@@ -10,9 +11,35 @@ const Nav: React.FC = () => {
 
         </div>
 
-        <ul>
-            
-        </ul>
+        <div className='nav'>
+            <span></span>
+
+                    <NavLink
+                        exact activeClassName='active'
+                        to='/'>
+                        <span>Home</span>
+                    </NavLink>
+
+                    <NavLink
+                        activeClassName='active'
+                        to='/menu'>
+                        <span>Menu</span>
+                    </NavLink>
+
+                    <NavLink
+                        activeClassName='active'
+                        to='/aboutus'>
+                        <span>About Us</span>
+                    </NavLink>
+
+                    <NavLink
+                        activeClassName='active'
+                        to='/contact'>
+                        <span>Contact</span>
+                    </NavLink>
+
+            <span></span>
+        </div>
     </div>
 
     </>
