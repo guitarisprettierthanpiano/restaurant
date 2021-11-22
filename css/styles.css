@@ -1,0 +1,12 @@
+* {
+    background-color: rgb(19, 19, 19);
+    color: white;
+    margin: 0px;
+    padding: 0px;
+    outline: none;
+    border: none;
+}
+#root{
+    height: 100vh;
+    width: 100vw;
+}
