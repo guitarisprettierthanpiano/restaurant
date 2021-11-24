@@ -186,8 +186,27 @@ span, h4{
     grid-row: 2;
     grid-column: 1 / span 2;
 
-    background-color: navy;
+    background-color: rgb(128, 115, 0);
 }
 .menu-bottom h1{
     text-align: center;
+}
+
+.food-menu-container{
+    grid-row: 2;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.first-menu{
+    grid-column: 1;
+
+    display: grid;
+    grid-template-rows: repeat(auto,auto);
+}
+.second-menu{
+    grid-column: 2;
+
+    display: grid;
+    grid-template-rows: repeat(auto,auto);
 }

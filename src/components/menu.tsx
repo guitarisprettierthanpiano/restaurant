@@ -21,6 +21,80 @@ const Menu: React.FC = () => {
             </div>
         </div>
 
+        <div className='food-menu-container'>
+            <div className='first-menu'>
+
+                <h1>BURGERS</h1>
+
+                <span className='food-name'>Burger $12</span>
+                <span>Fresh pork in a Mojo marinade with caramelized onions and white cheddar on an Amoroso roll with side of Au Jus. Choice of side</span>
+                <br />
+                <span className='food-name'>Burger $12</span>
+                <span>Fresh pork in a Mojo marinade with caramelized onions and white cheddar on an Amoroso roll with side of Au Jus. Choice of side</span>
+                <br />
+                <span className='food-name'>Burger $12</span>
+                <span>Fresh pork in a Mojo marinade with caramelized onions and white cheddar on an Amoroso roll with side of Au Jus. Choice of side</span>
+                <br />
+                <span className='food-name'>Burger $12</span>
+                <span>Fresh pork in a Mojo marinade with caramelized onions and white cheddar on an Amoroso roll with side of Au Jus. Choice of side</span>
+                <br />
+                <span className='food-name'>Burger $12</span>
+                <span>Fresh pork in a Mojo marinade with caramelized onions and white cheddar on an Amoroso roll with side of Au Jus. Choice of side</span>
+                <br />
+                <span className='food-name'>Burger $12</span>
+                <span>Fresh pork in a Mojo marinade with caramelized onions and white cheddar on an Amoroso roll with side of Au Jus. Choice of side</span>
+                <br />
+                <span className='food-name'>Burger $12</span>
+                <span>Fresh pork in a Mojo marinade with caramelized onions and white cheddar on an Amoroso roll with side of Au Jus. Choice of side</span>
+                <br />
+                <span className='food-name'>Burger $12</span>
+                <span>Fresh pork in a Mojo marinade with caramelized onions and white cheddar on an Amoroso roll with side of Au Jus. Choice of side</span>
+                <br />
+                <span className='food-name'>Burger $12</span>
+                <span>Fresh pork in a Mojo marinade with caramelized onions and white cheddar on an Amoroso roll with side of Au Jus. Choice of side</span>
+                <br />
+                <span className='food-name'>Burger $12</span>
+                <span>Fresh pork in a Mojo marinade with caramelized onions and white cheddar on an Amoroso roll with side of Au Jus. Choice of side</span>
+                <br />
+
+            </div>
+
+            <div className='second-menu'>
+
+                <h1>BURGERS</h1>
+
+                <span className='food-name'>Burger $12</span>
+                <span>Fresh pork in a Mojo marinade with caramelized onions and white cheddar on an Amoroso roll with side of Au Jus. Choice of side</span>
+                <br />
+                <span className='food-name'>Burger $12</span>
+                <span>Fresh pork in a Mojo marinade with caramelized onions and white cheddar on an Amoroso roll with side of Au Jus. Choice of side</span>
+                <br />
+                <span className='food-name'>Burger $12</span>
+                <span>Fresh pork in a Mojo marinade with caramelized onions and white cheddar on an Amoroso roll with side of Au Jus. Choice of side</span>
+                <br />
+                <span className='food-name'>Burger $12</span>
+                <span>Fresh pork in a Mojo marinade with caramelized onions and white cheddar on an Amoroso roll with side of Au Jus. Choice of side</span>
+                <br />
+                <span className='food-name'>Burger $12</span>
+                <span>Fresh pork in a Mojo marinade with caramelized onions and white cheddar on an Amoroso roll with side of Au Jus. Choice of side</span>
+                <br />
+                <span className='food-name'>Burger $12</span>
+                <span>Fresh pork in a Mojo marinade with caramelized onions and white cheddar on an Amoroso roll with side of Au Jus. Choice of side</span>
+                <br />
+                <span className='food-name'>Burger $12</span>
+                <span>Fresh pork in a Mojo marinade with caramelized onions and white cheddar on an Amoroso roll with side of Au Jus. Choice of side</span>
+                <br />
+                <span className='food-name'>Burger $12</span>
+                <span>Fresh pork in a Mojo marinade with caramelized onions and white cheddar on an Amoroso roll with side of Au Jus. Choice of side</span>
+                <br />
+                <span className='food-name'>Burger $12</span>
+                <span>Fresh pork in a Mojo marinade with caramelized onions and white cheddar on an Amoroso roll with side of Au Jus. Choice of side</span>
+                <br />
+                <span className='food-name'>Burger $12</span>
+                <span>Fresh pork in a Mojo marinade with caramelized onions and white cheddar on an Amoroso roll with side of Au Jus. Choice of side</span>
+                <br />
+            </div>
+        </div>
 
     </div>
     )
