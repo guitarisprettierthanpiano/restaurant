@@ -210,3 +210,31 @@ span, h4{
     display: grid;
     grid-template-rows: repeat(auto,auto);
 }
+
+/* CONTACT */
+.contact-container{
+    height: 100%;
+}
+.parallax {
+    /* The image used */
+    background-image: url("../img/test.jpg");
+  
+    /* Full height */
+    height: 100%;
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+.testt{
+    height:1000px;
+    background-color:rgb(161, 161, 161);
+    font-size:36px;
+}
+.testy{
+    height: 100%;
+    color: black;
+    background-color: rgba(91, 255, 255, 0.089);
+}
