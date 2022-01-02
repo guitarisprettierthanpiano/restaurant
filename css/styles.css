@@ -220,14 +220,18 @@ span, h4{
     background-image: url("../img/test.jpg");
   
     /* Full height */
-    height: 100%;
+    height: calc(100vh - 80px);
   
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-  }
+
+    display: grid;
+    align-content: center;
+    justify-content: center;
+}
 .testt{
     height:1000px;
     background-color:rgb(161, 161, 161);

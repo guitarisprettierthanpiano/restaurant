@@ -5,7 +5,9 @@ const Contact: React.FC = () => {
     return (
     <div className='contact-container'>
 
-        <div className="parallax">        </div>
+        <div className="parallax">   
+        <p>TESTING PARAGRAPH HAHA</p> 
+        </div>
 
         <div className='testt'>
         Scroll Up and Down this page to see the parallax scrolling effect.
