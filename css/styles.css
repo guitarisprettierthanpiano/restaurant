@@ -215,9 +215,8 @@ span, h4{
 .contact-container{
     height: 100%;
 }
-.parallax {
+.parallax, .parallax2, .parallax3 {
     /* The image used */
-    background-image: url("../img/test.jpg");
   
     /* Full height */
     height: calc(100vh - 80px);
@@ -232,13 +231,99 @@ span, h4{
     align-content: center;
     justify-content: center;
 }
-.testt{
-    height:1000px;
-    background-color:rgb(161, 161, 161);
-    font-size:36px;
+.parallax{
+    background-image: url("../img/wood.webp");
 }
-.testy{
-    height: 100%;
+.parallax p{
+    width: 80vw;
+    height: 70vh;
+    background-color: rgba(0, 128, 0, 0.8);
+
+    text-align: center;
+    text-justify: center;
+}
+.below-paral{
+    height: calc(100vh - 80px);
+    background-color:rgb(161, 161, 161);
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-items: center;
+
+    background-color: rgb(154, 69, 0);
+    background-image: linear-gradient(45deg, rgb(150, 78, 0) 25%, transparent 25%, transparent 75%, rgb(150, 78, 0) 75%, rgb(150, 78, 0)),
+    linear-gradient(45deg, rgb(150, 78, 0) 25%, transparent 25%, transparent 75%, rgb(150, 78, 0) 75%, rgb(150, 78, 0));
+    background-size: 60px 60px;
+    background-position: 0 0, 30px 30px;
+}
+.below-paral img{
+    height: 70vh;
+    width: 18vw;
+}
+.parallax2{
+    background-image: url("../img/tikibg.webp");
+}
+.parallax2 .hours-container{
+    background-color: #fbfbe1!important;
+    width: 90vw;
+    height: 60vh;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+.hours-container *{
     color: black;
-    background-color: rgba(91, 255, 255, 0.089);
+}
+.parallax2 .hours-container .hours{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.parallax2 .hours-container .happy-hour{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.come-on-in{
+    height: calc(100vh - 80px);
+    display: grid;
+    grid-template-columns: 40vw 1fr;
+    grid-template-rows: 1fr;
+}
+.come-on-in *{
+    color:black;
+}
+.come-on-in-left{
+    background-image: url("../img/pineapple.gif");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-color: rgb(255, 132, 50);
+}
+.parallax3{
+    background-image: url("../img/wood.webp");
+}
+
+/* FOOTER */
+.footer{
+    background-color: blue;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    align-items: center;
+    justify-items: center;
+
+    height: 30vh;
+}
+.footer img{
+    height: 25vh;
+    width: 30vw;
+}
+.footer button{
+    height: 20px;
+    width: 70px;
+    color: black;
+    background-color:cornflowerblue;
 }

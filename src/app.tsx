@@ -7,6 +7,7 @@ import Nav from './components/nav'
 import Menu from './components/menu'
 import AboutUs from './components/aboutus'
 import Contact from './components/contact'
+import Footer from './components/footer'
 
 const App: React.FC = () => {
    
@@ -16,6 +17,7 @@ const App: React.FC = () => {
 
         <HashRouter>
             <Nav />
+            
             <Switch>
                 <Route exact path='/'
                 component={Home}/>
@@ -29,6 +31,8 @@ const App: React.FC = () => {
                 <Route path='/contact'
                 component={Contact}/>
             </Switch>
+
+            <Footer />
         </HashRouter>
     </> 
     )

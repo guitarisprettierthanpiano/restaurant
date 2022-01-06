@@ -16,7 +16,7 @@ const Nav: React.FC = () => {
 
                     <NavLink
                         exact activeClassName='active'
-                        to='/'>
+                        to='/contact'>
                         <span>Home</span>
                     </NavLink>
 
@@ -34,7 +34,7 @@ const Nav: React.FC = () => {
 
                     <NavLink
                         activeClassName='active'
-                        to='/contact'>
+                        to='/'>
                         <span>Contact</span>
                     </NavLink>
 
