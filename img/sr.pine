@@ -1,442 +1,187 @@
+//
 // This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
-//@version=4
-study("STEVEN'S REALITY", overlay = true, precision=2)
+// @version = 4
+// @author  = The_Caretaker
+// © The_Caretaker
+//
+// Much respect to John A Bollinger the creator of Bollinger Bands® and Bollinger Band Width indicators.
+// 
+// Feel free to reuse or develop this script further, please drop me a note below if you find it useful.
+// DEFAULT IS 13 LENGTH 252 LOOKBACK
 
-len    = input(14,    "K",                                                input.integer, minval = 2)
-D      = input(3,     "D",                                                input.integer, minval = 1)
-E      = input(       "Forecasted KD", "KD Estimation",                   input.string,  options=["Current Dynamic KD", "Current Static KD","Forecasted KD"])
-smooth = input(6,     "Smooth",                                           input.integer, minval = 1)
-ures   = input(false,  "Use Multi Time Frame",                             input.bool) 
-reso   = input(       "1 day", "  Multi Time Frame Resolution 🕐",        input.string,  options=["5 min", "10 min", "15 min", "30 min", "45 min", "1 hour", "2 hours", "3 hours", "4 hours", "6 hours", "8 hours", "10 hours", "12 hours", "1 day","2 days", "3 days", "1 week", "1 month"])
-p      = input(true,  "Show Stoch Cross Value Panel📋",                   input.bool)
-bs     = input(true,  "Show OverBought OverSold Panel📜",                input.bool)
-BL     = input(       "Bands", "▼▼▼ Overbought Oversold Style ▼▼▼", input.string,  options=["Line Levels", "Bands"])
-plb    = input(true, "Plot OverBought Price",                            input.bool)
-ob     = input(80,    "  OverBought Level",                               input.float,   minval = 50, maxval = 100)
-pls    = input(true, "Plot Oversold Price",                              input.bool)
-os     = input(20,    "  OverSold Level",                                 input.float,   minval = 0,  maxval = 50)
-sm     = input(false, "======     Stoch Cross Smoothing     ======",      input.bool)
-slen   = input(8,     "  Smoothing Length",                               input.integer)
-s      = input(false, "Plot Stoch Historical Value",                      input.bool)
-sv     = input("K",   "  Stoch Value",                                    input.string,  options=["K", "D"])
-Cir    = input(false,  "Plot Crossing Circles🔵",                          input.bool)
-ib     = input(true,  "Dark Background ⬛",                              input.bool)
-step   = input(true,  "Use Step Lines",                                  input.bool)
-dec    = input(4,     "Decimals🔢",                                       input.integer, minval = 0 ,  maxval = 10)
+study  ( "Steven's Bollinger Band Width Percentile With TDI And Stochastic", "Steven's BBWP + TDI + Stochastic", overlay = false, format = format.percent, precision = 2)
 
-ss(Series, Period) => // Super Smoother Function
-    // period = input(8, "Super Smoother Period", input.float, minval=2.0, step=0.5)
-    var PI    = 2.0 * asin(1.0)
-    var SQRT2 = sqrt(2.0)
-    lambda = PI * SQRT2 / Period
-    a1     = exp(-lambda)
-    coeff2 = 2.0 * a1 * cos(lambda)
-    coeff3 = - pow(a1, 2.0)
-    coeff1 = 1.0 - coeff2 - coeff3
-    filt1  = 0.0
-    filt1 := coeff1 * (Series + nz(Series[1])) * 0.5 + coeff2 * nz(filt1[1]) + coeff3 * nz(filt1[2])
-    filt1
+///////////////////////////////////////////////////////////////////////////////
+// inputs
 
-getRez(intval) =>
-    int_1 = iff(intval == "5 min", "5", iff(intval == "10 min", "10", iff(intval == "15 min", "15", iff(intval == "30 min", "30", iff(intval == "45 min", "45", iff(intval == "1 hour", "60", iff(intval == "2 hours", "120", iff(intval == "3 hours", "180", iff(intval == "4 hours", "240", iff(intval == "6 hours", "360", iff(intval == "8 hours", "480", iff(intval == "10 hours", "600", iff(intval == "12 hours", "720", iff(intval == "1 day", "D", iff(intval == "2 days", "2D", iff(intval == "3 days", "3D",iff(intval == "1 week", "W", iff(intval == "1 month", "M","D"))))))))))))))))))
-    int_1
+i_priceSrc      = input ( close,            "Price Source", input.source,                                                               group = "BBWP Properties" )
+i_basisType     = input ( "SMA",            "Basis Type",   input.string,  options = [ "SMA", "EMA", "VWMA" ],                          group = "BBWP Properties" )
+i_bbwpLen       = input ( 13,               "Length",       input.integer, minval  = 1,                                                 group = "BBWP Properties" )
+i_bbwpLkbk      = input ( 252,              "Lookback",     input.integer, minval  = 1,                                                 group = "BBWP Properties" )
 
+i_c_bbwpTyped   = input ( "Solid",       "Color Type",   input.string,  options = [ "Spectrum", "Solid" ],           inline = "1",   group = "BBWP Plot Settings" )
+i_c_spctrmType  = input ( "Blue Red", "Spectrum",     input.string,  options = [ "Blue Red", "Blue Green Red"],   inline = "1",   group = "BBWP Plot Settings" )
+i_c_bbwpsolid   = input ( #ff0058,          "Solid",        input.color,                                                inline = "1",   group = "BBWP Plot Settings" )
+i_bbwpWidth     = input ( 2,                "Line Width",   input.integer, minval  = 1, maxval = 4,                     inline = "2",   group = "BBWP Plot Settings" )
+i_bbwpTransp    = input ( 0,                "Transparancy", input.integer, minval  = 0,                                 inline = "3",   group = "BBWP Plot Settings" )
 
+i_ma1On         = input ( true,             "",             input.bool,                                                 inline = "1",   group = "Moving Average Settings" )
+i_ma1Type       = input ( "SMA",            "MA 1 Type",    input.string,  options = [ "SMA", "EMA", "VWMA" ],          inline = "1",   group = "Moving Average Settings" )
+i_c_ma1         = input ( #ff0058,          "",             input.color,                                                inline = "1",   group = "Moving Average Settings" )
+i_ma1Len        = input ( 1,                "Length",       input.integer, minval  = 1,                                 inline = "1",   group = "Moving Average Settings" )
 
-res = ures ? getRez(reso) : timeframe.period
+i_alrtsOn       = input ( true,             "Alerts On",    input.bool,                                                                 group = "Visual Alerts" )
+i_upperLevel    = input ( 97,              "Extreme High", input.integer, minval  = 1,                                 inline = "1",   group = "Visual Alerts" )
+i_lowerLevel    = input ( 3,                "Extreme Low",  input.integer, minval  = 1,                                 inline = "1",   group = "Visual Alerts" )
+i_alrtTransp    = input ( 90,                "Transparancy", input.integer, minval  = 0,                                 inline = "2",   group = "Visual Alerts" )
 
-f_resInMinutes() => 
-    _resInMinutes = timeframe.multiplier * (
-      timeframe.isseconds ? 1. / 60             :
-      timeframe.isminutes ? 1.                  :
-      timeframe.isdaily   ? 60. * 24            :
-      timeframe.isweekly  ? 60. * 24 * 7        :
-      timeframe.ismonthly ? 60. * 24 * 30.4375  : na)
-// ————— Returns the float minutes value of the string _res.
-f_tfResInMinutes(_res) =>
-    // _res: resolution of any TF (in "timeframe.period" string format).
-    // Dependency: f_resInMinutes().
-    security(syminfo.tickerid, _res, f_resInMinutes())
+///////////////////////////////////////////////////////////////////////////////
+// variable declarations
 
-// —————————— Determine if current timeframe is smaller that higher timeframe selected in Inputs.
-// Get higher timeframe in minutes.
-higherTfInMinutes = f_tfResInMinutes(res)
-// Get current timeframe in minutes.
-currentTfInMinutes = f_resInMinutes()
-// Compare current TF to higher TF to make sure it is smaller, otherwise our plots don't make sense.
-chartOnLowerTf = currentTfInMinutes <= higherTfInMinutes
+var c_prcntSpctrm1 = array.new_color ( na )
+if barstate.isfirst
+    array.push ( c_prcntSpctrm1, #0000FF ),
+    array.push ( c_prcntSpctrm1, #000AFF ), array.push ( c_prcntSpctrm1, #0014FF ), array.push ( c_prcntSpctrm1, #001FFF ), array.push ( c_prcntSpctrm1, #0029FF ), array.push ( c_prcntSpctrm1, #0033FF ),
+    array.push ( c_prcntSpctrm1, #003DFF ), array.push ( c_prcntSpctrm1, #0047FF ), array.push ( c_prcntSpctrm1, #0052FF ), array.push ( c_prcntSpctrm1, #005CFF ), array.push ( c_prcntSpctrm1, #0066FF ),
+    array.push ( c_prcntSpctrm1, #0070FF ), array.push ( c_prcntSpctrm1, #007AFF ), array.push ( c_prcntSpctrm1, #0085FF ), array.push ( c_prcntSpctrm1, #008FFF ), array.push ( c_prcntSpctrm1, #0099FF ), 
+    array.push ( c_prcntSpctrm1, #00A3FF ), array.push ( c_prcntSpctrm1, #00ADFF ), array.push ( c_prcntSpctrm1, #00B8FF ), array.push ( c_prcntSpctrm1, #00C2FF ), array.push ( c_prcntSpctrm1, #00CCFF ), 
+    array.push ( c_prcntSpctrm1, #00D6FF ), array.push ( c_prcntSpctrm1, #00E0FF ), array.push ( c_prcntSpctrm1, #00EBFF ), array.push ( c_prcntSpctrm1, #00F5FF ), array.push ( c_prcntSpctrm1, #00FFFF ), 
+    array.push ( c_prcntSpctrm1, #00FFF5 ), array.push ( c_prcntSpctrm1, #00FFEB ), array.push ( c_prcntSpctrm1, #00FFE0 ), array.push ( c_prcntSpctrm1, #00FFD6 ), array.push ( c_prcntSpctrm1, #00FFCC ), 
+    array.push ( c_prcntSpctrm1, #00FFC2 ), array.push ( c_prcntSpctrm1, #00FFB8 ), array.push ( c_prcntSpctrm1, #00FFAD ), array.push ( c_prcntSpctrm1, #00FFA3 ), array.push ( c_prcntSpctrm1, #00FF99 ), 
+    array.push ( c_prcntSpctrm1, #00FF8F ), array.push ( c_prcntSpctrm1, #00FF85 ), array.push ( c_prcntSpctrm1, #00FF7A ), array.push ( c_prcntSpctrm1, #00FF70 ), array.push ( c_prcntSpctrm1, #00FF66 ), 
+    array.push ( c_prcntSpctrm1, #00FF5C ), array.push ( c_prcntSpctrm1, #00FF52 ), array.push ( c_prcntSpctrm1, #00FF47 ), array.push ( c_prcntSpctrm1, #00FF3D ), array.push ( c_prcntSpctrm1, #00FF33 ), 
+    array.push ( c_prcntSpctrm1, #00FF29 ), array.push ( c_prcntSpctrm1, #00FF1F ), array.push ( c_prcntSpctrm1, #00FF14 ), array.push ( c_prcntSpctrm1, #00FF0A ), array.push ( c_prcntSpctrm1, #00FF00 ), 
+    array.push ( c_prcntSpctrm1, #0AFF00 ), array.push ( c_prcntSpctrm1, #14FF00 ), array.push ( c_prcntSpctrm1, #1FFF00 ), array.push ( c_prcntSpctrm1, #29FF00 ), array.push ( c_prcntSpctrm1, #33FF00 ), 
+    array.push ( c_prcntSpctrm1, #3DFF00 ), array.push ( c_prcntSpctrm1, #47FF00 ), array.push ( c_prcntSpctrm1, #52FF00 ), array.push ( c_prcntSpctrm1, #5CFF00 ), array.push ( c_prcntSpctrm1, #66FF00 ), 
+    array.push ( c_prcntSpctrm1, #70FF00 ), array.push ( c_prcntSpctrm1, #7AFF00 ), array.push ( c_prcntSpctrm1, #85FF00 ), array.push ( c_prcntSpctrm1, #8FFF00 ), array.push ( c_prcntSpctrm1, #99FF00 ), 
+    array.push ( c_prcntSpctrm1, #A3FF00 ), array.push ( c_prcntSpctrm1, #ADFF00 ), array.push ( c_prcntSpctrm1, #B8FF00 ), array.push ( c_prcntSpctrm1, #C2FF00 ), array.push ( c_prcntSpctrm1, #CCFF00 ), 
+    array.push ( c_prcntSpctrm1, #D6FF00 ), array.push ( c_prcntSpctrm1, #E0FF00 ), array.push ( c_prcntSpctrm1, #EBFF00 ), array.push ( c_prcntSpctrm1, #F5FF00 ), array.push ( c_prcntSpctrm1, #FFFF00 ), 
+    array.push ( c_prcntSpctrm1, #FFF500 ), array.push ( c_prcntSpctrm1, #FFEB00 ), array.push ( c_prcntSpctrm1, #FFE000 ), array.push ( c_prcntSpctrm1, #FFD600 ), array.push ( c_prcntSpctrm1, #FFCC00 ), 
+    array.push ( c_prcntSpctrm1, #FFC200 ), array.push ( c_prcntSpctrm1, #FFB800 ), array.push ( c_prcntSpctrm1, #FFAD00 ), array.push ( c_prcntSpctrm1, #FFA300 ), array.push ( c_prcntSpctrm1, #FF9900 ), 
+    array.push ( c_prcntSpctrm1, #FF8F00 ), array.push ( c_prcntSpctrm1, #FF8500 ), array.push ( c_prcntSpctrm1, #FF7A00 ), array.push ( c_prcntSpctrm1, #FF7000 ), array.push ( c_prcntSpctrm1, #FF6600 ), 
+    array.push ( c_prcntSpctrm1, #FF5C00 ), array.push ( c_prcntSpctrm1, #FF5200 ), array.push ( c_prcntSpctrm1, #FF4700 ), array.push ( c_prcntSpctrm1, #FF3D00 ), array.push ( c_prcntSpctrm1, #FF3300 ), 
+    array.push ( c_prcntSpctrm1, #FF2900 ), array.push ( c_prcntSpctrm1, #FF1F00 ), array.push ( c_prcntSpctrm1, #FF1400 ), array.push ( c_prcntSpctrm1, #FF0000 ), array.push ( c_prcntSpctrm1, #FF0000 )
 
-mtf(data) =>
-    chartOnLowerTf ? security(syminfo.tickerid, res, data) : data
+var c_prcntSpctrm2 = array.new_color ( na )
+if barstate.isfirst
+    array.push ( c_prcntSpctrm2, #0000FF ),
+    array.push ( c_prcntSpctrm2, #0200FC ), array.push ( c_prcntSpctrm2, #0500F9 ), array.push ( c_prcntSpctrm2, #0700F7 ), array.push ( c_prcntSpctrm2, #0A00F4 ), array.push ( c_prcntSpctrm2, #0C00F2 ), 
+    array.push ( c_prcntSpctrm2, #0F00EF ), array.push ( c_prcntSpctrm2, #1100ED ), array.push ( c_prcntSpctrm2, #1400EA ), array.push ( c_prcntSpctrm2, #1600E8 ), array.push ( c_prcntSpctrm2, #1900E5 ), 
+    array.push ( c_prcntSpctrm2, #1C00E2 ), array.push ( c_prcntSpctrm2, #1E00E0 ), array.push ( c_prcntSpctrm2, #2100DD ), array.push ( c_prcntSpctrm2, #2300DB ), array.push ( c_prcntSpctrm2, #2600D8 ),
+    array.push ( c_prcntSpctrm2, #2800D6 ), array.push ( c_prcntSpctrm2, #2B00D3 ), array.push ( c_prcntSpctrm2, #2D00D1 ), array.push ( c_prcntSpctrm2, #3000CE ), array.push ( c_prcntSpctrm2, #3300CC ),
+    array.push ( c_prcntSpctrm2, #3500C9 ), array.push ( c_prcntSpctrm2, #3800C6 ), array.push ( c_prcntSpctrm2, #3A00C4 ), array.push ( c_prcntSpctrm2, #3D00C1 ), array.push ( c_prcntSpctrm2, #3F00BF ), 
+    array.push ( c_prcntSpctrm2, #4200BC ), array.push ( c_prcntSpctrm2, #4400BA ), array.push ( c_prcntSpctrm2, #4700B7 ), array.push ( c_prcntSpctrm2, #4900B5 ), array.push ( c_prcntSpctrm2, #4C00B2 ),
+    array.push ( c_prcntSpctrm2, #4F00AF ), array.push ( c_prcntSpctrm2, #5100AD ), array.push ( c_prcntSpctrm2, #5400AA ), array.push ( c_prcntSpctrm2, #5600A8 ), array.push ( c_prcntSpctrm2, #5900A5 ), 
+    array.push ( c_prcntSpctrm2, #5B00A3 ), array.push ( c_prcntSpctrm2, #5E00A0 ), array.push ( c_prcntSpctrm2, #60009E ), array.push ( c_prcntSpctrm2, #63009B ), array.push ( c_prcntSpctrm2, #660099 ),
+    array.push ( c_prcntSpctrm2, #680096 ), array.push ( c_prcntSpctrm2, #6B0093 ), array.push ( c_prcntSpctrm2, #6D0091 ), array.push ( c_prcntSpctrm2, #70008E ), array.push ( c_prcntSpctrm2, #72008C ), 
+    array.push ( c_prcntSpctrm2, #750089 ), array.push ( c_prcntSpctrm2, #770087 ), array.push ( c_prcntSpctrm2, #7A0084 ), array.push ( c_prcntSpctrm2, #7C0082 ), array.push ( c_prcntSpctrm2, #7F007F ),
+    array.push ( c_prcntSpctrm2, #82007C ), array.push ( c_prcntSpctrm2, #84007A ), array.push ( c_prcntSpctrm2, #870077 ), array.push ( c_prcntSpctrm2, #890075 ), array.push ( c_prcntSpctrm2, #8C0072 ), 
+    array.push ( c_prcntSpctrm2, #8E0070 ), array.push ( c_prcntSpctrm2, #91006D ), array.push ( c_prcntSpctrm2, #93006B ), array.push ( c_prcntSpctrm2, #960068 ), array.push ( c_prcntSpctrm2, #990066 ),
+    array.push ( c_prcntSpctrm2, #9B0063 ), array.push ( c_prcntSpctrm2, #9E0060 ), array.push ( c_prcntSpctrm2, #A0005E ), array.push ( c_prcntSpctrm2, #A3005B ), array.push ( c_prcntSpctrm2, #A50059 ), 
+    array.push ( c_prcntSpctrm2, #A80056 ), array.push ( c_prcntSpctrm2, #AA0054 ), array.push ( c_prcntSpctrm2, #AD0051 ), array.push ( c_prcntSpctrm2, #AF004F ), array.push ( c_prcntSpctrm2, #B2004C ), 
+    array.push ( c_prcntSpctrm2, #B50049 ), array.push ( c_prcntSpctrm2, #B70047 ), array.push ( c_prcntSpctrm2, #BA0044 ), array.push ( c_prcntSpctrm2, #BC0042 ), array.push ( c_prcntSpctrm2, #BF003F ), 
+    array.push ( c_prcntSpctrm2, #C1003D ), array.push ( c_prcntSpctrm2, #C4003A ), array.push ( c_prcntSpctrm2, #C60038 ), array.push ( c_prcntSpctrm2, #C90035 ), array.push ( c_prcntSpctrm2, #CC0033 ),
+    array.push ( c_prcntSpctrm2, #CE0030 ), array.push ( c_prcntSpctrm2, #D1002D ), array.push ( c_prcntSpctrm2, #D3002B ), array.push ( c_prcntSpctrm2, #D60028 ), array.push ( c_prcntSpctrm2, #D80026 ), 
+    array.push ( c_prcntSpctrm2, #DB0023 ), array.push ( c_prcntSpctrm2, #DD0021 ), array.push ( c_prcntSpctrm2, #E0001E ), array.push ( c_prcntSpctrm2, #E2001C ), array.push ( c_prcntSpctrm2, #E50019 ),
+    array.push ( c_prcntSpctrm2, #E80016 ), array.push ( c_prcntSpctrm2, #EA0014 ), array.push ( c_prcntSpctrm2, #ED0011 ), array.push ( c_prcntSpctrm2, #EF000F ), array.push ( c_prcntSpctrm2, #F2000C ), 
+    array.push ( c_prcntSpctrm2, #F4000A ), array.push ( c_prcntSpctrm2, #F70007 ), array.push ( c_prcntSpctrm2, #F90005 ), array.push ( c_prcntSpctrm2, #FC0002 ), array.push ( c_prcntSpctrm2, #FF0000 )
+
+///////////////////////////////////////////////////////////////////////////////
+// function declarations
+
+f_maType ( price, len, type ) => type == "SMA" ? sma ( price, len ) : type == "EMA" ? ema ( price, len ) : vwma ( price, len )
     
+f_bbwp ( price, bbwLen, bbwpLen, type ) =>
+    float basis = f_maType ( price, bbwLen, type )
+    float dev = stdev ( price, bbwLen )
+    _bbw = (( basis + dev ) - ( basis - dev )) / basis
+    _bbwSum = 0
+    for i = 1 to bbwpLen
+        _bbwSum := _bbwSum + ( _bbw [i] > _bbw ? 0 : 1 )
+    return = ( _bbwSum / i_bbwpLkbk ) * 100
 
-st(len) => 
-    (close - lowest(low,len))/(highest(high,len) - lowest(low,len))
-
-x = stoch(close,high,low,len)*0.01
-x2 = sma(x,smooth)
-x3 = sma(x2,D)
-
-
-C(level, len,smooth) =>
-    if smooth == 1
-        C = (highest(high,len) - lowest(low,len))*level + lowest(low,len)
-    else    
-        sum = 0.0
-        for i = 1 to smooth -1
-            sum := x[i] + sum
-        a = smooth*level - sum
-        C = a * (highest(high,len) - lowest(low,len)) + lowest(low,len)
- 
-C2(len,smooth) =>
-    float sumK  = 0
-    for i = 1 to smooth-1
-        sumK := sumK + x[i]
-    float sumKS = 0
-    for i = 1 to D-1
-        sumKS := sumKS + x2[i]
-    C2 = ((((sumKS*smooth)+sumK-(sumK*D))*(highest(high,len)-lowest(low,len)))/((D-1)))+lowest(low,len)
-   
-
-Cf(level, len,smooth) =>
-    if smooth == 1
-        Cf = (highest(high,len) - lowest(low,len))*level + lowest(low,len)
-    else    
-        sum = 0.0
-        for i = 0 to smooth -2
-            sum := x[i] + sum
-        a = smooth*level - sum
-        Cf = a * (highest(high,len-1) - lowest(low,len-1)) + lowest(low,len-1)
-    
-
-stp(len) => 
-    (close - lowest(low,len-1))/(highest(high,len-1) - lowest(low,len-1))
-
-kk = stoch(close, high, low, len)*0.01
+f_clrSlct ( percent, select, type, solid, array1, array2 ) => select == "Solid" ? solid : array.get ( type == "Blue Green Red" ? array1 : array2, round ( percent ) )
 
-X = stp(len)
-xk = 100* sma(kk,smooth)
+/////////////////////////////////////////////////////////////////////////////// 
+// calculations
 
-k1(len)=>
-    sum = 0.0
-    for i = 0 to len - 2
-        sum := kk[i] +  sum
-        mean = (sum + X) /len
+bbwp        = f_bbwp ( i_priceSrc, i_bbwpLen, i_bbwpLkbk, i_basisType )
+c_bbwp      = f_clrSlct ( bbwp, i_c_bbwpTyped, i_c_spctrmType, i_c_bbwpsolid, c_prcntSpctrm1, c_prcntSpctrm2 )
+bbwpMA1     = i_ma1On ? f_maType ( bbwp, i_ma1Len, i_ma1Type ) : na
+hiAlrtBar   = i_alrtsOn and bbwp >= i_upperLevel ? bbwp : na
+loAlrtBar   = i_alrtsOn and bbwp <= i_lowerLevel ? bbwp : na
 
-X2 = 100*k1(smooth)
+/////////////////////////////////////////////////////////////////////////////// 
+// plots
 
+//p_scaleHi   = hline ( 80,      "Scale High",   #ff0000,                hline.style_dotted )
+//p_midLine   = hline ( 50,       "Mid-Line",     color.silver,           hline.style_dotted)
+//p_scaleLo   = hline ( 20,        "Scale Low",    #0000ff,                hline.style_dotted)
 
-d1(len)=>
-    sum = 0.0
-    for i = 0 to len - 2
-        sum := xk[i] + sum
-    mean = (sum + X2)/len
+p_bbwp      = plot ( bbwp,      "BBWP",         c_bbwp,  i_bbwpWidth,   plot.style_line,    transp = i_bbwpTransp, editable = false )
+p_hiAlrt    = plot ( hiAlrtBar, "Extreme Hi",   c_bbwp,  1,             plot.style_columns, transp = i_alrtTransp, histbase = 0,   editable = false )
+p_loAlrt    = plot ( loAlrtBar, "Extreme Lo",   c_bbwp,  1,             plot.style_columns, transp = i_alrtTransp, histbase = 100, editable = false )
 
+/////////////////////////////
+// end
 
-x3p = d1(D)*0.01
-    
 
 
-ccks = mtf(ss(C(x3,len,smooth),slen))
-cck = mtf(C(x3,len,smooth))
-ccks2 = mtf(ss(C2(len,smooth),slen))
-cck2 = mtf(C2(len,smooth))
-cfks = mtf(ss(Cf(x3p,len,smooth),slen))
-cfk = mtf(Cf(x3p,len,smooth))
 
-stochk = mtf(x)
-stochks = mtf(x2)
-stochd = mtf(x3)
-highmtf = mtf(highest(high,len))
-lowmtf = mtf(lowest(low,len))
+//THIS ALL WORKS JUST UN COMMENT IT OUT FOR STOCHASTIC take out the transp=100
+length3 = input(12, minval=1), smoothK1 = input(8, minval=1), smoothD1 = input(3, minval=1)
+k1 = sma(stoch(close, high, low, length3), smoothK1)
+d1 = sma(k1, smoothD1)
+plot(k1, color=#ff2900, linewidth=2)
+plot(d1, color=#ffffff, linewidth=1, display=display.none)
 
-//Highest and Lowest K you can get on current Bar
-sumk = 0.0
-for i = 1 to smooth -1
-    sumk := stochk[i] + sumk
-hk = (1+sumk)/smooth
-lk = sumk/smooth
+//SECOND STOCHASTIC I ADDED FOR 14 6 3
+//length4 = input(14, minval=1), smoothK2 = input(6, minval=1), smoothD2 = input(3, minval=1)
+//k2 = sma(stoch(close, high, low, length4), smoothK2)
+//d2 = sma(k1, smoothD2)
+//plot(k2, color=#ff2900, linewidth=2, display=display.none)
+//plot(d2, color=#ffffff, linewidth=1, display=display.none)
 
-//Highest D and Lowest D you can get on current Bar
-sumd = 0.0
-for i = 1 to D - 1
-    sumd := stochks[i] + sumd
-hd = (hk+sumd)/D
-ld = (lk+sumd)/D
+//commented this part out too
+//h0 = hline(80)
+//h1 = hline(20)
+//fill(h0, h1, transp=100)
 
 
+h0 = hline(100, "Upper Band", color=#ff0057, linestyle=hline.style_solid)
+h1 = hline(83, "Lower Band", color=#ff0057, linestyle=hline.style_dotted, linewidth=0)
+h2 = hline(25, "Lower Band", color=#ff0057, linestyle=hline.style_dotted)
+h3 = hline(0, "Lower Band", color=#ff0057, linestyle=hline.style_solid)
+h4 = hline(50, "Lower Band", color=#ff0057, linestyle=hline.style_dotted)
+fill(h0, h1, color=#ff0057, title="Upper Fill")
+//fill(h2, h3, color=#ff0057, title="Lower Fill")
+fill(h2, h3, color=#ff0057, title="Lower Fill")
 
-float Cross = na
-if (E == "Current Dynamic KD") // Close one day ago
-    Cross := sm? ccks : cck
-if (E == "Current Static KD")
-    Cross := sm ? ccks2 : cck2
-if (E == "Forecasted KD")
-    Cross := sm ? cfks : cfk
 
 
-Round( _val, _decimals) => 
-    // Rounds _val to _decimals places.
-    _p = pow(10,_decimals)
-    round(abs(_val)*_p)/_p*sign(_val)
 
 
-cob = mtf(C(0.01*ob,len,smooth))
-fob = mtf(Cf(0.01*ob,len,smooth))
 
-cos = mtf(C(0.01*os,len,smooth))
-fos = mtf(Cf(0.01*os,len,smooth))
-float obp = na
-if (E == "Current Dynamic KD") or (E == "Current Static KD")
-    obp := cob
-if (E == "Forecasted KD")
-    obp := fob
-    
-float osp = na
-if (E == "Current Dynamic KD") or (E == "Current Static KD")
-    osp := cos
-if (E == "Forecasted KD")
-    osp := fos
-    
+// RSI
+src_rsi = input(close, title="RSI Source")
+length_rsi = input(11, minval=1, title="RSI Length")
+rsi = rsi(src_rsi, length_rsi)
 
+// Moving Average RSI
+ma_length_rsi = input(6, minval=1, title="RSI MA Length")
+ma_rsi = sma(rsi, ma_length_rsi)
 
-//the actual stoch line color  its red 
-Co = close[1] > Cross[1] ? #ff0000 : #ff0000
+// Bollinger Bands
+src = rsi
+length = input(31, minval=1, title="BB Length")
+mult = input(2.0, minval=0.001, maxval=50, title="BB Mult")
+basis = sma(src, length)
+devs = mult * stdev(src, length)
+upper = basis + devs
+lower = basis - devs
 
-
-
-
-US = close > Cross and close[1] < Cross[1] ? Cross : na
-UD = close < Cross and close[1] > Cross[1] ? Cross : na
-
-
-linestyle = step ? plot.style_stepline : plot.style_linebr
-
-
-plot(Cross,         "Stochastic Stop", style= linestyle, linewidth=1, color=Co)
-Color = #ff0016
-Color1 = #ff0016
-style = "•"
-size = size.small
-
-
-//plotchar(Cir?US:na ,"Upcross Stop Start",style ,location.absolute,Color,0,size = size)
-//plotchar(Cir?UD:na ,"Upcross Stop Start",style ,location.absolute,Color1,0,size = size)
-
-
-
-
-
-float ps = na
-if (sv == "K")
-    ps := mtf(x2)
-if (sv == "D")
-    ps := mtf(x3)
-
-
-
-lable(P, T, s, color_PnL) =>// show_panel
-    label PnL_Label = na
-    PnL_Label := label.new(bar_index, P, text = T, color=color_PnL, textcolor=color.white, style = s, yloc=yloc.price, xloc=xloc.bar_index,size=size.small)
-
-
-lable1(P, T, s, color_PnL) =>// show_panel
-    label PnL_Label = na
-    PnL_Label := label.new(bar_index, P, text = T, color=color_PnL, textcolor=color.white, style = s, yloc=yloc.price, xloc=xloc.bar_index,size=size.normal)
-    label.delete(PnL_Label[1])
-
-if (s) and US
-    lable(high,+ tostring(Round(ps*100,0)),label.style_label_down,color.new(color.aqua, 50))
-    
-    
-if (s) and UD  
-    lable(low,+ tostring(Round(ps*100,0)),label.style_label_up,color.new(color.fuchsia, 50))
-
-    
-    
-ab =  Cross > close
-
-    
-labelstyle = ab ? label.style_label_left : label.style_label_left
-//labelstyle = ab ? label.style_label_down : label.style_label_up
-
-
-
-lbg = ib ?  color.new(#000000,0) :  color.new(#000000,0)
-
-ud()=>
-    if mtf(x3) > mtf(x2)
-        "UP: "
-    else
-        "DOWN: "
-
-
-bslabel() =>
-    bs ? "\n" + "Upper Critical Zone :  " + tostring(Round(obp,dec)) + "\n" + "Lower Critical Zone : " + tostring(Round(osp,dec)): na
-
-
-
-
-float obl = na
-if (BL == "Line Levels")
-    obl := obp
-else
-    na
-    
-float osl = na
-if (BL == "Line Levels")
-    osl := osp
-else
-    na
-
-float obb = na
-if (BL == "Bands")
-    obb := obp
-else
-    na
-
-float osb = na
-if (BL == "Bands")
-    osb := osp
-else
-    na
-
-lb()=>
-    float lb = na
-    if barstate.islast
-        lb := obl
-    else
-        na
-
-ls()=>
-    float ls = na
-    if barstate.islast
-        ls := osl
-    else
-        na
-
-
-tf() =>
-    if (not ures) or (not chartOnLowerTf)
-        ""
-
-    else
-        reso
-
-
-if (p)        
-    lable1(Cross, tf() + "\n" + " Stochastic Cross " + ud() + "" + tostring(Round(Cross,dec)) + bslabel() ,labelstyle,lbg)
-
-
-plot(plb ? lb() : na, "Overbought Price", color = #00C0FFff,transp = 0, show_last = 1)
-plot(pls ? ls() : na, "Oversold Price",   color = #FF0080ff,transp = 0, show_last = 1)
-
-if plb and (BL == "Line Levels")
-    B = line.new( nz(bar_index[1],0), obl, bar_index, obl, extend=extend.both, width=1, color=color.new(#00C0FFff,0),style = line.style_dotted)
-    line.delete(B[1])
-
-if pls and (BL == "Line Levels")
-    S = line.new( nz(bar_index[1],0), osl, bar_index, osl, extend=extend.both, width=1, color=color.new(#FF0080ff,0),style = line.style_dotted)
-    line.delete(S[1])
-
-plot(plb ? obb : na, "Overbought Price band", color = #310089)
-plot(pls ? osb : na, "Oversold Price band",   color = #310089)
-
-
-
-//bollinger bands stuff i added
-//@version=4
-slength = input(20, minval=1)
-src = input(close, title="Source")
-mult = input(2.0, minval=0.001, maxval=50, title="StdDev")
-basis = sma(src, slength)
-dev = mult * stdev(src, slength)
-upper = basis + dev
-lower = basis - dev
-offset = input(0, "Offset", type = input.integer, minval = -500, maxval = 500)
-plot(basis, "Basis", color=#ff6d00, linewidth=1, offset = offset)
-p1 = plot(upper, "Upper", color=#0033b6, linewidth=1, offset = offset)
-p2 = plot(lower, "Lower", color=#0033b6, linewidth=1, offset = offset)
-fill(p1, p2, title = "Background", color=color.rgb(0, 0, 0, 99))
-
-
-
-
-
-
-
-
-
-//Daily Pivot Points
-bool overridesym = input(group="PVSRA", title="Override chart symbol?", defval=false)
-string pvsra_sym = input(group="PVSRA", title="Symbol to use for volume candles", type=input.symbol, defval="INDEX:BTCUSD", tooltip="You can use INDEX:BTCUSD or you can combine multiple feeds, for example '(BINANCE:BTCUSDT+COINBASE:BTCUSD)'. Note that adding too many will slow things down.")
-
-//Non repainting security
-f_security(_symbol, _res, _src, _repaint) => security(_symbol, _res, _src[_repaint ? 0 : barstate.isrealtime ? 1 : 0])[_repaint ? 0 : barstate.isrealtime ? 0 : 1]
-
-// PVSRA
-// From MT4 source:
-
-//   Situation "Climax"
-//   Bars with volume >= 200% of the average volume of the 10 previous chart TFs, and bars
-//   where the product of candle spread x candle volume is >= the highest for the 10 previous
-//   chart time TFs.
-//   Default Colors:  Bull bars are green and bear bars are red.
-
-//   Situation "Volume Rising Above Average"
-//   Bars with volume >= 150% of the average volume of the 10 previous chart TFs.
-//   Default Colors:  Bull bars are blue and bear are blue-violet.
-
-// We want to be able to override where we get the volume data for the candles.
-
-
-pvsra_security(sresolution,sseries) => security(overridesym ? pvsra_sym : syminfo.tickerid ,sresolution,sseries[barstate.isrealtime?1:0], barmerge.gaps_off,barmerge.lookahead_off)
-pvsra_volume = iff(overridesym == true, pvsra_security("",volume), volume)
-pvsra_high = iff(overridesym == true, pvsra_security("",high), high)
-pvsra_low = iff(overridesym == true, pvsra_security("",low), low)
-pvsra_close = iff(overridesym == true, pvsra_security("",close), close)
-pvsra_open = iff(overridesym == true, pvsra_security("",open), open)
-
-
-//label.new(overridesym ? 0 : na, low, text = "PVSRA Override: " + pvsra_sym, xloc = xloc.bar_index, yloc=yloc.belowbar,style=label.style_label_down, size=size.huge)
-
-// The below math matches MT4 PVSRA indicator source
-// average volume from last 10 candles
-av = iff(overridesym == true,(sum(pvsra_volume,10))/10,(sum(volume,10))/10)
-//climax volume on the previous candle
-value2 = iff(overridesym == true,pvsra_volume*(pvsra_high-pvsra_low),volume*(high-low))
-// highest climax volume of the last 10 candles
-hivalue2 = highest(value2,10) 
-// VA value determines the bar color. va = 0: normal. va = 1: climax.  va = 2: rising
-va = iff(overridesym == true,iff(pvsra_volume >= (av * 2) or value2 >= hivalue2, 1, iff(pvsra_volume >= av * 1.5, 2, 0)),iff(volume >= (av * 2) or value2 >= hivalue2, 1, iff(volume >= av * 1.5, 2, 0)))
-
-// Bullish or bearish coloring
-isBull = iff(overridesym == true,pvsra_close > pvsra_open,close > open)
-
-CUColor = #00ff0a // Climax up (bull) bull and bear both start with b so it would be weird hence up down
-CDColor = #ff0000 // Climax down (bear)
-
-AUColor = #0088ff //Avobe average up (bull)
-ADColor = #da00ff //Above average down (bear))
-
-NUColor = #999999
-NDColor = #4d4d4d
-
-// candleColor = iff(climax,iff(isBull,CUColor,CDColor),iff(aboveA,iff(isBull,AUColor,ADColor),iff(isBull,NUColor,NDColor)))
-candleColor = iff(isBull,iff(va == 1,CUColor,iff(va == 2,AUColor,NUColor)),iff(va == 1,CDColor,iff(va == 2,ADColor,NDColor)))
-barcolor(candleColor) 
-
-alertcondition(va > 0, title="Alert on Vector Candle", message="{{ticker}} Vector Candle on the {{interval}}")
-
-
-
-//my moving averages i added
-plot(ema(close, 9), color=#00e2ff, linewidth=2, title='9 EMA')
-plot(ema(close, 21), color=#ffe500, linewidth=2, title='21 EMA')
-plot(ema(close, 50), color=#004000, linewidth=2, title='50 EMA', display=display.none)
-plot(ema(close, 55), color=#00ff0a, linewidth=2, title='55 EMA')
-plot(ema(close, 200), color=#ffffff, linewidth=2, title='200 EMA')
-plot(sma(close, 200), color=#5d606b, linewidth=2, title='200 SMA', display=display.none)
-plot(ema(close, 377), color=#5c00ff, linewidth=2, title='377 EMA', display=display.none)
-plot(ema(close, 800), color=#ff0088, linewidth=2, title='800 EMA')
-
+// Plots 
+plot(basis, title='BB Basis', color=#ffe500, display=display.none)
+p1X = plot(upper, title='BB Upper', color=#ffe500)
+p2X = plot(lower, title='BB Lower', color=#ffe500)
+plot(rsi, title='RSI Plot', color=#00e2ff, linewidth=2)

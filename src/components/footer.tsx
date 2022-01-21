@@ -1,13 +1,18 @@
 import * as React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Footer: React.FC = () => {
     return(
     <div className='footer'>
-        <img src='../img/test.jpg'/>
+        <img src='../img/tiki.png'/>
         <div className='footer-p'>
-            <p>123 sdemwd drive <br/> Ph. (343)232-2322</p>
+            <p>340 Corey Avenue <br/> St. Pete Beach, Florida <br/><br/>Ph. (727) 914-8881</p>
         </div>
-        <button>Contact Us</button>
+        <NavLink
+        activeClassName='active'
+        to='/'>
+            <button>Contact Us</button>
+        </NavLink>
     </div>
     )
 }

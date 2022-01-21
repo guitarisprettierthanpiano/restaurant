@@ -1,9 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Manjari&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merienda&display=swap');
+
+@keyframes fade{
+    0%{
+        opacity:0;
+    }
+}
+
 * {
     box-sizing: border-box;
-    color: white;
+    color: rgb(226, 226, 226);
+    font-weight: 400;
 
     margin: 0;
     padding: 0;
+    font-size: 18px;
+
+    font-family: 'Merienda', sans-serif;
+
+    line-height: 1.5;
 }
 #root{
     background-color: rgb(255, 255, 255);
@@ -24,7 +39,7 @@ span, h4{
     display: grid;
     grid-template-columns: 1fr 1fr;
 
-    background-color: rgb(164, 0, 0);
+    background-color: rgb(76, 97, 43);
 }
 .banner-subcontainer{
     grid-column: 1;
@@ -35,23 +50,39 @@ span, h4{
 
 /* NAV */
 .nav-container{
-    height: 60px;
+    height: 80px;
 
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr auto auto 1fr;
+    grid-template-rows: 1fr;
 
-    background-color: green;
+    background-color: #41470b;
 }   
 .nav-logo{
-    grid-column: 1;
+    grid-column: 2;
+
+    display: grid;
+    justify-items: center;
+
+    width: auto;
+}
+.nav-logo img{
+    height: 80px;
+    cursor: pointer;
+
+    animation: fade ease-in 0.5s;
 }
 .nav{
-    grid-column: 2;
+    grid-column: 3;
+    width: 40vw;
 
     align-self: center;
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
+}
+.nav *{
+    padding-left: 10px;
 }
 
 /* HOME */
@@ -71,11 +102,7 @@ span, h4{
     display: grid;
     grid-template-columns: auto auto;
 }
-@keyframes fade{
-    0%{
-        opacity:0;
-    }
-}
+
 
 .landing-left{
     width: 40vw;
@@ -231,18 +258,39 @@ span, h4{
     align-content: center;
     justify-content: center;
 }
+
 .parallax{
     background-image: url("../img/wood.webp");
 }
-.parallax p{
-    width: 80vw;
-    height: 70vh;
-    background-color: rgba(0, 128, 0, 0.8);
+.parallax .main-landing{
+    width: 85vw;
+    height: 80vh;
 
-    text-align: center;
-    text-justify: center;
+    background-image: url(../img/maintiki.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    border: 20px solid rgb(81, 110, 56);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto auto 1fr;
+
+    
 }
-.below-paral{
+.parallax *{
+    color:#f6f6bd;
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.9);
+}
+.main-landing h1{
+    font-size: 74px;
+    text-align: center;
+}
+.main-landing h2{
+    font-size: 34px;
+    text-align: center;
+}
+
+.tikis{
     height: calc(100vh - 80px);
     background-color:rgb(161, 161, 161);
     
@@ -252,62 +300,129 @@ span, h4{
     align-items: center;
     justify-items: center;
 
-    background-color: rgb(154, 69, 0);
-    background-image: linear-gradient(45deg, rgb(150, 78, 0) 25%, transparent 25%, transparent 75%, rgb(150, 78, 0) 75%, rgb(150, 78, 0)),
-    linear-gradient(45deg, rgb(150, 78, 0) 25%, transparent 25%, transparent 75%, rgb(150, 78, 0) 75%, rgb(150, 78, 0));
-    background-size: 60px 60px;
-    background-position: 0 0, 30px 30px;
+    /* background-color: rgb(141, 104, 73);
+    background-image: linear-gradient(45deg, rgb(153, 97, 52) 25%, transparent 25%, transparent 75%, rgb(153, 97, 52) 75%, rgb(153, 97, 52)),
+    linear-gradient(45deg, rgb(153, 97, 52) 25%, transparent 25%, transparent 75%, rgb(153, 97, 52) 75%, rgb(153, 97, 52));
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px; */
+
+    border-top: 2px rgba(0, 0, 0, 0.8) solid;
+    border-bottom: 2px rgba(0, 0, 0, 0.8) solid;
+
+    background-image: url('https://lirp.cdn-website.com/md/dmip/dms3rep/multi/opt/mesh-cane-texture-1920w.png');
+    background-color: rgb(151, 104, 38);
 }
-.below-paral img{
+.tikis img{
     height: 70vh;
     width: 18vw;
 }
+.tikis img:hover{
+    background-color: rgba(0, 0, 0, 0.9);
+    opacity: 0.7;
+    transition: all .2s ease;
+}
+
 .parallax2{
     background-image: url("../img/tikibg.webp");
+    height: auto;
+
+    padding-top: 10vh;
+    padding-bottom: 10vh;
 }
 .parallax2 .hours-container{
-    background-color: #fbfbe1!important;
-    width: 90vw;
-    height: 60vh;
+    width: 85vw;
+    height: auto;
+    min-height: 50vh;
 
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
 }
 .hours-container *{
-    color: black;
+    background-color: rgb(61, 61, 7);
+}
+.hours-container * h1{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: 600;
 }
 .parallax2 .hours-container .hours{
     display: grid;
+    align-content: center;
     grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+
+    padding: 20px;
 }
 .parallax2 .hours-container .happy-hour{
     display: grid;
+    align-content: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto 1fr auto 1fr;
+
+    padding: 20px;
+}
+.happy-hour-h4{
+    text-align: start;
+}
+.hours-container * ul{
+    display: grid;
+    align-content: center;
+    justify-content: center;
     grid-template-columns: 1fr;
 }
+.hours-container * li{
+    list-style-type: none;
+    line-height: 1.5;
+    text-align: center;
+}
+.happy-hour-ul li{
+    text-align: start;
+}
+
 .come-on-in{
     height: calc(100vh - 80px);
+
     display: grid;
-    grid-template-columns: 40vw 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
-}
-.come-on-in *{
-    color:black;
+
+    background-image: url(https://lirp.cdn-website.com/md/dmip/dms3rep/multi/opt/rounds-and-dots-texture-1920w.png);
+    background-color: rgb(63, 63, 8) !important;
+
+    border-top: 2px rgba(0, 0, 0, 0.8) solid;
+    border-bottom: 2px rgba(0, 0, 0, 0.8) solid;
 }
 .come-on-in-left{
-    background-image: url("../img/pineapple.gif");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    background-color: rgb(255, 132, 50);
+    display: grid;
+    align-items: center;
+    justify-items: center;
 }
+.come-on-in-left img{
+    height: 50vh;
+
+    /* i made this from https://www.cssportal.com/css-clip-path-generator/ */
+    clip-path: polygon(40% 100%, 60% 100%, 65% 78%, 62% 63%, 68% 43%, 58% 61%, 66% 19%, 54% 60%, 56% 0, 50% 59%, 41% 0, 45% 59%, 29% 18%, 42% 61%, 29% 43%, 38% 63%, 35% 78%);
+}
+
 .parallax3{
     background-image: url("../img/wood.webp");
+}
+.mapGL{
+    border: 10px rgba(0, 0, 0, 0.9) outset;
+}
+.mapGL *{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500;
+    font-style: 12px;
+    background: none;
 }
 
 /* FOOTER */
 .footer{
-    background-color: blue;
+    background-image:url(https://lirp.cdn-website.com/md/dmip/dms3rep/multi/opt/sandy-texture-1920w.png);
+    background-color: #1f4680;
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr 1fr;
@@ -316,14 +431,23 @@ span, h4{
     justify-items: center;
 
     height: 30vh;
+
+    border-top: 1px rgba(0, 0, 0, 0.8) solid;
 }
 .footer img{
-    height: 25vh;
-    width: 30vw;
+    height: auto;
+    width: 200px;
+
+    animation: fade ease-in 0.5s;
 }
 .footer button{
-    height: 20px;
-    width: 70px;
-    color: black;
-    background-color:cornflowerblue;
+    font-size: 24px;
+    padding: 12px;
+
+    color: #e8e6e3 !important;
+    background-color:#1f4680;
+    border: 1px solid white;
+    border-radius: 8px;
+
+    cursor: pointer;
 }

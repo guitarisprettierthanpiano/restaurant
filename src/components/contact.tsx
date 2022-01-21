@@ -1,19 +1,34 @@
 import * as React from 'react';
+import { useState } from 'react';
+import MapGL from 'react-map-gl';
 
 const Contact: React.FC = () => {
+
+    const [viewport, setViewport] = useState({
+        latitude: 48.7425,
+        longitude: 44.536944,
+        zoom: 15,
+        bearing: 0,
+        pitch: 0
+      });
 
     return (
     <div className='contact-container'>
 
-        <div className="parallax">   
-            <p>Welcome to Twisted Tiki!</p> 
+        <div className="parallax">
+            <div className='main-landing'>
+                <div></div>
+                <h1>Welcome to Twisted Tiki!</h1> 
+                <h2>a Polynesian-inspired Bar & Grille</h2>
+                <div></div>
+            </div>
         </div>
 
-        <div className='below-paral'>
+        <div className='tikis'>
             <img src='../img/tiki1.webp'/>
-            <img src='../img/tiki1.webp'/>
-            <img src='../img/tiki1.webp'/>
-            <img src='../img/tiki1.webp'/>
+            <img src='../img/tiki2.webp'/>
+            <img src='../img/tiki3.webp'/>
+            <img src='../img/tiki4.webp'/>
         </div>
 
         <div className='parallax2'>
@@ -21,25 +36,33 @@ const Contact: React.FC = () => {
                 <div className='hours'>
                     <h1>Hours</h1>
                     <ul>
-                        <li>mon - thurs</li>
-                        <li> fri sat </li>
-                        <li> sun</li>
-                        <li>brunch at 11am</li>
+                        <li>Mon - Thurs:  11:30am - 11pm-ish</li>
+                        <li>Fri Sat:  11:30am - midnight-ish</li>
+                        <li>Sunday:  11am - 11pm-ish</li>
+                        <li>Brunch served 11am</li>
                     </ul>
                 </div>
                 <div className='happy-hour'>
                     <h1>Happy Hour</h1>
-                        <li>$13</li>
-                        <li>4 </li>
-                        <li>5</li>
-                        <li>5</li>
-                        <li>15</li>
+                    <div></div>
+                    <h4 className='happy-hour-h4'>Everyday Day All Day!</h4>
+                    <div></div>
+                    <ul className='happy-hour-ul'>
+                        <li>$13 Domestic Beer Buckets</li>
+                        <li>$4 Fireball Shots </li>
+                        <li>$5 House Wines</li>
+                        <li>$5 Captain Morgan, Bacardi, Smirnoff</li>
+                        <li>$15 keep the mug with a drink of choice, take a piece of Hawaii home with you! </li>
+                    </ul>
+                    <div></div>
                 </div>
             </div>
         </div>
 
         <div className='come-on-in'>
-            <div className='come-on-in-left'></div>
+            <div className='come-on-in-left'>
+                <img src='../img/pineapple.gif'></img>
+            </div>
             <div className='come-on-in-right'>
                 <h1>Come On In</h1>
                 <h1>Tropical Vibes Inside!</h1>
@@ -52,8 +75,15 @@ const Contact: React.FC = () => {
         </div>
 
         <div className="parallax3">
-            <p>Mapbox OpenStreetMap React!</p>
+            <MapGL className='mapGL'
+            {...viewport}
+            width="80vw"
+            height="80vh"
+            mapStyle="mapbox://styles/mapbox/dark-v9"
+            onViewportChange={setViewport}
+            mapboxApiAccessToken={"pk.eyJ1IjoiY2xlbWVudHNhdXZhZ2UiLCJhIjoiY2twaTRxdGZwMDA2ajJ1bGpvOTJxbHI1diJ9.htkStpTFLbJNqB_EBouPRw"}/>
         </div>
+
     </div>
     )
 }
