@@ -64,13 +64,19 @@ const Contact: React.FC = () => {
                 <img src='../img/pineapple.gif'></img>
             </div>
             <div className='come-on-in-right'>
-                <h1>Come On In</h1>
-                <h1>Tropical Vibes Inside!</h1>
-                    <p>Get ready to experience the tropical vibe at Twisted Tiki. Our Polynesian-inspired cocktails along with our eclectic tiki décor are your ticket to paradise!
+                <div></div>
+                <h1 className='first-h1'>...Come On In!</h1>
+                <div></div>
+                <h1 className='second-h1'>Tropical Vibes Inside</h1>
+                <div></div>
+                <p>Get ready to experience the tropical vibe at Twisted Tiki. Our Polynesian-inspired cocktails along with our eclectic tiki décor are your ticket to paradise!<br /><br />
 
-                    What's a tropical tiki bar without some music? Expect to find the area's best bands & musicians here at Twisted Tiki along with other fun events like Art Night, Paint Night, Trivia Night and more!
+                What's a tropical tiki bar without some music? Expect to find the area's best bands and musicians here at Twisted Tiki along with other fun events like Art Night, Paint Night, Trivia Night and more!<br /><br />
 
-                    Every day is a day in paradise at The Twisted Tiki. Aloha!</p>
+                Every day is a day in paradise at The Twisted Tiki. Aloha!</p>
+                <div></div>
+                <button>See What's Happening @ Twisted Tiki!</button>
+                <div></div>
             </div>
         </div>
 
