@@ -32,14 +32,14 @@ const Nav: React.FC = () => {
 
                     <NavLink
                         activeClassName='active'
-                        to='/aboutus'>
-                        <span>About Us</span>
+                        to='/events'>
+                        <span>Events & Happenings</span>
                     </NavLink>
 
                     <NavLink
                         activeClassName='active'
                         to='/contact'>
-                        <span>Contact</span>
+                        <span>Contact Us</span>
                     </NavLink>
         </div>
 

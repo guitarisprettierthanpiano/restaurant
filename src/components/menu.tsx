@@ -86,7 +86,7 @@ const Menu: React.FC = () => {
                 <p>New Belgium Voodoo Ranger IPA</p>
                 <p>Elysian Space Dust IPA</p>
 
-                <h4>Ciders / Selters / Sour / Other</h4>
+                <h4>Ciders / Other</h4>
                 <p>3 Daughter's Key Lime Cider</p>
                 <p>Angry Orchard Cider</p>
                 <p>Smirnoff Ice</p>

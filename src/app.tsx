@@ -5,7 +5,7 @@ import Home from './components/home'
 import Banner from './components/banner'
 import Nav from './components/nav'
 import Menu from './components/menu'
-import AboutUs from './components/aboutus'
+import Events from './components/events'
 import Contact from './components/contact'
 import Footer from './components/footer'
 
@@ -25,8 +25,8 @@ const App: React.FC = () => {
             <Route path='/menu'
             component={Menu}/>
 
-            <Route path='/aboutus'
-            component={AboutUs}/>
+            <Route path='/events'
+            component={Events}/>
 
             <Route path='/contact'
             component={Contact}/>
