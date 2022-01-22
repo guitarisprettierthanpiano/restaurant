@@ -13,27 +13,27 @@ const App: React.FC = () => {
    
     return(
     <>
-        <Banner/>
+    <Banner/>
 
-        <HashRouter>
-            <Nav />
-            
-            <Switch>
-                <Route exact path='/'
-                component={Home}/>
+    <HashRouter>
+        <Nav />
+        
+        <Switch>
+            <Route exact path='/'
+            component={Home}/>
 
-                <Route path='/menu'
-                component={Menu}/>
+            <Route path='/menu'
+            component={Menu}/>
 
-                <Route path='/aboutus'
-                component={AboutUs}/>
+            <Route path='/aboutus'
+            component={AboutUs}/>
 
-                <Route path='/contact'
-                component={Contact}/>
-            </Switch>
+            <Route path='/contact'
+            component={Contact}/>
+        </Switch>
 
-            <Footer />
-        </HashRouter>
+        <Footer />
+    </HashRouter>
     </> 
     )
 

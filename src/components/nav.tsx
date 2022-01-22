@@ -11,7 +11,7 @@ const Nav: React.FC = () => {
         <div className='nav-logo'>
             <NavLink
             exact activeClassName='active'
-            to='/contact'>
+            to='/'>
                 <img src='../img/tiki.png'/>
             </NavLink>
         </div>
@@ -20,7 +20,7 @@ const Nav: React.FC = () => {
         <div className='nav'>
                     <NavLink
                         exact activeClassName='active'
-                        to='/contact'>
+                        to='/'>
                         <span>Home</span>
                     </NavLink>
 
@@ -38,7 +38,7 @@ const Nav: React.FC = () => {
 
                     <NavLink
                         activeClassName='active'
-                        to='/'>
+                        to='/contact'>
                         <span>Contact</span>
                     </NavLink>
         </div>

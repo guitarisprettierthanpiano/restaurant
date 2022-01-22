@@ -31,6 +31,9 @@
 span, h4{
     text-align: center;
 }
+p{
+    font-family: Manjari;
+}
 
 /* BANNER */
 .banner-container{
@@ -85,164 +88,323 @@ span, h4{
     padding-left: 10px;
 }
 
-/* HOME */
-.home-container{
+/* CONTACT US */
+.contact-us-container{
+    width: 100%;
+
     grid-row: 3;
 
     display: grid;
-    grid-template-rows: auto auto auto;
-}
-.home-landing{
-    animation: fade ease-in 0.5s;
-    background-color: grey;
-    height: calc(100vh - 80px);
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto, auto);
 
-    grid-row: 1;
+    justify-items: center;
 
-    display: grid;
-    grid-template-columns: auto auto;
+    background: rgba(0, 0, 0, 0.9);
 }
-
-
-.landing-left{
-    width: 40vw;
-    grid-column: 1;
-
-    display: grid;
-    grid-template-rows: 1fr auto auto auto 1fr;
-}
-.landing-right{
-    grid-column: 2;
-    display: grid;
-}
-.landing-right img{
-    object-fit: contain;
-}
-
-.gallery{
-    background-color: indigo;
-    height: 66vh;
-
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-}
-.gallery h1{
-    grid-row: 1;
-
-    text-align: center;
-    align-self: center;
-}
-.gallery-img-container{
-    grid-row: 2;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-.gallery-img-container img{
-    width: 20%;
-}
-
-.yellow-part{
-    height: 66vh;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-.yellow-left, .yellow-middle, .yellow-right{
-    display: grid;
-
-    grid-template-rows: 1fr auto auto auto 1fr;
-}
-.yellow-left{
-    background-color: orange;
-}
-.yellow-middle{
-    background-color: gold;
-}
-.yellow-right{
-    background-color: yellow;
-}
-
-.rest-is{
-    background-color: mediumseagreen;
+.contact-us-div{
     height: 100vh;
 
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
 }
-.rest-is-left{
-    display: grid;
+.contact-us-div h1{
+    grid-row: 1;
+    grid-column: 1 / span 2;
 }
-.rest-is-right{
+form{
+    grid-row: 2;
+    grid-column: 1 / span 2;
     display: grid;
-
-    grid-template-rows: 1fr auto auto 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto auto;
+}
+input{
+    border: none;
+    border-bottom: 1px solid grey;
+    background: rgba(0, 0, 0, 0.9);
+}
+textarea{
+    background: rgba(0, 0, 0, 0.9);
+}
+.contact-us-div button{
+    grid-row: 3;
+    grid-column: 2;
+}
+.contact-mapbox{
+    height: 100vh;
+    width: 100%;
 }
 
 /* MENU */
 .menu-container{
-    background-color: midnightblue;
+    background-image: url(https://lirp.cdn-website.com/md/dmip/dms3rep/multi/opt/mesh-cane-texture-2880w.png);
+    background-color: rgb(77, 100, 41);
 
     grid-row: 3;
 
     display: grid;
-    grid-template-rows: auto auto auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto, auto);
+
+    justify-items: center;
 }
-.menu-landing{
-    height: calc(100vh - 80px);
-    grid-row: 1;
+
+.white-menu{
+    width: 90vw;
+    max-width: 900px;
 
     display: grid;
-    grid-template-columns: 3fr 2fr;
-    grid-template-rows: 1fr auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto, auto);
+
+    align-content: center;
+    justify-content: center;
+
+    padding-top: 4vh;
+    padding-bottom: 4vh;
+
+    border-bottom: 1px rgba(0, 0, 0, 0.8) solid;
 }
-.menu-left{
+.white-menu img{
+    width: 100%;
+}
+
+.cocktails-parallax{
+    width: 100%;
     display: grid;
-    grid-row: 1;
-    grid-column: 1;
-}
-.menu-right{
-    display: grid;
-    grid-template-rows: 1fr auto auto auto 1fr;
-    grid-row: 1;
-    grid-column: 2;
-}
-.menu-bottom{
-    height: 80px;
 
-    grid-row: 2;
-    grid-column: 1 / span 2;
+    background-image: url("../img/wood.webp");
 
-    background-color: rgb(128, 115, 0);
+    padding-top: 5vh;
+    padding-bottom: 5vh;
 }
-.menu-bottom h1{
-    text-align: center;
-}
-
-.food-menu-container{
-    grid-row: 2;
-
+.cocktails{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(auto, auto);
+    
+    background-color: rgb(63, 63, 8);
+
+    width: 90vw;
+    max-width: 900px;
 }
-.first-menu{
+.cocktails * {
+    color: #e0a462;
+}
+.cocktails h1{
+    grid-row: 1;
+    grid-column: 1 / span 2;
+
+    font-size: 54px;
+    font-weight: 700;
+    font-style: italic;
+    text-shadow: 2px 2px 4px black;
+
+    padding: 20px;
+    padding-top: 40px;
+    text-align: center;
+}
+.cocktails * h4{
+    font-size: 22px;
+    text-decoration: underline;
+    font-weight: 600;
+    text-align: start;
+}
+.cocktails * p{
+    font-weight: 400;
+
+    padding-bottom: 20px;
+}
+.cocktails * h3{
+    color: #fab51f;
+    font-size: 36px;
+    font-weight: 500;
+    font-style: italic;
+
+    padding: 10px;
+    background-color: #131516;
+    border: 3px solid rgb(150, 33, 33);
+
+}
+.cocktails-right, .cocktails-left{
+    width: 95%;
+    padding-left: 5vw;
+
+    padding-bottom: 40px;
+}
+
+.beverages{
+    border-top: 1px rgba(0, 0, 0, 0.8) solid;
+    background-color: rgb(27, 149, 165);
+    height: auto;
+    width: 100%;
+
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+
+    padding: 2vw;
+}
+.beverages h1:nth-child(1){
+    grid-column: 1 / span 4;
+    grid-row: 1;
+}
+.beverages h1:nth-child(2){
+    grid-column: 3 / span 5;
+    grid-row: 1;
+}
+.beverages h1{
+    color: #f6f6bd;
+    font-size: 60px;
+    font-weight: 600;
+    font-style: italic;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+
+    text-align: center;
+}
+.beverages * h4{
+    text-align: start;
+    font-size: 22px;
+    font-weight: 600;
+    text-decoration: underline;
+    padding-top: 30px;
+}
+.beverages span{
+    font-family: Manjari;
+
+    grid-row: 2;
+    grid-column: 1 / span 6;
+    text-align: center;
+
+    padding-top: 20px;
+}
+.beverages-left{
+    grid-row: 3;
+    grid-column: 1 / span 2;
+
+    display: grid;
+    grid-template-columns: 1fr;
+
+    padding: 10px;
+    max-width: 33vw;
+}
+.beverages-middle{
+    grid-row: 3;
+    grid-column: 3 / span 4;
+
+    display: grid;
+    grid-template-columns: 1fr;
+
+    padding: 10px;
+
+    max-width: 33vw;
+}
+.beverages-right{
+    grid-row: 3;
+    grid-column: 5 / span 6;
+
+    display: grid;
+    grid-template-columns: 1fr;
+
+    padding: 10px;
+
+    max-width: 33vw;
+}
+.beverages-left h4:nth-child(1), .beverages-middle h4:nth-child(1), .beverages-right h4:nth-child(1){
+    padding-top: 0px;
+}
+
+.menu-happy-hour{
+    display: grid;
+    background-color: rgb(63, 63, 8);
+    width: 100%;
+
+    grid-template-rows: 1fr;
+    grid-template-columns: 3fr 4fr;
+
+    border-top: 1px rgba(0, 0, 0, 0.8) solid;
+}
+.happy-hour-left{
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+
+    align-items: center;
+    justify-items: center;
+}
+.happy-hour-left img{
+    z-index: 1;
+    grid-row: 1;
     grid-column: 1;
 
-    display: grid;
-    grid-template-rows: repeat(auto,auto);
-}
-.second-menu{
-    grid-column: 2;
+    width: 85%;
 
+    margin: 10px;
+    
+    box-shadow: rgba(0,0,0,0.25) 0 3px 11px 0;
+
+    align-content: center;
+    border-radius: 2px;
+}
+.happy-hour-left p{
+    position: absolute;
+    font-family: Merienda;
+    font-size: 24px;
+    color: #e8e6e3;
+
+    text-transform: uppercase;
+    box-shadow: rgba(0,0,0,0.25) 0 3px 11px 0;
+
+    top: 2vh;
+    right: 2vw;
+    z-index: 2;
+
+    min-width: 170px;
+    width: 15vw;
+    height: 50px;
+
+    text-align: center;
+    text-justify: center;
+
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+    
+    background-color: rgb(43, 205, 226);
+
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 60% 75%, 0 100%, 30% 75%, 0% 75%); 
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 60% 75%, 0 100%, 30% 75%, 0% 75%);
+}
+.happy-hour-right{
     display: grid;
-    grid-template-rows: repeat(auto,auto);
+    grid-template-columns: 1fr;
+
+    padding-bottom: 5vh;
+}
+.happy-hour-right h1{
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    font-size: 54px;
+    font-style: italic;
+    color: #ffdd46;
+    text-shadow: rgba(0, 0, 0, 0.9) 2px 2px 4px;
+    text-align: center;
+}
+.happy-hour-right p{
+    font-size: 18px;
+    color: #8ebae5;
+    font-family: Merienda;
 }
 
-/* CONTACT */
+
+
+/* HOME */
 .contact-container{
     height: 100%;
 }
-.parallax, .parallax2, .parallax3 {
+.parallax, .parallax2, .mapbox-parallax, .cocktails-parallax {
     /* The image used */
   
     /* Full height */
@@ -291,48 +453,89 @@ span, h4{
 }
 
 .tikis{
-    height: calc(100vh - 80px);
-    background-color:rgb(161, 161, 161);
+    height: calc(80vh - 80px);
     
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
+
     align-items: center;
     justify-items: center;
-
-    /* background-color: rgb(141, 104, 73);
-    background-image: linear-gradient(45deg, rgb(153, 97, 52) 25%, transparent 25%, transparent 75%, rgb(153, 97, 52) 75%, rgb(153, 97, 52)),
-    linear-gradient(45deg, rgb(153, 97, 52) 25%, transparent 25%, transparent 75%, rgb(153, 97, 52) 75%, rgb(153, 97, 52));
-    background-size: 40px 40px;
-    background-position: 0 0, 20px 20px; */
-
+    
     border-top: 2px rgba(0, 0, 0, 0.8) solid;
     border-bottom: 2px rgba(0, 0, 0, 0.8) solid;
 
     background-image: url('https://lirp.cdn-website.com/md/dmip/dms3rep/multi/opt/mesh-cane-texture-1920w.png');
     background-color: rgb(151, 104, 38);
 }
-.tikis img{
-    height: 70vh;
-    width: 18vw;
+.tikis * img{
+    height: calc(70vh - 80px);
+    max-width: 250px;
 }
-.tikis img:hover{
-    background-color: rgba(0, 0, 0, 0.9);
-    opacity: 0.7;
-    transition: all .2s ease;
+.tiki-1, .tiki-2, .tiki-3, .tiki-4 {
+  position: relative;
+
+  /*unsure of what should set this to*/
+  width: 95%;
+
+  display: grid;
+  align-items: center;
+  justify-content: center;
 }
+.tiki-layer {
+  /* (C1) DIMENSIONS */
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  /* (C2) POSITION */
+  position: absolute;
+  top: 0;
+  text-align: center;
+}
+.tiki-layer {
+  visibility: none;
+  opacity: 0;
+  transition: all 0.2s;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto auto 1fr;
+}
+.tiki-1:hover .tiki-layer, 
+.tiki-2:hover .tiki-layer,
+.tiki-3:hover .tiki-layer,
+.tiki-4:hover .tiki-layer {
+  visibility: visible;
+  opacity: 1;
+  background-color: rgba(29, 17, 0, 0.9);
+  border-radius: 4px;
+}
+.tikis * h2{
+    font-size: 28px;
+    color: rgb(218, 162, 117) !important;
+    font-family: Merienda;
+}
+.tikis * h3{
+    font-style: italic;
+    font-family: Marmelad !important;
+    font-style: 16px;
+    color: rgb(200, 195, 188);
+    font-weight: 500;
+}
+
 
 .parallax2{
     background-image: url("../img/tikibg.webp");
-    height: 100vh;
+    height: 60vh;
 
     padding-top: 10vh;
     padding-bottom: 10vh;
 }
 .parallax2 .hours-container{
-    width: 85vw;
+    width: 80vw;
+    max-width: 1000px;
     height: auto;
-    min-height: 60vh;
+    height: 50vh;
 
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -413,16 +616,17 @@ span, h4{
 .come-on-in-right{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr auto 1fr auto 1fr auto 1fr auto 1fr;
+    grid-template-rows: 1fr 1fr auto 1fr auto 1fr auto 1fr auto 1fr 1fr;
 
     width: 95%;
     align-content: center;
 }
 .first-h1{
-    background-color: rgb(255, 102, 0);
+    background-color: rgb(219, 88, 0);
     text-justify: center;
     text-transform: uppercase;
     padding: 2px;
+    font-weight: 600;
 
     text-indent: 10px;
     font-size: 24px;
@@ -430,7 +634,8 @@ span, h4{
 .second-h1{
     color: rgb(58, 212, 255);
 
-    font-size: 50px;
+    font-size: 54px;
+    text-shadow: 2px 2px 4px black;
 }
 .come-on-in-right p{
     font-size: 14px;
@@ -438,13 +643,14 @@ span, h4{
 .come-on-in-right button{
     background-color: rgba(0, 0, 0, 0);
     height:40px;
+    width: 50%;
     font-size: 16px;
-    width: 60%;
+    font-weight: 500;
     border-radius: 8px;
     cursor: pointer;
 }
 
-.parallax3{
+.mapbox-parallax{
     background-image: url("../img/wood.webp");
 
     height: 100vh;
@@ -475,10 +681,7 @@ span, h4{
     border-top: 1px rgba(0, 0, 0, 0.8) solid;
 }
 .footer img{
-    height: auto;
-    width: 200px;
-
-    animation: fade ease-in 0.5s;
+    height: 25vh;
 }
 .footer p{
     font-size: 14px;
