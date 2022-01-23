@@ -62,9 +62,9 @@ const Events: React.FC = () => {
 
             <div className='guest-musician'>
                 <img src='../img/test.jpg'></img>
-                <h2>BB King</h2>
+                <h2>Local Musicians</h2>
                 <h4>Every Other Tuesday 5 p.m. - 9 p.m.</h4>
-                <p>Chill out with us at Twisted Tiki every other Tuesday night with the music of BB King!</p>
+                <p>Chill out with us at Twisted Tiki every other Tuesday night with the music of the area!</p>
             </div>
 
             <div className='art-night'>

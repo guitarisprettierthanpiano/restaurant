@@ -24,17 +24,23 @@ const Nav: React.FC = () => {
                         <span>Home</span>
                     </NavLink>
 
+                    <p>|</p>
+
                     <NavLink
                         activeClassName='active'
                         to='/menu'>
                         <span>Menu</span>
                     </NavLink>
 
+                    <p>|</p>
+                    
                     <NavLink
                         activeClassName='active'
                         to='/events'>
                         <span>Events & Happenings</span>
                     </NavLink>
+
+                    <p>|</p>
 
                     <NavLink
                         activeClassName='active'

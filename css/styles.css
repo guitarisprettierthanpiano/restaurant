@@ -59,7 +59,7 @@ p{
     grid-template-columns: 1fr auto auto 1fr;
     grid-template-rows: 1fr;
 
-    background-color: #41470b;
+    background-color:rgb(63, 63, 8);
 }   
 .nav-logo{
     grid-column: 2;
@@ -81,15 +81,19 @@ p{
     align-self: center;
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(7, auto);
 }
 .nav *{
-    padding-left: 10px;
+    padding-left: 4px;
+    padding-right: 4px;
     text-decoration: none;
 
     color: rgb(218, 162, 117);
 }
-.active *{
+.active span{
+    color: rgb(255, 125, 41);
+}
+.nav *:hover span{
     color: rgb(255, 125, 41);
 }
 
@@ -507,6 +511,8 @@ textarea{
     color: rgb(216, 212, 207);
     
     font-size: 18px;
+
+    padding-bottom: 14px;
 }
 .events-happy-list{
     grid-row: 8;
@@ -528,13 +534,13 @@ textarea{
     background-size: auto;
 }
 .trivia-night{
-    background-color: rgba(142, 177, 90, 0.5);
+    background-color: rgba(94, 132, 38, 0.5);
 }
 .guest-musician{
-    background-color: rgba(255, 217, 0, 0.55);
+    background-color: rgba(174, 174, 0, 0.6);
 }
 .art-night{
-    background-color: rgba(189, 61, 82, 0.5);
+    background-color: rgba(189, 34, 60, 0.6);
 }
 .trivia-night, .guest-musician, .art-night{
     display: grid;
@@ -654,7 +660,7 @@ textarea{
   position: relative;
 
   /*unsure of what should set this to*/
-  width: 95%;
+  width: 90%;
 
   display: grid;
   align-items: center;
