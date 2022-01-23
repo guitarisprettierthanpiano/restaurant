@@ -2,15 +2,27 @@ import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Footer: React.FC = () => {
+    const TopOfPage = () => {
+        window.scrollTo(0, 0)
+    };
+
     return(
     <div className='footer'>
-        <img src='../img/tiki.png' loading='lazy'/>
+        <img src='./././img/tiki.png' loading='lazy'/>
+
         <div className='footer-p'>
-            <p>340 Corey Avenue <br/> St. Pete Beach, Florida <br/><br/>Ph. (727) 914-8881</p>
+            <p>2022 Ke Aloha Street 
+            <br/> 
+            Raleigh, North Carolina
+            <br/>
+            <br/>
+            Ph. (919) 101-2022</p>
         </div>
+
         <NavLink
         activeClassName='active'
-        to='/'>
+        to='/contact'
+        onClick = {TopOfPage}>
             <button>Contact Us</button>
         </NavLink>
     </div>

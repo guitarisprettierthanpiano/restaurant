@@ -5,8 +5,8 @@ const Menu: React.FC = () => {
     return (
     <div className='menu-container'>
         <div className='white-menu'>
-            <img src='../img/menu1.webp'></img>
-            <img src='../img/menu2.webp' loading='lazy'></img>
+            <img src='./././img/menu1.webp'></img>
+            <img src='./././img/menu2.webp' loading='lazy'></img>
         </div>
 
         <div className='cocktails-parallax'>
@@ -124,7 +124,7 @@ const Menu: React.FC = () => {
 
         <div className='menu-happy-hour'>
             <div className='happy-hour-left'>
-                <img src='../img/happyhr.webp' loading='lazy'/>
+                <img src='./././img/pouring.gif' loading='lazy'/>
                 <p>Happy Hour</p>
             </div>
             <div className='happy-hour-right'>

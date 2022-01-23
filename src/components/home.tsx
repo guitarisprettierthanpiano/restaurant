@@ -1,16 +1,38 @@
 import * as React from 'react';
 import { useState } from 'react';
 import MapGL from 'react-map-gl';
+import { NavLink } from 'react-router-dom';
 
 const Contact: React.FC = () => {
 
+    //scroll to top of page on click
+    const TopOfPage = () => {
+        window.scrollTo(0, 0)
+    };
+
+
+    //adding animation to tikis on scrolling
+    const windowVH:number = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+
+    window.onscroll = function(){reveal_tikis()}
+    function reveal_tikis(){
+        const allTikis = document.querySelectorAll('.ALLTIKIS')
+
+        if (window.pageYOffset >= windowVH*0.1){
+            for(let i = 0; i < allTikis.length; i++){
+                allTikis[i].classList.add('wobble')
+            }
+        }
+    }
+
+    
     const [viewport, setViewport] = useState({
-        latitude: 48.7425,
-        longitude: 44.536944,
-        zoom: 15,
+        latitude: 35.787743,
+        longitude: -78.644257,
+        zoom: 12,
         bearing: 0,
         pitch: 0
-      });
+    });
 
     return (
     <div className='contact-container'>
@@ -26,8 +48,8 @@ const Contact: React.FC = () => {
 
         <div className='tikis'>
 
-            <div className='tiki-1'>
-                <img loading='lazy' src="../img/tiki1.webp"/>
+            <div id='tiki-1' className='ALLTIKIS'>
+                <img loading='lazy' src="./././img/tiki1.webp"/>
                 <div className="tiki-layer">
                     <div></div>    
                     <h2>Ke aloha</h2>
@@ -37,8 +59,8 @@ const Contact: React.FC = () => {
                 </div>
             </div>
 
-            <div className='tiki-2'>
-                <img loading='lazy' src="../img/tiki2.webp"/>
+            <div id='tiki-2' className='ALLTIKIS'>
+                <img loading='lazy' src="./././img/tiki2.webp"/>
                 <div className="tiki-layer">
                     <div></div>    
                     <h2>Aloha</h2>
@@ -48,8 +70,8 @@ const Contact: React.FC = () => {
                 </div>
             </div>
 
-            <div className='tiki-3'>
-                <img loading='lazy' src="../img/tiki3.webp"/>
+            <div id='tiki-3' className='ALLTIKIS'>
+                <img loading='lazy' src="./././img/tiki3.webp"/>
                 <div className="tiki-layer">
                     <div></div>    
                     <h2>I leʻaleʻa kāu</h2>
@@ -59,8 +81,8 @@ const Contact: React.FC = () => {
                 </div>
             </div>
 
-            <div className='tiki-4'>
-                <img loading='lazy' src="../img/tiki4.webp"/>
+            <div id='tiki-4' className='ALLTIKIS'>
+                <img loading='lazy' src="./././img/tiki4.webp"/>
                 <div className="tiki-layer">
                     <div></div>    
                     <h2>E hele kāua</h2>
@@ -101,7 +123,7 @@ const Contact: React.FC = () => {
 
         <div className='come-on-in'>
             <div className='come-on-in-left'>
-                <img loading='lazy' src='../img/pineapple.gif'></img>
+                <img loading='lazy' src='./././img/pineapple.gif'></img>
             </div>
             <div className='come-on-in-right'>
                 <div></div>
@@ -116,7 +138,14 @@ const Contact: React.FC = () => {
 
                 Every day is a day in paradise at The Twisted Tiki. Aloha!</p>
                 <div></div>
-                <button>See What's Happening @ Twisted Tiki!</button>
+                <NavLink 
+                    activeClassName='active'
+                    to='/events'
+                    onClick={TopOfPage}>
+                    <button>
+                        See What's Happening @ Twisted Tiki!
+                    </button>
+                </NavLink>
                 <div></div>
                 <div></div>
             </div>

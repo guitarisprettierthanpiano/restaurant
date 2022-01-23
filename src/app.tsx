@@ -13,12 +13,12 @@ const App: React.FC = () => {
    
     return(
     <>
-    <Banner/>
-
+    {/* <Banner/> */}
     <HashRouter>
+
         <Nav />
-        
-        <Switch>
+            <Switch>
+
             <Route exact path='/'
             component={Home}/>
 
