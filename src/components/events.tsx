@@ -59,7 +59,7 @@ const Events: React.FC = () => {
                 <img loading='lazy' src='./././img/trivia.png'></img>
                 <h2>Trivia Night</h2>
                 <h4>Mondays 6:30 p.m.</h4>
-                <p>Win bar tabs! Free to play.</p>
+                <p>Win bar tabs! Free to play.</p> 
             </div> 
 
             <div className='guest-musician'>

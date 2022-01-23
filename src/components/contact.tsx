@@ -13,17 +13,21 @@ const Home: React.FC = () => {
         pitch: 0
     });
 
-    //clears inputs on submit button click, style button
+    //clears inputs on submit button click, style button green or transparent
     const ClearInputs = () =>{
         const allinputs = document.querySelectorAll('input')
         const submitbutton:HTMLElement = document.querySelector('#submit-btn')
+
+        submitbutton.style.backgroundColor = "rgba(0, 0, 0, 0)"
 
         for (let i = 0; i < allinputs.length; i++){
             if (allinputs[i].value !== ''){
                 submitbutton.style.backgroundColor = "green"; 
             }
+
             allinputs[i].value='';
         }
+        
     }
 
     return(

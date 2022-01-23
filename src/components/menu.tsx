@@ -124,8 +124,8 @@ const Menu: React.FC = () => {
 
         <div className='menu-happy-hour'>
             <div className='happy-hour-left'>
-                <img src='./././img/pouring.gif' loading='lazy'/>
-                <p>Happy Hour</p>
+                <img id='hh-img' src='./././img/pouring.gif' loading='lazy'/>
+                <p id='hh-p'>Happy Hour</p>
             </div>
             <div className='happy-hour-right'>
                 <h1>All Day Every Day</h1>

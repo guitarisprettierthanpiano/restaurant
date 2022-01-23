@@ -5,27 +5,28 @@ import { NavLink } from 'react-router-dom';
 
 const Contact: React.FC = () => {
 
-    //scroll to top of page on click
+    //scroll to top of page on clicking a nav link
     const TopOfPage = () => {
         window.scrollTo(0, 0)
     };
 
 
-    //adding animation to tikis on scrolling
+    //adding animation to tikis on scrolling 25% of page view height
     const windowVH:number = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
 
     window.onscroll = function(){reveal_tikis()}
     function reveal_tikis(){
         const allTikis = document.querySelectorAll('.ALLTIKIS')
 
-        if (window.pageYOffset >= windowVH*0.1){
+        if (window.pageYOffset >= windowVH*0.25){
             for(let i = 0; i < allTikis.length; i++){
                 allTikis[i].classList.add('wobble')
             }
         }
     }
 
-    
+
+    //raleigh nc coords, somewhat zoomed out
     const [viewport, setViewport] = useState({
         latitude: 35.787743,
         longitude: -78.644257,

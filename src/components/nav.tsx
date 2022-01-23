@@ -17,7 +17,7 @@ const Nav: React.FC = () => {
             exact activeClassName='active'
             to='/'
             onClick = {TopOfPage}>
-                <img src='../img/tiki.png'/>
+                <img src='./././img/tiki.png'/>
             </NavLink>
         </div>
 
