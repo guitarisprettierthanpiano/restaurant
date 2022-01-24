@@ -19,9 +19,14 @@ const Contact: React.FC = () => {
         const allTikis = document.querySelectorAll('.ALLTIKIS')
 
         if (window.pageYOffset >= windowVH*0.25){
-            for(let i = 0; i < allTikis.length; i++){
-                allTikis[i].classList.add('wobble')
-            }
+            //i used this before i decided to make two different wobbles, giving the illusion they are bangings against eachother.
+            // for(let i = 0; i < allTikis.length; i++){
+            //     allTikis[i].classList.add('wobble')
+            // }
+            allTikis[0].classList.add('wobbleL')
+            allTikis[1].classList.add('wobbleR')
+            allTikis[2].classList.add('wobbleL')
+            allTikis[3].classList.add('wobbleR')
         }
     }
 
@@ -152,14 +157,19 @@ const Contact: React.FC = () => {
             </div>
         </div>
 
-        <div className="mapbox-parallax">
-            <MapGL className='mapGL'
-            {...viewport}
-            width="80vw"
-            height="80vh"
-            mapStyle="mapbox://styles/mapbox/dark-v9"
-            onViewportChange={setViewport}
-            mapboxApiAccessToken={"pk.eyJ1IjoiY2xlbWVudHNhdXZhZ2UiLCJhIjoiY2twaTRxdGZwMDA2ajJ1bGpvOTJxbHI1diJ9.htkStpTFLbJNqB_EBouPRw"}/>
+        <div className="pineapplebg-parallax">
+            <div className='pineapplebg-bluebg'>
+                <h1>Get the <span id='S1'>S</span><span id='S2'>w</span><span id='S3'>a</span><span id='S4'>g</span></h1>
+                <div className='pineapplebg-images'>
+                    <div></div>
+                    <img loading='lazy' src='./././img/shirt1.png'/>
+                    <img loading='lazy' src='./././img/shirt2.png'/>
+                    <img loading='lazy' src='./././img/shirt3.png'/>
+                    <div></div>
+                </div>
+                <p>Get Twisted with our Twisted Tiki merch!
+                Women's Tees, Men's Tees, Tumblers, Koozies and Stickers available now!</p>
+            </div>
         </div>
 
     </div>

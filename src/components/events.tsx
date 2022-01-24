@@ -10,7 +10,7 @@ const Events: React.FC = () => {
                 <h2>Events & Entertainment</h2>
 
                 <h5>Music Times</h5>
-                <p>Fri & Sat 7pm to 11pm, Sunday 3pm to 7pm.  Kevin Toon every other Tuesday 5pm to 9pm. (Unless otherwise specified below).</p>
+                <p>Fri & Sat 7pm to 11pm, Sunday 3pm to 7pm.  Local musicians every other Tuesday 5pm to 9pm. (Unless otherwise specified below).</p>
 
                 <h4>January</h4>
                 <div className='left-events'>
@@ -56,7 +56,7 @@ const Events: React.FC = () => {
 
         <div className='events-bottom'>
             <div className='trivia-night'>
-                <img loading='lazy' src='./././img/trivia.png'></img>
+                <img loading='lazy' id='trivia-img' src='./././img/trivia.png'></img>
                 <h2>Trivia Night</h2>
                 <h4>Mondays 6:30 p.m.</h4>
                 <p>Win bar tabs! Free to play.</p> 
@@ -71,7 +71,7 @@ const Events: React.FC = () => {
 
             <div className='art-night'>
                 <img loading='lazy' src='./././img/art.png'></img>
-                <h2>Art Night</h2>
+                <h2 className='animate-h2'>Art Night</h2>
                 <h4>Monthly - check the schedule for times</h4>
                 <p>Enjoy some great music while you browse and shop with some great local artisans!</p>
             </div>

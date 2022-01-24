@@ -4,11 +4,11 @@ import MapGL from 'react-map-gl';
 
 const Home: React.FC = () => {
 
-    //settings for mapgl, default generic raleigh zoomed out.
+    //settings for mapgl, default generic raleigh zoomed out. mapStyle is from https://docs.mapbox.com/api/maps/styles/#list-styles 
     const [viewport, setViewport] = useState({
-        latitude: 48.7425,
-        longitude: 44.536944,
-        zoom: 15,
+        latitude: 35.787743,
+        longitude: -78.644257,
+        zoom: 12,
         bearing: 0,
         pitch: 0
     });
@@ -65,17 +65,15 @@ const Home: React.FC = () => {
 
         </div>
 
-        <div className="mapbox-contact">
+        <div className="mapbox-parallax">
 
-            <MapGL className='mapGLL'
+            <MapGL className='mapGL'
             {...viewport}
-            width="60vw"
-            height="40vh"
-            mapStyle="mapbox://styles/mapbox/dark-v9"
+            width="80vw"
+            height="80vh"
+            mapStyle="mapbox://styles/mapbox/outdoors-v11"
             onViewportChange={setViewport}
             mapboxApiAccessToken={"pk.eyJ1IjoiY2xlbWVudHNhdXZhZ2UiLCJhIjoiY2twaTRxdGZwMDA2ajJ1bGpvOTJxbHI1diJ9.htkStpTFLbJNqB_EBouPRw"}/>
-
-            <img loading='lazy' src='./././img/tikipole.gif'/>
         </div>
 
     </div>

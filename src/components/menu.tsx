@@ -45,8 +45,9 @@ const Menu: React.FC = () => {
         </div>
 
         <div className='beverages'>
-            <h1>Beer</h1>
-            <h1>Wine</h1>
+            <h1 id='first-h1'></h1>
+            <h1 id='second-h1'></h1>
+
             <span>*List subject to change*</span>
 
             <div className='beverages-left'>
