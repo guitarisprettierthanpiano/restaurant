@@ -233,7 +233,7 @@ p{
     border-top: 2px rgba(0, 0, 0, 0.8) solid;
     border-bottom: 2px rgba(0, 0, 0, 0.8) solid;
 
-    background-image: url('https://lirp.cdn-website.com/md/dmip/dms3rep/multi/opt/mesh-cane-texture-1920w.png');
+    background-image: url('../img/mesh.png');
     background-color: rgb(151, 104, 38);
 }
 .tikis * img{
@@ -552,7 +552,7 @@ h1 span{
 
 /* MENU */
 .menu-container{
-    background-image: url(https://lirp.cdn-website.com/md/dmip/dms3rep/multi/opt/mesh-cane-texture-2880w.png);
+    background-image: url(../img/mesh.png);
     background-color: rgb(77, 100, 41);
 
     grid-row: 2;
@@ -876,7 +876,7 @@ h1 span{
     display: grid;
     grid-template-columns: 3fr 8fr 1fr;
 
-    background-image: url(https://lirp.cdn-website.com/8ce212de/dms3rep/multi/opt/wall%2Bmural-2880w.jpg);
+    background-image: url(../img/mural.webp);
 
     background-color: rgb(196, 251, 255);
 }
@@ -989,7 +989,7 @@ h1 span{
     grid-template-columns: 1fr;
     grid-template-rows: repeat(auto, auto);
 
-    background-image: url(https://lirp.cdn-website.com/md/dmip/dms3rep/multi/opt/flower-texture-2880w.png);
+    background-image: url(../img/flowertexture.png);
     background-repeat: repeat;
     background-size: auto;
 
