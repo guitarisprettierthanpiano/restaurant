@@ -87,8 +87,6 @@ p{
 
     display: grid;
     justify-items: center;
-
-    width: auto;
 }
 .nav-logo img{
     height: 80px;
@@ -333,7 +331,6 @@ p{
     }
 }
     
-
 .hours-container * h1{
     text-align: center;
     text-transform: uppercase;
@@ -377,7 +374,6 @@ p{
 .happy-hour-ul li{
     text-align: start;
 }
-
 
 .come-on-in{
     height: calc(100vh);
@@ -765,7 +761,6 @@ h1 span{
     radial-gradient(at 100% 100%,      rgba(96, 16, 48, 0) 9px, rgb(67, 67, 11) 10px, rgba(96, 16, 48, 0) 11px),
     rgb(63, 63, 8);
     background-size: 10px 9px;
-
 
     width: 100%;
 
@@ -1225,7 +1220,6 @@ textarea{
     border: 2px solid rgba(216, 212, 207, 0.8);
 }
 
-
 .mapbox-parallax{
     background-image: url(../img/wood.webp);
 
@@ -1260,18 +1254,18 @@ textarea{
     align-items: center;
     justify-items: center;
 
-    height: 30vh;
+    height: 160px;
 
     border-top: 1px rgba(0, 0, 0, 0.8) solid;
 }
 .footer img{
-    height: 25vh;
+    height: 150px;
 }
 .footer p{
     font-size: 14px;
 }
 .footer button{
-    font-size: 24px;
+    font-size: 20px;
     padding: 12px;
 
     color: #e8e6e3;
