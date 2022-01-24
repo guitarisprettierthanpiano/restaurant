@@ -222,6 +222,7 @@ p{
 }
 .tikis{
     height: calc(80vh - 80px);
+    width: 100%;
     
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -253,7 +254,7 @@ p{
 .tiki-layer {
   /* (C1) DIMENSIONS */
   box-sizing: border-box;
-  width: 100%;
+  width: 90%;
   height: 100%;
   /* (C2) POSITION */
   position: absolute;
@@ -697,7 +698,7 @@ h1 span{
         content: "Wine";
     }
     100%{
-        content: "Beer";
+        content: "Ciders";
     }
 }
 .beverages * h4{
@@ -1274,4 +1275,26 @@ textarea{
     border-radius: 8px;
 
     cursor: pointer;
+}
+
+
+/* MY LAPTOP'S SIZE */
+@media screen and (max-width: 1366px){
+.come-on-in-left img{
+    height: 250px;
+    width: 300px;
+}
+
+.pineapplebg-bluebg * img{
+    max-width: auto;
+    max-height: auto;
+    width: 180px;
+    height: 250px;
+}    
+}
+
+
+/* IPAD SIZE */
+@media screen and (max-width: 1023px){
+
 }
