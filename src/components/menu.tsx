@@ -16,7 +16,7 @@ const Menu: React.FC = () => {
                 <div className='cocktails-left'>
                     <div className='cocktails-left-item'>
                         <h4>Aloha Punch</h4>
-                        <p>light rum, pineapple rum and coconut rum with pineapple & cranberry juice topped with fresh coconut flakes and a fresh rum soaked pineapple</p>
+                        <p>Light rum, pineapple rum and coconut rum with pineapple & cranberry juice topped with fresh coconut flakes and a fresh rum soaked pineapple</p>
                     </div>
                     <div className='cocktails-left-item'>
                         <h4>BAJA Berry Blaster</h4>

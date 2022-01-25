@@ -508,7 +508,7 @@ h1 span{
     text-shadow: rgb(0, 0, 0) 2px 2px 4px;
     text-align: center;
 
-    animation: flips 3s infinite;
+    animation: flips 5s infinite;
 }
 #S2{
     animation-delay: 0.4s;
@@ -520,7 +520,7 @@ h1 span{
     animation-delay: 0.75s;
 }
 @keyframes flips {
-    0%,75% {
+    0%,85% {
       transform: rotateY(360deg) 
     }
 }
@@ -702,7 +702,7 @@ h1 span{
         content: "Wine";
     }
     100%{
-        content: "Ciders";
+        content: "Beer";
     }
 }
 .beverages * h4{
