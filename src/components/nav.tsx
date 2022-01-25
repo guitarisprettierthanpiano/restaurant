@@ -30,7 +30,7 @@ const Nav: React.FC = () => {
                         <span>Home</span>
                     </NavLink>
 
-                    <p>|</p>
+                    <p className='seperator'>|</p>
 
                     <NavLink
                         activeClassName='active'
@@ -39,16 +39,16 @@ const Nav: React.FC = () => {
                         <span>Menu</span>
                     </NavLink>
 
-                    <p>|</p>
+                    <p className='seperator'>|</p>
                     
                     <NavLink
                         activeClassName='active'
                         to='/events'
                         onClick = {TopOfPage}>
-                        <span>Events & Happenings</span>
+                        <span id='EventsNHappenings'>Events</span>
                     </NavLink>
 
-                    <p>|</p>
+                    <p className='seperator'>|</p>
 
                     <NavLink
                         activeClassName='active'

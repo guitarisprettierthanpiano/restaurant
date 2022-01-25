@@ -148,7 +148,7 @@ const Contact: React.FC = () => {
                     activeClassName='active'
                     to='/events'
                     onClick={TopOfPage}>
-                    <button>
+                    <button id='button1'>
                         See What's Happening @ Twisted Tiki!
                     </button>
                 </NavLink>

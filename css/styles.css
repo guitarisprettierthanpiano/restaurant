@@ -115,6 +115,9 @@ p{
 .nav *:hover span{
     color: rgb(255, 125, 41);
 }
+#EventsNHappenings{
+    content: "Events & Happenings";
+}
 
 
 /* HOME */
@@ -145,11 +148,14 @@ p{
     background-image: url(../img/wood.webp);
 
     height: calc(100vh - 80px);
+    max-width: 100vw;
 
     margin-top: 80px;
 
     display: grid;
     align-items: center;
+    align-content: center;
+    justify-items: center;
     justify-content: center;
 }
 .parallax .main-landing{
@@ -186,7 +192,6 @@ p{
     animation: right linear 2s;
 }
 
-
 @keyframes wobbleL {
     0% { transform: translateX(0%); } 
     15% { transform: translateX(-40%) rotate(-12deg); } 
@@ -222,7 +227,7 @@ p{
 }
 .tikis{
     height: calc(80vh - 80px);
-    width: 100%;
+    width: 100vw;
     
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -308,7 +313,6 @@ p{
 .parallax2 .hours-container{
     width: 80vw;
     max-width: 1000px;
-    height: auto;
     height: 50vh;
 
     display: grid;
@@ -516,7 +520,7 @@ h1 span{
     animation-delay: 0.75s;
 }
 @keyframes flips {
-    0%,80% {
+    0%,75% {
       transform: rotateY(360deg) 
     }
 }
@@ -1280,21 +1284,215 @@ textarea{
 
 /* MY LAPTOP'S SIZE */
 @media screen and (max-width: 1366px){
-.come-on-in-left img{
-    height: 250px;
-    width: 300px;
+    .come-on-in-left img{
+        height: 250px;
+        width: 300px;
+    }
+    .pineapplebg-bluebg * img{
+        max-width: auto;
+        max-height: auto;
+        width: 180px;
+        height: 250px;
+    }    
 }
 
-.pineapplebg-bluebg * img{
-    max-width: auto;
-    max-height: auto;
-    width: 180px;
-    height: 250px;
-}    
-}
 
-
-/* IPAD SIZE */
+/* TABLET SIZE */
 @media screen and (max-width: 1023px){
+    .tikis * img{
+        height: calc(70vh - 80px);
+        max-width: 23vw;
+        max-height: 300px;
+    }
+    .come-on-in-right button{
+        background-color: rgba(0, 0, 0, 0);
+        height:40px;
+        width: 90%;
+    }
+    .happy-hour{
+        height: 70vh;
+    }
+    .happy-hour-right h1{
+        padding-top: 5vh;
+        padding-bottom: 5vh;
+        font-size: 40px;
+    }
+    .events-bottom * img{
+        height: 50%;
+        width: 80%;
+    }
 
+    .hours-container *{
+        font-size: 14px;
+    }
+
+    .come-on-in{
+        height:auto;
+    }
+    .first-h1{
+        font-size: 20px;
+    }
+    .second-h1{
+        font-size: 30px;
+    }
+    .come-on-in * a{
+        display: none;
+    }
+
+    .pineapplebg-images img:nth-child(3){
+        display: none;
+    }
+}
+
+/* PHONE SIZE */
+@media screen and (max-width: 539px){
+    .main-landing{
+        border: 2px solid rgb(58, 58, 17, 0.8)!important;
+    }
+    .tikis{
+        height: auto;
+        padding-top: 1px;
+    }
+    .tikis * img{
+        height: calc(70vh - 80px);
+        max-height: 180px;
+    }    
+    .tikis * h2{
+        font-size: 20px;
+    }
+    .nav-logo{
+        display: none;
+    }
+    .main-landing h1{
+        font-size: 50px;
+    }
+    .main-landing h2{
+        font-size: 30px;
+    }    
+
+    .parallax2{
+        display: grid;
+
+        padding: 0px;
+        margin: 0px;
+
+        height: auto;
+        justify-content:start;
+    }
+    .parallax2 .hours-container{
+        grid-row: 1;
+        grid-column: 1;
+        width: 100vw;
+        height: auto;
+
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+    }
+    .hours-container *{
+        padding: 0px;
+    }
+    .happy-hour{
+        width: 100vw;
+    }
+    .hours{
+        width: 100vw;
+    }
+
+    .come-on-in{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+    }
+    .come-on-in-right{
+        grid-row: 1;
+        grid-column: 1;
+    }
+    .come-on-in-left{
+        grid-row: 2;
+        grid-column: 1;
+
+        padding: 10px;
+    }
+
+    .pineapplebg-images img:nth-child(2){
+        display: none;
+    }
+    .pineapplebg-bluebg p{
+        width: 100%;
+    }
+    
+    .cocktails h1, .beverages h1{
+        font-size: 34px;
+    }
+    .cocktails * h3{
+        font-size: 20px;
+    }
+    .cocktails * p , .cocktails * h4 ,.beverages * p, .beverages * h4{
+        font-size: 14px;
+    }
+
+    .menu-happy-hour{
+        grid-template-columns: 1fr auto;
+    }
+    .happy-hour-left{
+        display: none;
+    }
+    .happy-hour-right *{
+        padding: 6px;
+    }
+    .happy-hour-right p{
+        font-size: 14px;
+    }
+
+    .events-parallax{
+        grid-template-columns: 1fr auto 1fr;
+    }
+    .upcoming-events *{
+        font-size: 14px;
+    }
+
+    .events-bottom * img{
+        display: none;
+    }
+    .trivia-night, .guest-musician, .art-night{
+        grid-template-columns: auto 1fr;
+    }
+    .events-bottom * h2{
+        font-size: 30px;
+    }
+
+    .footer img{
+        display: none;
+    }
+    .footer{
+        height: auto;
+        padding: 10px;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-us-div h1{
+        font-size: 30px;
+    }
+}
+
+/* PHONE SIZE */
+@media screen and (max-width: 426px){
+    .seperator {
+        display: none;
+        padding: 0px;
+    }
+
+    .main-landing{
+        width: 95vw;
+        height: calc(80vh);
+    }
+    .main-landing h1{
+        font-size: 36px;
+    }
+    .main-landing h2{
+        font-size: 20px;
+    }
+
+    .pineapplebg-bluebg h1{
+        font-size: 24px;
+    }
 }
