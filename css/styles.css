@@ -406,7 +406,7 @@ p{
     justify-items: center;
 }
 .come-on-in-left img{
-    height: 50%;
+    height: 60%;
     width: 100%;
 
     /* i made this from https://www.cssportal.com/css-clip-path-generator/ */
@@ -1285,8 +1285,8 @@ textarea{
 /* MY LAPTOP'S SIZE */
 @media screen and (max-width: 1366px){
     .come-on-in-left img{
-        height: 250px;
-        width: 300px;
+        height: 300px;
+        width: 100%;
     }
     .pineapplebg-bluebg * img{
         max-width: auto;

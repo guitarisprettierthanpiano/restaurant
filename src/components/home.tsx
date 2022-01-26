@@ -1,9 +1,8 @@
 import * as React from 'react';
 import { useState } from 'react';
-import MapGL from 'react-map-gl';
 import { NavLink } from 'react-router-dom';
 
-const Contact: React.FC = () => {
+const Home: React.FC = () => {
 
     //scroll to top of page on clicking a nav link
     const TopOfPage = () => {
@@ -176,4 +175,4 @@ const Contact: React.FC = () => {
     )
 }
 
-export default Contact;
+export default Home;

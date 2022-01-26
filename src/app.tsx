@@ -2,7 +2,6 @@ import * as React from 'react';
 import { Switch, HashRouter, Route } from 'react-router-dom';
 
 import Home from './components/home'
-import Banner from './components/banner'
 import Nav from './components/nav'
 import Menu from './components/menu'
 import Events from './components/events'
@@ -13,7 +12,7 @@ const App: React.FC = () => {
    
     return(
     <>
-    {/* <Banner/> */}
+
     <HashRouter>
 
         <Nav />
@@ -34,6 +33,7 @@ const App: React.FC = () => {
 
         <Footer />
     </HashRouter>
+    
     </> 
     )
 

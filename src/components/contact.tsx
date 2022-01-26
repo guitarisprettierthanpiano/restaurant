@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useState } from 'react';
 import MapGL from 'react-map-gl';
 
-const Home: React.FC = () => {
+const Contact: React.FC = () => {
 
     //settings for mapgl, default generic raleigh zoomed out. mapStyle is from https://docs.mapbox.com/api/maps/styles/#list-styles 
     const [viewport, setViewport] = useState({
@@ -80,4 +80,4 @@ const Home: React.FC = () => {
     )
 }
 
-export default Home;
+export default Contact;

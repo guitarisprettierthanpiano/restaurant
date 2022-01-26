@@ -2,6 +2,7 @@ import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Footer: React.FC = () => {
+    
     const TopOfPage = () => {
         window.scrollTo(0, 0)
     };

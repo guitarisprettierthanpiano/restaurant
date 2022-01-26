@@ -2,6 +2,8 @@ import * as React from 'react';
 
 const Banner: React.FC = () => {
 
+    //not currently using this component
+    
     return (
         <>
         <div className='banner-container'>
