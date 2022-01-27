@@ -61,6 +61,8 @@ p{
 
 /* NAV */
 .nav-container{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+
     grid-row: 1;
     height: 80px;
 
@@ -110,13 +112,27 @@ p{
     color: rgb(218, 162, 117);
 }
 .active span{
-    color: rgb(255, 125, 41);
+    color: rgb(255, 125, 41)!important;
 }
 .nav *:hover span{
-    color: rgb(255, 125, 41);
+    animation: fadecolor 20s;
 }
 #EventsNHappenings{
     content: "Events & Happenings";
+}
+@keyframes fadecolor{
+    0%{
+        outline: 1px solid rgba(255, 127, 41, 0);
+    }
+    3%{
+        color: rgb(255, 125, 41);
+    }
+    3%{
+        outline: 1px solid rgb(255, 125, 41);
+    }
+    5%{
+        background-color: rgba(111, 0, 145, 0.486)
+    }
 }
 
 
@@ -412,10 +428,6 @@ p{
     /* i made this from https://www.cssportal.com/css-clip-path-generator/ */
     clip-path: polygon(40% 100%, 60% 100%, 65% 78%, 62% 63%, 68% 43%, 58% 61%, 66% 19%, 54% 60%, 56% 0, 50% 59%, 41% 0, 45% 59%, 29% 18%, 42% 61%, 29% 43%, 38% 63%, 35% 78%);
 }
-.come-on-in-left img:hover{
-    transform: scale(1.1);
-    transition: all .15s ease;
-}
 .come-on-in-right{
     display: grid;
     grid-row: 1;
@@ -445,6 +457,9 @@ p{
 
     font-size: 54px;
     text-shadow: 2px 2px 4px black;
+
+    padding-top: 14px;
+    padding-bottom: 14px;
 }
 .come-on-in-right p{
     font-size: 16px;
@@ -1129,13 +1144,14 @@ h1 span{
 .contact-us-div h1{
     grid-row: 1;
     grid-column: 1 / span 2;
-    animation: fade ease-in 1s;
+    animation: fade ease-in .8s;
 
     font-size: 48px;
     text-align: center;
     text-shadow: rgba(0, 0, 0, 0.9) 2px 2px 4px;
 
-    color: rgb(142, 186, 229);
+    /* color: rgb(142, 186, 229); */
+    color:  rgb(218, 162, 117);
 
     align-self: end;
 
@@ -1204,6 +1220,8 @@ textarea{
     grid-row: 3;
     grid-column: 2;
 
+    border: 1px solid rgba(216, 212, 207, 0.8);
+
     margin: 2vw;
 
     width: 110px;
@@ -1220,9 +1238,39 @@ textarea{
 
     border-radius: 6px;
 
-    padding: 4px;
+    padding: 5px;
+}
+/* .contact-us-div button:hover{
+    animation: fadecolors 30s;
+} */
+@keyframes fadecolors{
+    0%{
+        border: 1px solid rgb(255, 125, 41);
+    }
+    1%{
+        color: rgb(255, 125, 41);
+    }
+    3%{
+        background-color: rgba(111, 0, 145, 0.486)
+    }
+}
+.contact-us-div button:active{
+   /* border: 1px solid rgb(255, 125, 41)!important;
+   color: rgb(255, 125, 41)!important;
+   background-color: rgba(111, 0, 145, 0.486)!important; */
 
-    border: 2px solid rgba(216, 212, 207, 0.8);
+   animation: contactbtn 2s linear;
+}
+@keyframes contactbtn{
+    0%{
+        transform: translateY(0px);
+    }
+    1%{
+        transform: translateY(1px);
+    }
+    100%{
+        transform: translateY(1px);
+    }
 }
 
 .mapbox-parallax{
@@ -1284,15 +1332,15 @@ textarea{
 
 /* MY LAPTOP'S SIZE */
 @media screen and (max-width: 1366px){
-    .come-on-in-left img{
-        height: 300px;
-        width: 100%;
+    .pineapplebg-images img{
+        width: 200px;
+        height: 250px;
     }
     .pineapplebg-bluebg * img{
         max-width: auto;
         max-height: auto;
-        width: 180px;
-        height: 250px;
+        width: 150%;
+        height: 150%;
     }    
 }
 
@@ -1309,8 +1357,12 @@ textarea{
         height:40px;
         width: 90%;
     }
+    .parallax2{
+        padding-top: 2vh;
+        padding-bottom: 2vh;
+    }
     .happy-hour{
-        height: 70vh;
+        height: auto;
     }
     .happy-hour-right h1{
         padding-top: 5vh;
@@ -1338,9 +1390,24 @@ textarea{
     .come-on-in * a{
         display: none;
     }
+    .come-on-in-left img{
+        width: 400px;
+        height: 300px;
+    }
 
+    .pineapplebg-images img{
+        width: 200px;
+        height: 280px;
+    }
     .pineapplebg-images img:nth-child(3){
         display: none;
+    }
+}
+
+@media screen and (max-width: 800px){
+    .come-on-in-left img{
+        width: 320px;
+        height: 250px;
     }
 }
 
@@ -1389,10 +1456,17 @@ textarea{
         grid-template-rows: auto auto;
     }
     .hours-container *{
-        padding: 0px;
+        padding: 4px;
     }
     .happy-hour{
         width: 100vw;
+    }
+    .happy-hour *{
+        padding: 4px;
+
+    }
+    .happy-hour-h4{
+        text-indent: 4px;
     }
     .hours{
         width: 100vw;
@@ -1411,6 +1485,10 @@ textarea{
         grid-column: 1;
 
         padding: 10px;
+    }
+    .come-on-in-left img{
+        width: 350px;
+        height: 220px;
     }
 
     .pineapplebg-images img:nth-child(2){
