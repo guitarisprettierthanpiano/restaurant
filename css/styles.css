@@ -898,7 +898,7 @@ h1 span{
 
     background-image: url(../img/mural.webp);
 
-    background-color: rgb(196, 251, 255);
+    background-color: rgb(8, 8, 8);
 }
 .upcoming-events{
     animation: fade ease-in 1s;
