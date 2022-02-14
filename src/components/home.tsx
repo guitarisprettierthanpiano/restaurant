@@ -42,8 +42,8 @@ const Home: React.FC = () => {
     return (
     <div className='contact-container'>
 
-        <div className="parallax">
-            <div className='main-landing'>
+        <div className="parallax" style={{backgroundImage: 'url(../img/wood.webp)'}}>
+            <div className='main-landing' style={{backgroundImage: 'url(../img/maintiki.webp)'}}>
                 <div></div>
                 <h1>Welcome to Twisted Tiki!</h1> 
                 <h2>a Polynesian-inspired Bar & Grille</h2>
@@ -51,7 +51,7 @@ const Home: React.FC = () => {
             </div>
         </div>
 
-        <div className='tikis'>
+        <div className='tikis' style={{backgroundImage: 'url(../img/mesh.webp)'}}>
 
             <div id='tiki-1' className='ALLTIKIS'>
                 <img loading='lazy' src="./././img/tiki1.webp"/>
@@ -98,7 +98,7 @@ const Home: React.FC = () => {
             </div>
         </div>
 
-        <div className='parallax2'>
+        <div className='parallax2' style={{backgroundImage: 'url(../img/tikibg.webp)'}}>
             <div className='hours-container'>
                 <div className='hours'>
                     <h1>Hours</h1>
@@ -161,9 +161,9 @@ const Home: React.FC = () => {
                 <h1>Get the <span id='S1'>S</span><span id='S2'>w</span><span id='S3'>a</span><span id='S4'>g</span></h1>
                 <div className='pineapplebg-images'>
                     <div></div>
-                    <img loading='lazy' src='./././img/shirt1.png'/>
-                    <img loading='lazy' src='./././img/shirt2.png'/>
-                    <img loading='lazy' src='./././img/shirt3.png'/>
+                    <img loading='lazy' src='./././img/shirt1.webp'/>
+                    <img loading='lazy' src='./././img/shirt2.webp'/>
+                    <img loading='lazy' src='./././img/shirt3.webp'/>
                     <div></div>
                 </div>
                 <p>Get Twisted with our Twisted Tiki merch!

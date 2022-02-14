@@ -1,12 +1,14 @@
 import * as React from 'react';
 import { Switch, HashRouter, Route } from 'react-router-dom';
 
-import Home from './components/home'
 import Nav from './components/nav'
-import Menu from './components/menu'
-import Events from './components/events'
-import Contact from './components/contact'
-import Footer from './components/footer'
+
+const Home = React.lazy(() => import("./components/home"));
+const Menu = React.lazy(() => import("./components/menu"));
+const Events = React.lazy(() => import("./components/events"));
+const Contact = React.lazy(() => import("./components/contact"));
+
+const Footer = React.lazy(() => import("./components/footer"));
 
 const App: React.FC = () => {
    
@@ -16,22 +18,27 @@ const App: React.FC = () => {
     <HashRouter>
 
         <Nav />
-            <Switch>
 
-            <Route exact path='/'
-            component={Home}/>
+        <Switch>
+            <React.Suspense fallback={<p className='loading'>Loading page...</p>}>
+                <Route exact path='/'
+                component={Home}/>
 
-            <Route path='/menu'
-            component={Menu}/>
+                <Route path='/menu'
+                component={Menu}/>
 
-            <Route path='/events'
-            component={Events}/>
+                <Route path='/events'
+                component={Events}/>
 
-            <Route path='/contact'
-            component={Contact}/>
+                <Route path='/contact'
+                component={Contact}/>
+            </React.Suspense>
         </Switch>
 
-        <Footer />
+        <React.Suspense fallback={<p className='loading'>Loading footer...</p>}>
+            <Footer />
+        </React.Suspense>
+
     </HashRouter>
     
     </> 

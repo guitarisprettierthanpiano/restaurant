@@ -1,6 +1,10 @@
 import * as React from 'react';
 import { useState } from 'react';
+
 import MapGL from 'react-map-gl';
+
+//'https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css';
+import './mapbox.css';
 
 const Contact: React.FC = () => {
 
@@ -65,7 +69,7 @@ const Contact: React.FC = () => {
 
         </div>
 
-        <div className="mapbox-parallax">
+        <div className="mapbox-parallax" style={{backgroundImage: 'url(../img/wood.webp)'}}>
 
             <MapGL className='mapGL'
             {...viewport}

@@ -3,13 +3,13 @@ import * as React from 'react';
 const Menu: React.FC = () => {
 
     return (
-    <div className='menu-container'>
+    <div className='menu-container' style={{backgroundImage: 'url(../img/mesh.webp)'}}>
         <div className='white-menu'>
             <img src='./././img/menu1.webp'></img>
             <img src='./././img/menu2.webp' loading='lazy'></img>
         </div>
 
-        <div className='cocktails-parallax'>
+        <div className='cocktails-parallax' style={{backgroundImage: 'url(../img/wood.webp)'}}>
             <div className='cocktails'>
                 <h1>Cocktails</h1>
 

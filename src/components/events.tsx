@@ -5,7 +5,7 @@ const Events: React.FC = () => {
     return (
     <div className='events-container'>
 
-        <div className='events-parallax'>
+        <div className='events-parallax' style={{backgroundImage: 'url(../img/mural.webp)'}}>
             <div className='upcoming-events'>
                 <h2>Events & Entertainment</h2>
 
@@ -52,23 +52,23 @@ const Events: React.FC = () => {
             </div>
         </div>
 
-        <div className='events-bottom'>
+        <div className='events-bottom' style={{backgroundImage: 'url(../img/flowertexture.webp)'}}>
             <div className='trivia-night'>
-                <img loading='lazy' id='trivia-img' src='./././img/trivia.png'></img>
+                <img loading='lazy' id='trivia-img' src='./././img/trivia.webp'></img>
                 <h2>Trivia Night</h2>
                 <h4>Mondays 6:30 p.m.</h4>
                 <p>Win bar tabs! Free to play.</p> 
             </div> 
 
             <div className='guest-musician'>
-                <img loading='lazy' src='./././img/music.png'></img>
+                <img loading='lazy' src='./././img/music.webp'></img>
                 <h2>Local Musicians</h2>
                 <h4>Every Other Tuesday 5 p.m. - 9 p.m.</h4>
                 <p>Chill out with us at Twisted Tiki every other Tuesday night with the music of the area!</p>
             </div>
 
             <div className='art-night'>
-                <img loading='lazy' src='./././img/art.png'></img>
+                <img loading='lazy' src='./././img/art.webp'></img>
                 <h2 className='animate-h2'>Art Night</h2>
                 <h4>Monthly - check the schedule for times</h4>
                 <p>Enjoy some great music while you browse and shop with some great local artisans!</p>
