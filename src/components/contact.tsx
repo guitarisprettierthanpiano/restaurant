@@ -10,7 +10,12 @@ const Contact: React.FC = () => {
         longitude: -78.644257,
         zoom: 12,
         bearing: 0,
-        pitch: 0
+        pitch: 0,
+        height: `50vh`,
+        width: `50vw`,
+        mapStyle: `mapbox://styles/mapbox/outdoors-v11`,
+        mapboxApiAccessToken: `pk.eyJ1IjoiY2xlbWVudHNhdXZhZ2UiLCJhIjoiY2twaTRxdGZwMDA2ajJ1bGpvOTJxbHI1diJ9.htkStpTFLbJNqB_EBouPRw`, 
+        className: `Map-GL`
     });
 
     //clears inputs on submit button click, style button green or transparent
@@ -68,12 +73,7 @@ const Contact: React.FC = () => {
         <div className="mapbox-parallax">
 
             <MapGL className='mapGL'
-            {...viewport}
-            width="80vw"
-            height="80vh"
-            mapStyle="mapbox://styles/mapbox/outdoors-v11"
-            onViewportChange={setViewport}
-            mapboxApiAccessToken={"pk.eyJ1IjoiY2xlbWVudHNhdXZhZ2UiLCJhIjoiY2twaTRxdGZwMDA2ajJ1bGpvOTJxbHI1diJ9.htkStpTFLbJNqB_EBouPRw"}/>
+            {...viewport}/>
         </div>
 
     </div>
