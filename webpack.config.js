@@ -1,13 +1,12 @@
 const path = require('path');
+// const Dotenv = require('dotenv-webpack');
 
 module.exports = {
     entry: "./src/index.tsx",
-    mode: "production",
-    // devtool: 'inline-source-map',
+    devtool: "inline-source-map",
     output: {
         filename: "bundle.js",
-        path: path.resolve(__dirname, 'dist'),
-        clean: true,
+        path: path.resolve(__dirname, 'dist')
     },
     module: {
         rules: [
@@ -16,14 +15,15 @@ module.exports = {
                 use: 'ts-loader',
                 exclude: /node_modules/
             },
-            {
-                test: /\.(css)$/,
-                use: ['style-loader', 'css-loader'],
-            },           
+            {        
+                test: /\.css$/,        
+                use: ["style-loader", "css-loader"]      
+            },            
         ]
     },
-    // watch: true,
+    watch: true,
     resolve: {
         extensions: [".ts", ".tsx", ".js"]
     },
+    // plugins: [new Dotenv()],
 }

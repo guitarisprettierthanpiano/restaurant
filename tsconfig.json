@@ -1,12 +1,17 @@
 {
     "compilerOptions": {
-      "outDir": "./dist/",
-      "sourceMap": true,
-      "noImplicitAny": true,
-      "module": "es6",
-      "target": "es5",
-      "jsx": "react",
-      "allowJs": true,
-      "moduleResolution": "node"
+        "module": "commonjs",
+        "jsx": "react",
+        "watch": true,
+        "target": "es5",
+        "lib": [
+            "es6",
+            "dom"
+        ],
+        "plugins": [
+            {
+                "name": "typescript-plugin-css-modules"
+            }
+        ]
     }
-  }
+}
