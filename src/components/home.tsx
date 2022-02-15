@@ -9,11 +9,12 @@ import Tiki3 from './img/tiki3.webp'
 import Tiki4 from './img/tiki4.webp'
 import Wood from './img/wood.webp'
 import Mesh from './img/mesh.webp'
-import Pineapple from './img/pineapple.gif'
+import Pineapple from './img/pineapple.mp4'
 import TikiBG from './img/tikibg.webp'
 import Shirt1 from './img/shirt1.webp'
-import Shirt2 from './img/shirt1.webp'
-import Shirt3 from './img/shirt1.webp'
+import Shirt2 from './img/shirt2.webp'
+import Shirt3 from './img/shirt3.webp'
+/* <img className='pineapple-mp4' loading='lazy' src={Pineapple}></img> */
 
 const Home: React.FC = () => {
 
@@ -141,7 +142,11 @@ const Home: React.FC = () => {
 
         <div className='come-on-in'>
             <div className='come-on-in-left'>
-                <img loading='lazy' src={Pineapple}></img>
+
+                <video className='pineapple-mp4' autoPlay loop>
+                    <source src={Pineapple} type="video/mp4"/>
+                    Your browser does not support the video tag.
+                </video> 
             </div>
             <div className='come-on-in-right'>
                 <div></div>

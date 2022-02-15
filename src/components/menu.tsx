@@ -4,8 +4,9 @@ import Mesh from './img/mesh.webp'
 import Wood from './img/wood.webp'
 import Menu1 from './img/menu1.webp'
 import Menu2 from './img/menu2.webp'
-import Pouring from './img/pouring.gif'
+import Pouring from './img/pouring.mp4'
 
+//                <img id='hh-img' src={Pouring} loading='lazy'/>
 const Menu: React.FC = () => {
 
     return (
@@ -131,7 +132,14 @@ const Menu: React.FC = () => {
 
         <div className='menu-happy-hour'>
             <div className='happy-hour-left'>
-                <img id='hh-img' src={Pouring} loading='lazy'/>
+
+
+                <video id='hh-img' autoPlay loop>
+                    <source src={Pouring} type="video/mp4"/>
+                    Your browser does not support the video tag.
+                </video> 
+
+
                 <p id='hh-p'>Happy Hour</p>
             </div>
             <div className='happy-hour-right'>

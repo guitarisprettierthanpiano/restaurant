@@ -12,9 +12,13 @@
 @keyframes left {
     0% {
         left: 100%;
-        transform: translateX(-100%);
+        transform: translateX(-120%);
       }
-    50% {
+      50% {
+        left: 100%;
+        transform: translateX(-120%);
+      }
+    80% {
       left: 0;
       transform: translateX(0);
     }
@@ -22,9 +26,13 @@
 @keyframes right {
     0% {
         right: 100%;
-        transform: translateX(100%);
+        transform: translateX(120%);
       }
     50% {
+        right: 100%;
+        transform: translateX(120%);
+      }
+    80% {
       right: 0;
       transform: translateX(0);
     }
@@ -199,13 +207,17 @@ p{
     font-size: 74px;
     text-align: center;
 
-    animation: left linear 2s;
+    animation: left linear 3s;
+    left: 0;
+    transform: translateX(0);
 }
 .main-landing h2{
     font-size: 34px;
     text-align: center;
 
-    animation: right linear 2s;
+    animation: right linear 3s;
+    right: 0;
+    transform: translateX(0);
 }
 
 @keyframes wobbleL {
@@ -419,7 +431,7 @@ p{
     align-items: center;
     justify-items: center;
 }
-.come-on-in-left img{
+.come-on-in-left video{
     height: 60%;
     width: 100%;
 
@@ -794,7 +806,7 @@ h1 span{
     align-items: center;
     justify-items: center;
 }
-.happy-hour-left img{
+.happy-hour-left video{
     z-index: 1;
     grid-row: 1;
     grid-column: 1;
@@ -812,7 +824,7 @@ h1 span{
     -webkit-clip-path: ellipse(50% 90% at 50% 50%); 
     clip-path: ellipse(25% 130% at 50% 1%);
 }
-.happy-hour-left img:hover{
+.happy-hour-left video:hover{
     transform: scale(1.1);
     transition: all .15s ease;
 }
@@ -1377,7 +1389,7 @@ textarea{
     .come-on-in * a{
         display: none;
     }
-    .come-on-in-left img{
+    .come-on-in-left video{
         width: 400px;
         height: 300px;
     }
@@ -1392,7 +1404,7 @@ textarea{
 }
 
 @media screen and (max-width: 800px){
-    .come-on-in-left img{
+    .come-on-in-left video{
         width: 320px;
         height: 250px;
     }
@@ -1473,7 +1485,7 @@ textarea{
 
         padding: 10px;
     }
-    .come-on-in-left img{
+    .come-on-in-left video{
         width: 350px;
         height: 220px;
     }

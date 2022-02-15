@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
     entry: "./src/index.tsx",
     mode: "production",
-    // devtool: "inline-source-map",
+    devtool: "inline-source-map",
     output: {
         filename: "bundle.js",
         path: path.resolve(__dirname, 'dist'),
@@ -21,7 +21,7 @@ module.exports = {
                 use: ["style-loader", "css-loader"]      
             },       
             {
-                test: /\.(png|gif|webp)$/,
+                test: /\.(mp4|webp)$/,
                 loader: 'file-loader',
                 options: {
                   name: '[name].[ext]',

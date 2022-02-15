@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import Logo from './img/tiki.png';
+import Logo from './img/tiki.webp';
 
 const Nav: React.FC = () => {
 
