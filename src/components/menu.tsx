@@ -1,15 +1,21 @@
 import * as React from 'react';
 
+import Mesh from './img/mesh.webp'
+import Wood from './img/wood.webp'
+import Menu1 from './img/menu1.webp'
+import Menu2 from './img/menu2.webp'
+import Pouring from './img/pouring.gif'
+
 const Menu: React.FC = () => {
 
     return (
-    <div className='menu-container' style={{backgroundImage: 'url(../img/mesh.webp)'}}>
+    <div className='menu-container' style={{backgroundImage: `url(${Mesh})`}}>
         <div className='white-menu'>
-            <img src='./././img/menu1.webp'></img>
-            <img src='./././img/menu2.webp' loading='lazy'></img>
+            <img src={Menu1}></img>
+            <img src={Menu2} loading='lazy'></img>
         </div>
 
-        <div className='cocktails-parallax' style={{backgroundImage: 'url(../img/wood.webp)'}}>
+        <div className='cocktails-parallax' style={{backgroundImage: `url(${Wood})`}}>
             <div className='cocktails'>
                 <h1>Cocktails</h1>
 
@@ -125,7 +131,7 @@ const Menu: React.FC = () => {
 
         <div className='menu-happy-hour'>
             <div className='happy-hour-left'>
-                <img id='hh-img' src='./././img/pouring.gif' loading='lazy'/>
+                <img id='hh-img' src={Pouring} loading='lazy'/>
                 <p id='hh-p'>Happy Hour</p>
             </div>
             <div className='happy-hour-right'>

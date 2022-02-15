@@ -2,6 +2,19 @@ import * as React from 'react';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
+import MainTiki from './img/maintiki.webp'
+import Tiki1 from './img/tiki1.webp'
+import Tiki2 from './img/tiki2.webp'
+import Tiki3 from './img/tiki3.webp'
+import Tiki4 from './img/tiki4.webp'
+import Wood from './img/wood.webp'
+import Mesh from './img/mesh.webp'
+import Pineapple from './img/pineapple.gif'
+import TikiBG from './img/tikibg.webp'
+import Shirt1 from './img/shirt1.webp'
+import Shirt2 from './img/shirt1.webp'
+import Shirt3 from './img/shirt1.webp'
+
 const Home: React.FC = () => {
 
     //scroll to top of page on clicking a nav link
@@ -42,8 +55,8 @@ const Home: React.FC = () => {
     return (
     <div className='contact-container'>
 
-        <div className="parallax" style={{backgroundImage: 'url(../img/wood.webp)'}}>
-            <div className='main-landing' style={{backgroundImage: 'url(../img/maintiki.webp)'}}>
+        <div className="parallax" style={{backgroundImage: `url(${Wood})`}}>
+            <div className='main-landing' style={{backgroundImage: `url(${MainTiki})`}}>
                 <div></div>
                 <h1>Welcome to Twisted Tiki!</h1> 
                 <h2>a Polynesian-inspired Bar & Grille</h2>
@@ -51,10 +64,10 @@ const Home: React.FC = () => {
             </div>
         </div>
 
-        <div className='tikis' style={{backgroundImage: 'url(../img/mesh.webp)'}}>
+        <div className='tikis' style={{backgroundImage: `url(${Mesh})`}}>
 
             <div id='tiki-1' className='ALLTIKIS'>
-                <img loading='lazy' src="./././img/tiki1.webp"/>
+                <img loading='lazy' src={Tiki1}/>
                 <div className="tiki-layer">
                     <div></div>    
                     <h2>Ke aloha</h2>
@@ -65,7 +78,7 @@ const Home: React.FC = () => {
             </div>
 
             <div id='tiki-2' className='ALLTIKIS'>
-                <img loading='lazy' src="./././img/tiki2.webp"/>
+                <img loading='lazy' src={Tiki2}/>
                 <div className="tiki-layer">
                     <div></div>    
                     <h2>Aloha</h2>
@@ -76,7 +89,7 @@ const Home: React.FC = () => {
             </div>
 
             <div id='tiki-3' className='ALLTIKIS'>
-                <img loading='lazy' src="./././img/tiki3.webp"/>
+                <img loading='lazy' src={Tiki3}/>
                 <div className="tiki-layer">
                     <div></div>    
                     <h2>I leʻaleʻa kāu</h2>
@@ -87,7 +100,7 @@ const Home: React.FC = () => {
             </div>
 
             <div id='tiki-4' className='ALLTIKIS'>
-                <img loading='lazy' src="./././img/tiki4.webp"/>
+                <img loading='lazy' src={Tiki4}/>
                 <div className="tiki-layer">
                     <div></div>    
                     <h2>E hele kāua</h2>
@@ -98,7 +111,7 @@ const Home: React.FC = () => {
             </div>
         </div>
 
-        <div className='parallax2' style={{backgroundImage: 'url(../img/tikibg.webp)'}}>
+        <div className='parallax2' style={{backgroundImage: `url(${TikiBG})`}}>
             <div className='hours-container'>
                 <div className='hours'>
                     <h1>Hours</h1>
@@ -128,7 +141,7 @@ const Home: React.FC = () => {
 
         <div className='come-on-in'>
             <div className='come-on-in-left'>
-                <img loading='lazy' src='./././img/pineapple.gif'></img>
+                <img loading='lazy' src={Pineapple}></img>
             </div>
             <div className='come-on-in-right'>
                 <div></div>
@@ -161,9 +174,9 @@ const Home: React.FC = () => {
                 <h1>Get the <span id='S1'>S</span><span id='S2'>w</span><span id='S3'>a</span><span id='S4'>g</span></h1>
                 <div className='pineapplebg-images'>
                     <div></div>
-                    <img loading='lazy' src='./././img/shirt1.webp'/>
-                    <img loading='lazy' src='./././img/shirt2.webp'/>
-                    <img loading='lazy' src='./././img/shirt3.webp'/>
+                    <img loading='lazy' src={Shirt1}/>
+                    <img loading='lazy' src={Shirt2}/>
+                    <img loading='lazy' src={Shirt3}/>
                     <div></div>
                 </div>
                 <p>Get Twisted with our Twisted Tiki merch!

@@ -7,7 +7,6 @@ const Home = React.lazy(() => import("./components/home"));
 const Menu = React.lazy(() => import("./components/menu"));
 const Events = React.lazy(() => import("./components/events"));
 const Contact = React.lazy(() => import("./components/contact"));
-
 const Footer = React.lazy(() => import("./components/footer"));
 
 const App: React.FC = () => {

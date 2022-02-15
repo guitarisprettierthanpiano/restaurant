@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 
+import Logo from './img/tiki.png';
+
 const Nav: React.FC = () => {
 
     const TopOfPage = () => {
@@ -17,7 +19,7 @@ const Nav: React.FC = () => {
             exact activeClassName='active'
             to='/'
             onClick = {TopOfPage}>
-                <img src='./././img/tiki.png'/>
+                <img src={Logo}/>
             </NavLink>
         </div>
 

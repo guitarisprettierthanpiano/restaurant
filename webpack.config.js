@@ -21,13 +21,15 @@ module.exports = {
                 use: ["style-loader", "css-loader"]      
             },       
             {
-                test: /\.(png|webp|gif)$/,
-                loader: 'url-loader'
-              }     
+                test: /\.(png|gif|webp)$/,
+                loader: 'file-loader',
+                options: {
+                  name: '[name].[ext]',
+            },}
         ]
     },
-    // watch: true,
+    watch: true,
     resolve: {
-        extensions: [".ts", ".tsx", ".js"]
+        extensions: [".tsx", ".ts", ".js"]
     },
 }

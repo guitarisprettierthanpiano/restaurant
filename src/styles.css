@@ -3,10 +3,10 @@
 
 @keyframes fade{
     0%{
-        opacity:0;
+        filter:brightness(50%)
     }
     100%{
-        opacity: 1;
+        filter:brightness(100%)
     }
 }
 @keyframes left {
@@ -96,8 +96,6 @@ p{
 .nav-logo img{
     height: 80px;
     cursor: pointer;
-
-    animation: fade ease-in 0.5s;
 }
 .nav{
     grid-column: 3;
@@ -119,6 +117,7 @@ p{
 }
 .nav *:hover span{
     animation: fadecolor 20s;
+    border-radius: 4px;
 }
 #EventsNHappenings{
     content: "Events & Happenings";
@@ -187,7 +186,8 @@ p{
     grid-template-columns: 1fr;
     grid-template-rows: 1fr auto auto 1fr;
 
-    animation: fade ease-in 1s;
+    filter:brightness(100%);
+    animation: fade ease-in 1.1s;
 
 }
 .parallax *{
@@ -702,7 +702,7 @@ h1 span{
 }
 #first-h1:after{
     content: "";
-    animation: firsth1 linear infinite 6s;
+    animation: firsth1 linear infinite 4s;
 }
 @keyframes firsth1 {
     0% {
@@ -894,6 +894,7 @@ h1 span{
     background-color: rgb(8, 8, 8);
 }
 .upcoming-events{
+    filter:brightness(100%);
     animation: fade ease-in 1s;
     grid-column: 2;
     display: grid;
@@ -1136,7 +1137,6 @@ h1 span{
 .contact-us-div h1{
     grid-row: 1;
     grid-column: 1 / span 2;
-    animation: fade ease-in .8s;
 
     font-size: 48px;
     text-align: center;
@@ -1232,9 +1232,6 @@ textarea{
 
     padding: 5px;
 }
-/* .contact-us-div button:hover{
-    animation: fadecolors 30s;
-} */
 @keyframes fadecolors{
     0%{
         border: 1px solid rgb(255, 125, 41);

@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 
+import Logo from './img/tiki.png'
+
 const Footer: React.FC = () => {
     
     const TopOfPage = () => {
@@ -9,7 +11,7 @@ const Footer: React.FC = () => {
 
     return(
     <div className='footer'>
-        <img src='./././img/tiki.png' loading='lazy'/>
+        <img src={Logo} loading='lazy'/>
 
         <div className='footer-p'>
             <p>2022 Ke Aloha Street 
