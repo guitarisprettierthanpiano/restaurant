@@ -593,11 +593,13 @@ h1 span{
     justify-items: center;
 
     margin-top: 80px;
+    min-height: 100vh;
 }
 
 .white-menu{
     width: 90vw;
     max-width: 700px;
+    min-height: 100vh;
 
     display: grid;
     grid-template-columns: 1fr;
