@@ -3,7 +3,6 @@ import { useState } from 'react';
 
 import MapGL from 'react-map-gl';
 import Wood from './img/wood.webp';
-import './mapbox.css'; 
 
 const Contact: React.FC = () => {
 

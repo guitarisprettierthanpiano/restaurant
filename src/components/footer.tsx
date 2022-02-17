@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
 
     return(
     <div className='footer'>
-        <img src={Logo} loading='lazy'/>
+        <img alt='twisted tiki logo' src={Logo} loading='lazy'/>
 
         <div className='footer-p'>
             <p>2022 Ke Aloha Street 

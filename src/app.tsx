@@ -13,7 +13,6 @@ const App: React.FC = () => {
    
     return(
     <>
-
     <HashRouter>
 
         <Nav />
@@ -39,7 +38,6 @@ const App: React.FC = () => {
         </React.Suspense>
 
     </HashRouter>
-    
     </> 
     )
 

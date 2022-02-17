@@ -597,7 +597,7 @@ h1 span{
 
 .white-menu{
     width: 90vw;
-    max-width: 900px;
+    max-width: 700px;
 
     display: grid;
     grid-template-columns: 1fr;

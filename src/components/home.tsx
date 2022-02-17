@@ -3,10 +3,10 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import MainTiki from './img/maintiki.webp'
-import Tiki1 from './img/tiki1.webp'
-import Tiki2 from './img/tiki2.webp'
-import Tiki3 from './img/tiki3.webp'
-import Tiki4 from './img/tiki4.webp'
+import Tiki1 from './img/tiki11.webp'
+import Tiki2 from './img/tiki22.webp'
+import Tiki3 from './img/tiki33.webp'
+import Tiki4 from './img/tiki44.webp'
 import Wood from './img/wood.webp'
 import Mesh from './img/mesh.webp'
 import Pineapple from './img/pineapple.mp4'
@@ -32,10 +32,6 @@ const Home: React.FC = () => {
         const allTikis = document.querySelectorAll('.ALLTIKIS')
 
         if (window.pageYOffset >= windowVH*0.25){
-            //i used this before i decided to make two different wobbles, giving the illusion they are bangings against eachother.
-            // for(let i = 0; i < allTikis.length; i++){
-            //     allTikis[i].classList.add('wobble')
-            // }
             allTikis[0].classList.add('wobbleL')
             allTikis[1].classList.add('wobbleR')
             allTikis[2].classList.add('wobbleL')
@@ -179,9 +175,9 @@ const Home: React.FC = () => {
                 <h1>Get the <span id='S1'>S</span><span id='S2'>w</span><span id='S3'>a</span><span id='S4'>g</span></h1>
                 <div className='pineapplebg-images'>
                     <div></div>
-                    <img loading='lazy' src={Shirt1}/>
-                    <img loading='lazy' src={Shirt2}/>
-                    <img loading='lazy' src={Shirt3}/>
+                    <img alt='twisted tiki merch' loading='lazy' src={Shirt1}/>
+                    <img alt='twisted tiki merch' loading='lazy' src={Shirt2}/>
+                    <img alt='twisted tiki merch' loading='lazy' src={Shirt3}/>
                     <div></div>
                 </div>
                 <p>Get Twisted with our Twisted Tiki merch!
