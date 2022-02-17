@@ -17,7 +17,7 @@ module.exports = {
 
     mode: "production",
     // mode: "development",
-    // devtool: "source-map",
+    devtool: "source-map",
     // devtool: "inline-source-map",
 
     output: {
