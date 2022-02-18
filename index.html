@@ -11,7 +11,11 @@
         name="description"
         content="A tiki themed restaurant website based off of the same one of the same name.">
 
-    <link rel="stylesheet" href="./dist/styles.css"/>
+    <link rel="stylesheet" href="./dist/styles.css"/> 
+    <!-- <link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css"/> -->
+
+    <!-- <link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet"> -->
+    <!-- <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script> -->
 
     <link rel="icon" type="image/png" href="favicons/favicon-32x32.png">
 
@@ -19,19 +23,19 @@
 <body>
 
     <div id='root'></div> 
-
     <script src='dist/bundle.js'></script> 
 
+    <!-- https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css -->
     <!-- loading external mapbox css after everything is done -->
-    <script>
+    <!-- <script>
         window.addEventListener('load', () => {
             let link = document.createElement('link');
             link.rel = 'stylesheet';
             link.type = 'text/css';
-            link.href = "https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css";
+            link.href = "./dist/mapboxes.css";
             document.head.appendChild(link)
         })
-    </script>
+    </script> -->
 
 </body>
 </html>

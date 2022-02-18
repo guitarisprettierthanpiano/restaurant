@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import MainTiki from './img/maintiki.webp'
@@ -14,7 +13,6 @@ import TikiBG from './img/tikibg.webp'
 import Shirt1 from './img/shirt1.webp'
 import Shirt2 from './img/shirt2.webp'
 import Shirt3 from './img/shirt3.webp'
-/* <img className='pineapple-mp4' loading='lazy' src={Pineapple}></img> */
 
 const Home: React.FC = () => {
 
@@ -29,8 +27,7 @@ const Home: React.FC = () => {
 
     window.onscroll = function(){reveal_tikis()}
     function reveal_tikis(){
-        const allTikis = document.querySelectorAll('.ALLTIKIS')
-
+        let allTikis: NodeListOf<HTMLElement> = document.querySelectorAll('.ALLTIKIS')
         if (window.pageYOffset >= windowVH*0.25){
             allTikis[0].classList.add('wobbleL')
             allTikis[1].classList.add('wobbleR')
@@ -38,16 +35,6 @@ const Home: React.FC = () => {
             allTikis[3].classList.add('wobbleR')
         }
     }
-
-
-    //raleigh nc coords, somewhat zoomed out
-    const [viewport, setViewport] = useState({
-        latitude: 35.787743,
-        longitude: -78.644257,
-        zoom: 12,
-        bearing: 0,
-        pitch: 0
-    });
 
     return (
     <div className='contact-container'>

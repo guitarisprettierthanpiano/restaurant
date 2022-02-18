@@ -3140,6 +3140,16 @@ return mapboxgl$1;
 
 /***/ }),
 
+/***/ 5789:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ 7279:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -18695,7 +18705,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const React = __importStar(__webpack_require__(7294));
-const react_1 = __webpack_require__(7294);
 const react_router_dom_1 = __webpack_require__(886);
 const maintiki_webp_1 = __importDefault(__webpack_require__(5666));
 const tiki11_webp_1 = __importDefault(__webpack_require__(8796));
@@ -18709,7 +18718,6 @@ const tikibg_webp_1 = __importDefault(__webpack_require__(816));
 const shirt1_webp_1 = __importDefault(__webpack_require__(8190));
 const shirt2_webp_1 = __importDefault(__webpack_require__(2958));
 const shirt3_webp_1 = __importDefault(__webpack_require__(9634));
-/* <img className='pineapple-mp4' loading='lazy' src={Pineapple}></img> */
 const Home = () => {
     //scroll to top of page on clicking a nav link
     const TopOfPage = () => {
@@ -18719,7 +18727,7 @@ const Home = () => {
     const windowVH = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
     window.onscroll = function () { reveal_tikis(); };
     function reveal_tikis() {
-        const allTikis = document.querySelectorAll('.ALLTIKIS');
+        let allTikis = document.querySelectorAll('.ALLTIKIS');
         if (window.pageYOffset >= windowVH * 0.25) {
             allTikis[0].classList.add('wobbleL');
             allTikis[1].classList.add('wobbleR');
@@ -18727,14 +18735,6 @@ const Home = () => {
             allTikis[3].classList.add('wobbleR');
         }
     }
-    //raleigh nc coords, somewhat zoomed out
-    const [viewport, setViewport] = react_1.useState({
-        latitude: 35.787743,
-        longitude: -78.644257,
-        zoom: 12,
-        bearing: 0,
-        pitch: 0
-    });
     return (React.createElement("div", { className: 'contact-container' },
         React.createElement("div", { className: "parallax", style: { backgroundImage: `url(${wood_webp_1.default})` } },
             React.createElement("div", { className: 'main-landing', style: { backgroundImage: `url(${maintiki_webp_1.default})` } },
@@ -19077,6 +19077,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 const React = __importStar(__webpack_require__(7294));
 const react_dom_1 = __webpack_require__(3935);
 __webpack_require__(7279);
+__webpack_require__(5789);
 const App_1 = __importDefault(__webpack_require__(8957));
 react_dom_1.render(React.createElement(App_1.default, null), document.querySelector('#root'));
 

@@ -5,23 +5,25 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 module.exports = {
     plugins: [
         new MiniCssExtractPlugin({
-          // Options similar to the same options in webpackOptions.output
-          // all options are optional
           filename: "styles.css",
-          chunkFilename: "[id].css",
+          chunkFilename: "[name].css",
           ignoreOrder: true, // Enable to remove warnings about conflicting order
         }),
     ],
 
     entry: "./src/index.tsx",
+    // entry: {
+    //   bundle: './src/index.tsx',
+    //   mapbox: './src/mapbox.tsx',
+    // },
 
     mode: "production",
-    // mode: "development",
     devtool: "source-map",
+    // mode: "development",
     // devtool: "inline-source-map",
 
     output: {
-        filename: "bundle.js",
+        filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist'),
         clean: true,
     },
@@ -35,8 +37,8 @@ module.exports = {
             },
             {        
                 test: /\.css$/,        
-                use: [MiniCssExtractPlugin.loader, "css-loader"]  
-                // use: ["style-loader", "css-loader"]      
+                use: [MiniCssExtractPlugin.loader, "css-loader"]
+                // use: ["style-loader", "css-loader"],
             },       
             {
                 test: /\.(mp4|webp)$/,
@@ -50,8 +52,6 @@ module.exports = {
     optimization: {
         minimize: true,
         minimizer: [
-          // For webpack@5 you can use the `...` syntax to extend existing minimizers (i.e. `terser-webpack-plugin`), uncomment the next line
-          // `...`,
           new CssMinimizerPlugin({
             parallel: true,
             minimizerOptions: {
