@@ -21,21 +21,6 @@ const Home: React.FC = () => {
         window.scrollTo(0, 0)
     };
 
-
-    //adding animation to tikis on scrolling 25% of page view height
-    const windowVH:number = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
-
-    window.onscroll = function(){reveal_tikis()}
-    function reveal_tikis(){
-        let allTikis: NodeListOf<HTMLElement> = document.querySelectorAll('.ALLTIKIS')
-        if (window.pageYOffset >= windowVH*0.25){
-            allTikis[0].classList.add('wobbleL')
-            allTikis[1].classList.add('wobbleR')
-            allTikis[2].classList.add('wobbleL')
-            allTikis[3].classList.add('wobbleR')
-        }
-    }
-
     return (
     <div className='contact-container'>
 
@@ -50,7 +35,7 @@ const Home: React.FC = () => {
 
         <div className='tikis' style={{backgroundImage: `url(${Mesh})`}}>
 
-            <div id='tiki-1' className='ALLTIKIS'>
+            <div id='tiki-1' className='ALLTIKIS left'>
                 <img loading='lazy' src={Tiki1}/>
                 <div className="tiki-layer">
                     <div></div>    
@@ -61,7 +46,7 @@ const Home: React.FC = () => {
                 </div>
             </div>
 
-            <div id='tiki-2' className='ALLTIKIS'>
+            <div id='tiki-2' className='ALLTIKIS right'>
                 <img loading='lazy' src={Tiki2}/>
                 <div className="tiki-layer">
                     <div></div>    
@@ -72,7 +57,7 @@ const Home: React.FC = () => {
                 </div>
             </div>
 
-            <div id='tiki-3' className='ALLTIKIS'>
+            <div id='tiki-3' className='ALLTIKIS left'>
                 <img loading='lazy' src={Tiki3}/>
                 <div className="tiki-layer">
                     <div></div>    
@@ -83,7 +68,7 @@ const Home: React.FC = () => {
                 </div>
             </div>
 
-            <div id='tiki-4' className='ALLTIKIS'>
+            <div id='tiki-4' className='ALLTIKIS right'>
                 <img loading='lazy' src={Tiki4}/>
                 <div className="tiki-layer">
                     <div></div>    

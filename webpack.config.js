@@ -11,11 +11,11 @@ module.exports = {
         }),
     ],
 
-    entry: "./src/index.tsx",
-    // entry: {
-    //   bundle: './src/index.tsx',
-    //   mapbox: './src/mapbox.tsx',
-    // },
+    // entry: "./src/index.tsx",
+    entry: {
+      bundle: './src/index.tsx',
+      observers: './src/observers.js',
+    },
 
     mode: "production",
     devtool: "source-map",
@@ -23,9 +23,9 @@ module.exports = {
     // devtool: "inline-source-map",
 
     output: {
-        filename: 'bundle.js',
+        filename: '[name].js',
         path: path.resolve(__dirname, 'dist'),
-        clean: true,
+        clean: true
     },
 
     module: {

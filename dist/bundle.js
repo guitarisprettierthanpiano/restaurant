@@ -18723,18 +18723,6 @@ const Home = () => {
     const TopOfPage = () => {
         window.scrollTo(0, 0);
     };
-    //adding animation to tikis on scrolling 25% of page view height
-    const windowVH = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
-    window.onscroll = function () { reveal_tikis(); };
-    function reveal_tikis() {
-        let allTikis = document.querySelectorAll('.ALLTIKIS');
-        if (window.pageYOffset >= windowVH * 0.25) {
-            allTikis[0].classList.add('wobbleL');
-            allTikis[1].classList.add('wobbleR');
-            allTikis[2].classList.add('wobbleL');
-            allTikis[3].classList.add('wobbleR');
-        }
-    }
     return (React.createElement("div", { className: 'contact-container' },
         React.createElement("div", { className: "parallax", style: { backgroundImage: `url(${wood_webp_1.default})` } },
             React.createElement("div", { className: 'main-landing', style: { backgroundImage: `url(${maintiki_webp_1.default})` } },
@@ -18743,7 +18731,7 @@ const Home = () => {
                 React.createElement("h2", null, "a Polynesian-inspired Bar & Grille"),
                 React.createElement("div", null))),
         React.createElement("div", { className: 'tikis', style: { backgroundImage: `url(${mesh_webp_1.default})` } },
-            React.createElement("div", { id: 'tiki-1', className: 'ALLTIKIS' },
+            React.createElement("div", { id: 'tiki-1', className: 'ALLTIKIS left' },
                 React.createElement("img", { loading: 'lazy', src: tiki11_webp_1.default }),
                 React.createElement("div", { className: "tiki-layer" },
                     React.createElement("div", null),
@@ -18751,7 +18739,7 @@ const Home = () => {
                     React.createElement("br", null),
                     React.createElement("h3", null, "Cheers"),
                     React.createElement("div", null))),
-            React.createElement("div", { id: 'tiki-2', className: 'ALLTIKIS' },
+            React.createElement("div", { id: 'tiki-2', className: 'ALLTIKIS right' },
                 React.createElement("img", { loading: 'lazy', src: tiki22_webp_1.default }),
                 React.createElement("div", { className: "tiki-layer" },
                     React.createElement("div", null),
@@ -18759,7 +18747,7 @@ const Home = () => {
                     React.createElement("br", null),
                     React.createElement("h3", null, "Hello or Goodbye"),
                     React.createElement("div", null))),
-            React.createElement("div", { id: 'tiki-3', className: 'ALLTIKIS' },
+            React.createElement("div", { id: 'tiki-3', className: 'ALLTIKIS left' },
                 React.createElement("img", { loading: 'lazy', src: tiki33_webp_1.default }),
                 React.createElement("div", { className: "tiki-layer" },
                     React.createElement("div", null),
@@ -18767,7 +18755,7 @@ const Home = () => {
                     React.createElement("br", null),
                     React.createElement("h3", null, "Have Fun"),
                     React.createElement("div", null))),
-            React.createElement("div", { id: 'tiki-4', className: 'ALLTIKIS' },
+            React.createElement("div", { id: 'tiki-4', className: 'ALLTIKIS right' },
                 React.createElement("img", { loading: 'lazy', src: tiki44_webp_1.default }),
                 React.createElement("div", { className: "tiki-layer" },
                     React.createElement("div", null),
