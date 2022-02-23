@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 import Mural from './img/mural.webp';
 import FlowerTexture from './img/flowertexture.webp'
@@ -6,7 +6,7 @@ import Trivia from './img/trivia.webp';
 import Art from './img/art.webp';
 import Music from './img/music.webp';
 
-const Events: React.FC = () => {
+const Events = () => {
 
     return (
     <div className='events-container'>

@@ -18424,26 +18424,26 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const React = __importStar(__webpack_require__(7294));
+const react_1 = __importDefault(__webpack_require__(7294));
 const react_router_dom_1 = __webpack_require__(886);
 const nav_1 = __importDefault(__webpack_require__(6682));
-const Home = React.lazy(() => Promise.resolve().then(() => __importStar(__webpack_require__(9269))));
-const Menu = React.lazy(() => Promise.resolve().then(() => __importStar(__webpack_require__(1548))));
-const Events = React.lazy(() => Promise.resolve().then(() => __importStar(__webpack_require__(7474))));
-const Contact = React.lazy(() => Promise.resolve().then(() => __importStar(__webpack_require__(3003))));
-const Footer = React.lazy(() => Promise.resolve().then(() => __importStar(__webpack_require__(7554))));
+const Home = react_1.default.lazy(() => Promise.resolve().then(() => __importStar(__webpack_require__(9269))));
+const Menu = react_1.default.lazy(() => Promise.resolve().then(() => __importStar(__webpack_require__(1548))));
+const Events = react_1.default.lazy(() => Promise.resolve().then(() => __importStar(__webpack_require__(7474))));
+const Contact = react_1.default.lazy(() => Promise.resolve().then(() => __importStar(__webpack_require__(3003))));
+const Footer = react_1.default.lazy(() => Promise.resolve().then(() => __importStar(__webpack_require__(7554))));
 const App = () => {
-    return (React.createElement(React.Fragment, null,
-        React.createElement(react_router_dom_1.HashRouter, null,
-            React.createElement(nav_1.default, null),
-            React.createElement(react_router_dom_1.Switch, null,
-                React.createElement(React.Suspense, { fallback: React.createElement("p", { className: 'loading' }, "Loading page...") },
-                    React.createElement(react_router_dom_1.Route, { exact: true, path: '/', component: Home }),
-                    React.createElement(react_router_dom_1.Route, { path: '/menu', component: Menu }),
-                    React.createElement(react_router_dom_1.Route, { path: '/events', component: Events }),
-                    React.createElement(react_router_dom_1.Route, { path: '/contact', component: Contact }))),
-            React.createElement(React.Suspense, { fallback: React.createElement("p", { className: 'loading' }, "Loading footer...") },
-                React.createElement(Footer, null)))));
+    return (react_1.default.createElement(react_1.default.Fragment, null,
+        react_1.default.createElement(react_router_dom_1.HashRouter, null,
+            react_1.default.createElement(nav_1.default, null),
+            react_1.default.createElement(react_router_dom_1.Switch, null,
+                react_1.default.createElement(react_1.default.Suspense, { fallback: react_1.default.createElement("p", { className: 'loading' }, "Loading page...") },
+                    react_1.default.createElement(react_router_dom_1.Route, { exact: true, path: '/', component: Home }),
+                    react_1.default.createElement(react_router_dom_1.Route, { path: '/menu', component: Menu }),
+                    react_1.default.createElement(react_router_dom_1.Route, { path: '/events', component: Events }),
+                    react_1.default.createElement(react_router_dom_1.Route, { path: '/contact', component: Contact }))),
+            react_1.default.createElement(react_1.default.Suspense, { fallback: react_1.default.createElement("p", { className: 'loading' }, "Loading footer...") },
+                react_1.default.createElement(Footer, null)))));
 };
 exports.default = App;
 
@@ -18478,8 +18478,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const React = __importStar(__webpack_require__(7294));
-const react_1 = __webpack_require__(7294);
+const react_1 = __importStar(__webpack_require__(7294));
 const react_map_gl_1 = __importDefault(__webpack_require__(2401));
 const wood_webp_1 = __importDefault(__webpack_require__(4165));
 const Contact = () => {
@@ -18503,25 +18502,25 @@ const Contact = () => {
             allinputs[i].value = '';
         }
     };
-    return (React.createElement("div", { className: 'contact-us-container' },
-        React.createElement("div", { className: 'contact-us-div' },
-            React.createElement("h1", null, "Contact Us"),
-            React.createElement("form", null,
-                React.createElement("div", { id: 'name' },
-                    React.createElement("label", null, "Name:"),
-                    React.createElement("input", { type: "text", id: "fname", name: "fname" })),
-                React.createElement("div", { id: 'phone' },
-                    React.createElement("label", null, "Phone"),
-                    React.createElement("input", { type: "tel", id: "lname", name: "lname" })),
-                React.createElement("div", { id: 'email' },
-                    React.createElement("label", null, "Email:"),
-                    React.createElement("input", { type: "email", id: "lname", name: "lname" })),
-                React.createElement("div", { id: 'message' },
-                    React.createElement("label", null, "Message"),
-                    React.createElement("input", { type: "text", id: "lname", name: "lname" }))),
-            React.createElement("button", { onClick: ClearInputs, id: 'submit-btn' }, "Submit")),
-        React.createElement("div", { className: "mapbox-parallax", style: { backgroundImage: `url(${wood_webp_1.default})` } },
-            React.createElement(react_map_gl_1.default, Object.assign({ className: 'mapGL' }, viewport, { width: "80vw", height: "80vh", mapStyle: "mapbox://styles/mapbox/outdoors-v11", onViewportChange: setViewport, mapboxApiAccessToken: "pk.eyJ1IjoiY2xlbWVudHNhdXZhZ2UiLCJhIjoiY2twaTRxdGZwMDA2ajJ1bGpvOTJxbHI1diJ9.htkStpTFLbJNqB_EBouPRw" })))));
+    return (react_1.default.createElement("div", { className: 'contact-us-container' },
+        react_1.default.createElement("div", { className: 'contact-us-div' },
+            react_1.default.createElement("h1", null, "Contact Us"),
+            react_1.default.createElement("form", null,
+                react_1.default.createElement("div", { id: 'name' },
+                    react_1.default.createElement("label", null, "Name:"),
+                    react_1.default.createElement("input", { type: "text", id: "fname", name: "fname" })),
+                react_1.default.createElement("div", { id: 'phone' },
+                    react_1.default.createElement("label", null, "Phone"),
+                    react_1.default.createElement("input", { type: "tel", id: "lname", name: "lname" })),
+                react_1.default.createElement("div", { id: 'email' },
+                    react_1.default.createElement("label", null, "Email:"),
+                    react_1.default.createElement("input", { type: "email", id: "lname", name: "lname" })),
+                react_1.default.createElement("div", { id: 'message' },
+                    react_1.default.createElement("label", null, "Message"),
+                    react_1.default.createElement("input", { type: "text", id: "lname", name: "lname" }))),
+            react_1.default.createElement("button", { onClick: ClearInputs, id: 'submit-btn' }, "Submit")),
+        react_1.default.createElement("div", { className: "mapbox-parallax", style: { backgroundImage: `url(${wood_webp_1.default})` } },
+            react_1.default.createElement(react_map_gl_1.default, Object.assign({ className: 'mapGL' }, viewport, { width: "80vw", height: "80vh", mapStyle: "mapbox://styles/mapbox/outdoors-v11", onViewportChange: setViewport, mapboxApiAccessToken: "pk.eyJ1IjoiY2xlbWVudHNhdXZhZ2UiLCJhIjoiY2twaTRxdGZwMDA2ajJ1bGpvOTJxbHI1diJ9.htkStpTFLbJNqB_EBouPRw" })))));
 };
 exports.default = Contact;
 
@@ -18533,90 +18532,71 @@ exports.default = Contact;
 
 "use strict";
 
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const React = __importStar(__webpack_require__(7294));
+const react_1 = __importDefault(__webpack_require__(7294));
 const mural_webp_1 = __importDefault(__webpack_require__(1394));
 const flowertexture_webp_1 = __importDefault(__webpack_require__(8844));
 const trivia_webp_1 = __importDefault(__webpack_require__(3851));
 const art_webp_1 = __importDefault(__webpack_require__(9320));
 const music_webp_1 = __importDefault(__webpack_require__(4583));
 const Events = () => {
-    return (React.createElement("div", { className: 'events-container' },
-        React.createElement("div", { className: 'events-parallax', style: { backgroundImage: `url(${mural_webp_1.default})` } },
-            React.createElement("div", { className: 'upcoming-events' },
-                React.createElement("h2", null, "Events & Entertainment"),
-                React.createElement("h5", null, "Music Times"),
-                React.createElement("p", null, "Fri & Sat 7pm to 11pm, Sunday 3pm to 7pm.  Local musicians every other Tuesday 5pm to 9pm. (Unless otherwise specified below)."),
-                React.createElement("h4", null, "February"),
-                React.createElement("div", { className: 'left-events' },
-                    React.createElement("p", null, "1 - Game Show Night 7pm"),
-                    React.createElement("p", null, "2 - Trivia 7pm"),
-                    React.createElement("p", null, "4 - Jason Alan 7pm - 11pm"),
-                    React.createElement("p", null, "5 - tba"),
-                    React.createElement("p", null, "6 - Corey Ave. Market / One Kin Roof Fundraiser 2pm - 6pm"),
-                    React.createElement("p", null, "7 - Trivia 7pm"),
-                    React.createElement("p", null, "8 - Kevin Toon 5pm - pm"),
-                    React.createElement("p", null, "9 - Paint Night 6:30pm"),
-                    React.createElement("p", null, "11 - HighLife Band 7pm - 11pm"),
-                    React.createElement("p", null, "12 - Pete & Dean 3pm - 7pm"),
-                    React.createElement("p", null, "13 - Super Bowl 6pm")),
-                React.createElement("div", { className: 'right-events' },
-                    React.createElement("p", null, "14 - Trivia 7pm"),
-                    React.createElement("p", null, "18 - tba"),
-                    React.createElement("p", null, "19 - HorsesWild Band 3pm - 7pm - Guest Bartenders!"),
-                    React.createElement("p", null, "20 - tba"),
-                    React.createElement("p", null, "21 - Trivia 7pm"),
-                    React.createElement("p", null, "22 - Kevin Toon 5pm - 9pm"),
-                    React.createElement("p", null, "23 - Game Show Night 7pm"),
-                    React.createElement("p", null, "24 - Paint Nite 6:30pm"),
-                    React.createElement("p", null, "25 - tba"),
-                    React.createElement("p", null, "26 - tba"),
-                    React.createElement("p", null, "28 - Trivia 7pm")),
-                React.createElement("h3", null, "Happy Hour 7 Days A Week!"),
-                React.createElement("h6", null, "Every Day All Day!"),
-                React.createElement("div", { className: 'events-happy-list' },
-                    React.createElement("p", null, "$13 Domestic Beer Buckets"),
-                    React.createElement("p", null, "$4 Fireball Shots"),
-                    React.createElement("p", null, "$5 House Wines"),
-                    React.createElement("p", null, "$5 Captain Morgan, Bacardi & Smirnoff")))),
-        React.createElement("div", { className: 'events-bottom', style: { backgroundImage: `url(${flowertexture_webp_1.default})` } },
-            React.createElement("div", { className: 'trivia-night' },
-                React.createElement("img", { loading: 'lazy', id: 'trivia-img', src: trivia_webp_1.default }),
-                React.createElement("h2", null, "Trivia Night"),
-                React.createElement("h4", null, "Mondays 6:30 p.m."),
-                React.createElement("p", null, "Win bar tabs! Free to play.")),
-            React.createElement("div", { className: 'guest-musician' },
-                React.createElement("img", { loading: 'lazy', src: music_webp_1.default }),
-                React.createElement("h2", null, "Local Musicians"),
-                React.createElement("h4", null, "Every Other Tuesday 5 p.m. - 9 p.m."),
-                React.createElement("p", null, "Chill out with us at Twisted Tiki every other Tuesday night with the music of the area!")),
-            React.createElement("div", { className: 'art-night' },
-                React.createElement("img", { loading: 'lazy', src: art_webp_1.default }),
-                React.createElement("h2", { className: 'animate-h2' }, "Art Night"),
-                React.createElement("h4", null, "Monthly - check the schedule for times"),
-                React.createElement("p", null, "Enjoy some great music while you browse and shop with some great local artisans!")))));
+    return (react_1.default.createElement("div", { className: 'events-container' },
+        react_1.default.createElement("div", { className: 'events-parallax', style: { backgroundImage: `url(${mural_webp_1.default})` } },
+            react_1.default.createElement("div", { className: 'upcoming-events' },
+                react_1.default.createElement("h2", null, "Events & Entertainment"),
+                react_1.default.createElement("h5", null, "Music Times"),
+                react_1.default.createElement("p", null, "Fri & Sat 7pm to 11pm, Sunday 3pm to 7pm.  Local musicians every other Tuesday 5pm to 9pm. (Unless otherwise specified below)."),
+                react_1.default.createElement("h4", null, "February"),
+                react_1.default.createElement("div", { className: 'left-events' },
+                    react_1.default.createElement("p", null, "1 - Game Show Night 7pm"),
+                    react_1.default.createElement("p", null, "2 - Trivia 7pm"),
+                    react_1.default.createElement("p", null, "4 - Jason Alan 7pm - 11pm"),
+                    react_1.default.createElement("p", null, "5 - tba"),
+                    react_1.default.createElement("p", null, "6 - Corey Ave. Market / One Kin Roof Fundraiser 2pm - 6pm"),
+                    react_1.default.createElement("p", null, "7 - Trivia 7pm"),
+                    react_1.default.createElement("p", null, "8 - Kevin Toon 5pm - pm"),
+                    react_1.default.createElement("p", null, "9 - Paint Night 6:30pm"),
+                    react_1.default.createElement("p", null, "11 - HighLife Band 7pm - 11pm"),
+                    react_1.default.createElement("p", null, "12 - Pete & Dean 3pm - 7pm"),
+                    react_1.default.createElement("p", null, "13 - Super Bowl 6pm")),
+                react_1.default.createElement("div", { className: 'right-events' },
+                    react_1.default.createElement("p", null, "14 - Trivia 7pm"),
+                    react_1.default.createElement("p", null, "18 - tba"),
+                    react_1.default.createElement("p", null, "19 - HorsesWild Band 3pm - 7pm - Guest Bartenders!"),
+                    react_1.default.createElement("p", null, "20 - tba"),
+                    react_1.default.createElement("p", null, "21 - Trivia 7pm"),
+                    react_1.default.createElement("p", null, "22 - Kevin Toon 5pm - 9pm"),
+                    react_1.default.createElement("p", null, "23 - Game Show Night 7pm"),
+                    react_1.default.createElement("p", null, "24 - Paint Nite 6:30pm"),
+                    react_1.default.createElement("p", null, "25 - tba"),
+                    react_1.default.createElement("p", null, "26 - tba"),
+                    react_1.default.createElement("p", null, "28 - Trivia 7pm")),
+                react_1.default.createElement("h3", null, "Happy Hour 7 Days A Week!"),
+                react_1.default.createElement("h6", null, "Every Day All Day!"),
+                react_1.default.createElement("div", { className: 'events-happy-list' },
+                    react_1.default.createElement("p", null, "$13 Domestic Beer Buckets"),
+                    react_1.default.createElement("p", null, "$4 Fireball Shots"),
+                    react_1.default.createElement("p", null, "$5 House Wines"),
+                    react_1.default.createElement("p", null, "$5 Captain Morgan, Bacardi & Smirnoff")))),
+        react_1.default.createElement("div", { className: 'events-bottom', style: { backgroundImage: `url(${flowertexture_webp_1.default})` } },
+            react_1.default.createElement("div", { className: 'trivia-night' },
+                react_1.default.createElement("img", { loading: 'lazy', id: 'trivia-img', src: trivia_webp_1.default }),
+                react_1.default.createElement("h2", null, "Trivia Night"),
+                react_1.default.createElement("h4", null, "Mondays 6:30 p.m."),
+                react_1.default.createElement("p", null, "Win bar tabs! Free to play.")),
+            react_1.default.createElement("div", { className: 'guest-musician' },
+                react_1.default.createElement("img", { loading: 'lazy', src: music_webp_1.default }),
+                react_1.default.createElement("h2", null, "Local Musicians"),
+                react_1.default.createElement("h4", null, "Every Other Tuesday 5 p.m. - 9 p.m."),
+                react_1.default.createElement("p", null, "Chill out with us at Twisted Tiki every other Tuesday night with the music of the area!")),
+            react_1.default.createElement("div", { className: 'art-night' },
+                react_1.default.createElement("img", { loading: 'lazy', src: art_webp_1.default }),
+                react_1.default.createElement("h2", { className: 'animate-h2' }, "Art Night"),
+                react_1.default.createElement("h4", null, "Monthly - check the schedule for times"),
+                react_1.default.createElement("p", null, "Enjoy some great music while you browse and shop with some great local artisans!")))));
 };
 exports.default = Events;
 
@@ -18628,48 +18608,29 @@ exports.default = Events;
 
 "use strict";
 
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const React = __importStar(__webpack_require__(7294));
+const react_1 = __importDefault(__webpack_require__(7294));
 const react_router_dom_1 = __webpack_require__(886);
 const tiki_webp_1 = __importDefault(__webpack_require__(7676));
 const Footer = () => {
     const TopOfPage = () => {
         window.scrollTo(0, 0);
     };
-    return (React.createElement("div", { className: 'footer' },
-        React.createElement("img", { alt: 'twisted tiki logo', src: tiki_webp_1.default, loading: 'lazy' }),
-        React.createElement("div", { className: 'footer-p' },
-            React.createElement("p", null,
+    return (react_1.default.createElement("div", { className: 'footer' },
+        react_1.default.createElement("img", { alt: 'twisted tiki logo', src: tiki_webp_1.default, loading: 'lazy' }),
+        react_1.default.createElement("div", { className: 'footer-p' },
+            react_1.default.createElement("p", null,
                 "2022 Ke Aloha Street",
-                React.createElement("br", null),
+                react_1.default.createElement("br", null),
                 "Raleigh, North Carolina",
-                React.createElement("br", null),
-                React.createElement("br", null),
+                react_1.default.createElement("br", null),
+                react_1.default.createElement("br", null),
                 "Ph. (919) 101-2022")),
-        React.createElement(react_router_dom_1.NavLink, { activeClassName: 'active', to: '/contact', onClick: TopOfPage },
-            React.createElement("button", null, "Contact Us"))));
+        react_1.default.createElement(react_router_dom_1.NavLink, { activeClassName: 'active', to: '/contact', onClick: TopOfPage },
+            react_1.default.createElement("button", null, "Contact Us"))));
 };
 exports.default = Footer;
 
@@ -18681,30 +18642,11 @@ exports.default = Footer;
 
 "use strict";
 
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const React = __importStar(__webpack_require__(7294));
+const react_1 = __importDefault(__webpack_require__(7294));
 const react_router_dom_1 = __webpack_require__(886);
 const maintiki_webp_1 = __importDefault(__webpack_require__(5666));
 const tiki11_webp_1 = __importDefault(__webpack_require__(8796));
@@ -18723,107 +18665,107 @@ const Home = () => {
     const TopOfPage = () => {
         window.scrollTo(0, 0);
     };
-    return (React.createElement("div", { className: 'contact-container' },
-        React.createElement("div", { className: "parallax", style: { backgroundImage: `url(${wood_webp_1.default})` } },
-            React.createElement("div", { className: 'main-landing', style: { backgroundImage: `url(${maintiki_webp_1.default})` } },
-                React.createElement("div", null),
-                React.createElement("h1", null, "Welcome to Twisted Tiki!"),
-                React.createElement("h2", null, "a Polynesian-inspired Bar & Grille"),
-                React.createElement("div", null))),
-        React.createElement("div", { className: 'tikis', style: { backgroundImage: `url(${mesh_webp_1.default})` } },
-            React.createElement("div", { id: 'tiki-1', className: 'ALLTIKIS left' },
-                React.createElement("img", { loading: 'lazy', src: tiki11_webp_1.default }),
-                React.createElement("div", { className: "tiki-layer" },
-                    React.createElement("div", null),
-                    React.createElement("h2", null, "Ke aloha"),
-                    React.createElement("br", null),
-                    React.createElement("h3", null, "Cheers"),
-                    React.createElement("div", null))),
-            React.createElement("div", { id: 'tiki-2', className: 'ALLTIKIS right' },
-                React.createElement("img", { loading: 'lazy', src: tiki22_webp_1.default }),
-                React.createElement("div", { className: "tiki-layer" },
-                    React.createElement("div", null),
-                    React.createElement("h2", null, "Aloha"),
-                    React.createElement("br", null),
-                    React.createElement("h3", null, "Hello or Goodbye"),
-                    React.createElement("div", null))),
-            React.createElement("div", { id: 'tiki-3', className: 'ALLTIKIS left' },
-                React.createElement("img", { loading: 'lazy', src: tiki33_webp_1.default }),
-                React.createElement("div", { className: "tiki-layer" },
-                    React.createElement("div", null),
-                    React.createElement("h2", null, "I le\u02BBale\u02BBa k\u0101u"),
-                    React.createElement("br", null),
-                    React.createElement("h3", null, "Have Fun"),
-                    React.createElement("div", null))),
-            React.createElement("div", { id: 'tiki-4', className: 'ALLTIKIS right' },
-                React.createElement("img", { loading: 'lazy', src: tiki44_webp_1.default }),
-                React.createElement("div", { className: "tiki-layer" },
-                    React.createElement("div", null),
-                    React.createElement("h2", null, "E hele k\u0101ua"),
-                    React.createElement("br", null),
-                    React.createElement("h3", null, "Let's Party"),
-                    React.createElement("div", null)))),
-        React.createElement("div", { className: 'parallax2', style: { backgroundImage: `url(${tikibg_webp_1.default})` } },
-            React.createElement("div", { className: 'hours-container' },
-                React.createElement("div", { className: 'hours' },
-                    React.createElement("h1", null, "Hours"),
-                    React.createElement("ul", null,
-                        React.createElement("li", null, "Mon - Thurs:  11:30am - 11pm-ish"),
-                        React.createElement("li", null, "Fri Sat:  11:30am - midnight-ish"),
-                        React.createElement("li", null, "Sunday:  11am - 11pm-ish"),
-                        React.createElement("li", null, "Brunch served 11am"))),
-                React.createElement("div", { className: 'happy-hour' },
-                    React.createElement("h1", null, "Happy Hour"),
-                    React.createElement("div", null),
-                    React.createElement("h4", { className: 'happy-hour-h4' }, "Everyday Day All Day!"),
-                    React.createElement("div", null),
-                    React.createElement("ul", { className: 'happy-hour-ul' },
-                        React.createElement("li", null, "$13 Domestic Beer Buckets"),
-                        React.createElement("li", null, "$4 Fireball Shots "),
-                        React.createElement("li", null, "$5 House Wines"),
-                        React.createElement("li", null, "$5 Captain Morgan, Bacardi, Smirnoff"),
-                        React.createElement("li", null, "$15 keep the mug with a drink of choice, take a piece of Hawaii home with you! ")),
-                    React.createElement("div", null)))),
-        React.createElement("div", { className: 'come-on-in' },
-            React.createElement("div", { className: 'come-on-in-left' },
-                React.createElement("video", { className: 'pineapple-mp4', autoPlay: true, loop: true },
-                    React.createElement("source", { src: pineapple_mp4_1.default, type: "video/mp4" }),
+    return (react_1.default.createElement("div", { className: 'contact-container' },
+        react_1.default.createElement("div", { className: "parallax", style: { backgroundImage: `url(${wood_webp_1.default})` } },
+            react_1.default.createElement("div", { className: 'main-landing', style: { backgroundImage: `url(${maintiki_webp_1.default})` } },
+                react_1.default.createElement("div", null),
+                react_1.default.createElement("h1", null, "Welcome to Twisted Tiki!"),
+                react_1.default.createElement("h2", null, "a Polynesian-inspired Bar & Grille"),
+                react_1.default.createElement("div", null))),
+        react_1.default.createElement("div", { className: 'tikis', style: { backgroundImage: `url(${mesh_webp_1.default})` } },
+            react_1.default.createElement("div", { id: 'tiki-1', className: 'ALLTIKIS left' },
+                react_1.default.createElement("img", { loading: 'lazy', src: tiki11_webp_1.default }),
+                react_1.default.createElement("div", { className: "tiki-layer" },
+                    react_1.default.createElement("div", null),
+                    react_1.default.createElement("h2", null, "Ke aloha"),
+                    react_1.default.createElement("br", null),
+                    react_1.default.createElement("h3", null, "Cheers"),
+                    react_1.default.createElement("div", null))),
+            react_1.default.createElement("div", { id: 'tiki-2', className: 'ALLTIKIS right' },
+                react_1.default.createElement("img", { loading: 'lazy', src: tiki22_webp_1.default }),
+                react_1.default.createElement("div", { className: "tiki-layer" },
+                    react_1.default.createElement("div", null),
+                    react_1.default.createElement("h2", null, "Aloha"),
+                    react_1.default.createElement("br", null),
+                    react_1.default.createElement("h3", null, "Hello or Goodbye"),
+                    react_1.default.createElement("div", null))),
+            react_1.default.createElement("div", { id: 'tiki-3', className: 'ALLTIKIS left' },
+                react_1.default.createElement("img", { loading: 'lazy', src: tiki33_webp_1.default }),
+                react_1.default.createElement("div", { className: "tiki-layer" },
+                    react_1.default.createElement("div", null),
+                    react_1.default.createElement("h2", null, "I le\u02BBale\u02BBa k\u0101u"),
+                    react_1.default.createElement("br", null),
+                    react_1.default.createElement("h3", null, "Have Fun"),
+                    react_1.default.createElement("div", null))),
+            react_1.default.createElement("div", { id: 'tiki-4', className: 'ALLTIKIS right' },
+                react_1.default.createElement("img", { loading: 'lazy', src: tiki44_webp_1.default }),
+                react_1.default.createElement("div", { className: "tiki-layer" },
+                    react_1.default.createElement("div", null),
+                    react_1.default.createElement("h2", null, "E hele k\u0101ua"),
+                    react_1.default.createElement("br", null),
+                    react_1.default.createElement("h3", null, "Let's Party"),
+                    react_1.default.createElement("div", null)))),
+        react_1.default.createElement("div", { className: 'parallax2', style: { backgroundImage: `url(${tikibg_webp_1.default})` } },
+            react_1.default.createElement("div", { className: 'hours-container' },
+                react_1.default.createElement("div", { className: 'hours' },
+                    react_1.default.createElement("h1", null, "Hours"),
+                    react_1.default.createElement("ul", null,
+                        react_1.default.createElement("li", null, "Mon - Thurs:  11:30am - 11pm-ish"),
+                        react_1.default.createElement("li", null, "Fri Sat:  11:30am - midnight-ish"),
+                        react_1.default.createElement("li", null, "Sunday:  11am - 11pm-ish"),
+                        react_1.default.createElement("li", null, "Brunch served 11am"))),
+                react_1.default.createElement("div", { className: 'happy-hour' },
+                    react_1.default.createElement("h1", null, "Happy Hour"),
+                    react_1.default.createElement("div", null),
+                    react_1.default.createElement("h4", { className: 'happy-hour-h4' }, "Everyday Day All Day!"),
+                    react_1.default.createElement("div", null),
+                    react_1.default.createElement("ul", { className: 'happy-hour-ul' },
+                        react_1.default.createElement("li", null, "$13 Domestic Beer Buckets"),
+                        react_1.default.createElement("li", null, "$4 Fireball Shots "),
+                        react_1.default.createElement("li", null, "$5 House Wines"),
+                        react_1.default.createElement("li", null, "$5 Captain Morgan, Bacardi, Smirnoff"),
+                        react_1.default.createElement("li", null, "$15 keep the mug with a drink of choice, take a piece of Hawaii home with you! ")),
+                    react_1.default.createElement("div", null)))),
+        react_1.default.createElement("div", { className: 'come-on-in' },
+            react_1.default.createElement("div", { className: 'come-on-in-left' },
+                react_1.default.createElement("video", { className: 'pineapple-mp4', autoPlay: true, loop: true },
+                    react_1.default.createElement("source", { src: pineapple_mp4_1.default, type: "video/mp4" }),
                     "Your browser does not support the video tag.")),
-            React.createElement("div", { className: 'come-on-in-right' },
-                React.createElement("div", null),
-                React.createElement("div", null),
-                React.createElement("h1", { className: 'first-h1' }, "...Come On In!"),
-                React.createElement("div", null),
-                React.createElement("h1", { className: 'second-h1' }, "Tropical Vibes Inside"),
-                React.createElement("div", null),
-                React.createElement("p", null,
+            react_1.default.createElement("div", { className: 'come-on-in-right' },
+                react_1.default.createElement("div", null),
+                react_1.default.createElement("div", null),
+                react_1.default.createElement("h1", { className: 'first-h1' }, "...Come On In!"),
+                react_1.default.createElement("div", null),
+                react_1.default.createElement("h1", { className: 'second-h1' }, "Tropical Vibes Inside"),
+                react_1.default.createElement("div", null),
+                react_1.default.createElement("p", null,
                     "Get ready to experience the tropical vibe at Twisted Tiki. Our Polynesian-inspired cocktails along with our eclectic tiki d\u00E9cor are your ticket to paradise!",
-                    React.createElement("br", null),
-                    React.createElement("br", null),
+                    react_1.default.createElement("br", null),
+                    react_1.default.createElement("br", null),
                     "What's a tropical tiki bar without some music? Expect to find the area's best bands and musicians here at Twisted Tiki along with other fun events like Art Night, Paint Night, Trivia Night and more!",
-                    React.createElement("br", null),
-                    React.createElement("br", null),
+                    react_1.default.createElement("br", null),
+                    react_1.default.createElement("br", null),
                     "Every day is a day in paradise at The Twisted Tiki. Aloha!"),
-                React.createElement("div", null),
-                React.createElement(react_router_dom_1.NavLink, { activeClassName: 'active', to: '/events', onClick: TopOfPage },
-                    React.createElement("button", { id: 'button1' }, "See What's Happening @ Twisted Tiki!")),
-                React.createElement("div", null),
-                React.createElement("div", null))),
-        React.createElement("div", { className: "pineapplebg-parallax" },
-            React.createElement("div", { className: 'pineapplebg-bluebg' },
-                React.createElement("h1", null,
+                react_1.default.createElement("div", null),
+                react_1.default.createElement(react_router_dom_1.NavLink, { activeClassName: 'active', to: '/events', onClick: TopOfPage },
+                    react_1.default.createElement("button", { id: 'button1' }, "See What's Happening @ Twisted Tiki!")),
+                react_1.default.createElement("div", null),
+                react_1.default.createElement("div", null))),
+        react_1.default.createElement("div", { className: "pineapplebg-parallax" },
+            react_1.default.createElement("div", { className: 'pineapplebg-bluebg' },
+                react_1.default.createElement("h1", null,
                     "Get the ",
-                    React.createElement("span", { id: 'S1' }, "S"),
-                    React.createElement("span", { id: 'S2' }, "w"),
-                    React.createElement("span", { id: 'S3' }, "a"),
-                    React.createElement("span", { id: 'S4' }, "g")),
-                React.createElement("div", { className: 'pineapplebg-images' },
-                    React.createElement("div", null),
-                    React.createElement("img", { alt: 'twisted tiki merch', loading: 'lazy', src: shirt1_webp_1.default }),
-                    React.createElement("img", { alt: 'twisted tiki merch', loading: 'lazy', src: shirt2_webp_1.default }),
-                    React.createElement("img", { alt: 'twisted tiki merch', loading: 'lazy', src: shirt3_webp_1.default }),
-                    React.createElement("div", null)),
-                React.createElement("p", null, "Get Twisted with our Twisted Tiki merch! Women's Tees, Men's Tees, Tumblers, Koozies and Stickers available now!")))));
+                    react_1.default.createElement("span", { id: 'S1' }, "S"),
+                    react_1.default.createElement("span", { id: 'S2' }, "w"),
+                    react_1.default.createElement("span", { id: 'S3' }, "a"),
+                    react_1.default.createElement("span", { id: 'S4' }, "g")),
+                react_1.default.createElement("div", { className: 'pineapplebg-images' },
+                    react_1.default.createElement("div", null),
+                    react_1.default.createElement("img", { alt: 'twisted tiki merch', loading: 'lazy', src: shirt1_webp_1.default }),
+                    react_1.default.createElement("img", { alt: 'twisted tiki merch', loading: 'lazy', src: shirt2_webp_1.default }),
+                    react_1.default.createElement("img", { alt: 'twisted tiki merch', loading: 'lazy', src: shirt3_webp_1.default }),
+                    react_1.default.createElement("div", null)),
+                react_1.default.createElement("p", null, "Get Twisted with our Twisted Tiki merch! Women's Tees, Men's Tees, Tumblers, Koozies and Stickers available now!")))));
 };
 exports.default = Home;
 
@@ -18835,30 +18777,11 @@ exports.default = Home;
 
 "use strict";
 
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const React = __importStar(__webpack_require__(7294));
+const react_1 = __importDefault(__webpack_require__(7294));
 const mesh_webp_1 = __importDefault(__webpack_require__(9712));
 const wood_webp_1 = __importDefault(__webpack_require__(4165));
 const menu1_webp_1 = __importDefault(__webpack_require__(4481));
@@ -18866,108 +18789,108 @@ const menu2_webp_1 = __importDefault(__webpack_require__(3312));
 const pouring_mp4_1 = __importDefault(__webpack_require__(1731));
 //                <img id='hh-img' src={Pouring} loading='lazy'/>
 const Menu = () => {
-    return (React.createElement("div", { className: 'menu-container', style: { backgroundImage: `url(${mesh_webp_1.default})` } },
-        React.createElement("div", { className: 'white-menu' },
-            React.createElement("img", { src: menu1_webp_1.default }),
-            React.createElement("img", { src: menu2_webp_1.default, loading: 'lazy' })),
-        React.createElement("div", { className: 'cocktails-parallax', style: { backgroundImage: `url(${wood_webp_1.default})` } },
-            React.createElement("div", { className: 'cocktails' },
-                React.createElement("h1", null, "Cocktails"),
-                React.createElement("div", { className: 'cocktails-left' },
-                    React.createElement("div", { className: 'cocktails-left-item' },
-                        React.createElement("h4", null, "Aloha Punch"),
-                        React.createElement("p", null, "Light rum, pineapple rum and coconut rum with pineapple & cranberry juice topped with fresh coconut flakes and a fresh rum soaked pineapple")),
-                    React.createElement("div", { className: 'cocktails-left-item' },
-                        React.createElement("h4", null, "BAJA Berry Blaster"),
-                        React.createElement("p", null, "Smirnoff Blueberry vodka with lemonade and splash of club soda, blueberry syrup and booze soaked blueberries")),
-                    React.createElement("div", { className: 'cocktails-left-item' },
-                        React.createElement("h4", null, "Quarantini"),
-                        React.createElement("p", null, "Malibu rum, blue curacao and pineapple juice topped with fresh rum soaked pineapples"))),
-                React.createElement("div", { className: 'cocktails-right' },
-                    React.createElement("div", { className: 'cocktails-right-item' },
-                        React.createElement("h4", null, "Maui Mai Tai"),
-                        React.createElement("p", null, "Bacardi gold rum, lime juice, orgeat, orange curacao, simple syrup, served with fresh orange & cherry")),
-                    React.createElement("div", { className: 'cocktails-right-item' },
-                        React.createElement("h4", null, "Hula Punch"),
-                        React.createElement("p", null, "Captain Morgan spiced and pineapple rums, peach schnapps, cranberry and pineapple juices garnished with fresh boozy pineapple chunks and cherry")),
-                    React.createElement("div", { className: 'cocktails-right-item' },
-                        React.createElement("h3", null, "Order your cocktail in one of our take home tiki mugs!"))))),
-        React.createElement("div", { className: 'beverages' },
-            React.createElement("h1", { id: 'first-h1' }),
-            React.createElement("h1", { id: 'second-h1' }),
-            React.createElement("span", null, "*List subject to change*"),
-            React.createElement("div", { className: 'beverages-left' },
-                React.createElement("h4", null, "Domestics"),
-                React.createElement("p", null, "Bud / Bud Light / Bud Light Lime"),
-                React.createElement("p", null, "Coors Light"),
-                React.createElement("p", null, "Miller Lite / Miller High Life"),
-                React.createElement("p", null, "Michelob Ultra"),
-                React.createElement("p", null, "Pabst Blue Ribbon"),
-                React.createElement("p", null, "Busch Light"),
-                React.createElement("p", null, "Natty Light"),
-                React.createElement("p", null, "Yuengling"),
-                React.createElement("p", null, "Blue Moon Light Sky"),
-                React.createElement("h4", null, "Imports"),
-                React.createElement("p", null, "Corona / Corona Light / Corona Premier"),
-                React.createElement("p", null, "Heineken"),
-                React.createElement("p", null, "Stella Artois"),
-                React.createElement("p", null, "Guinness"),
-                React.createElement("p", null, "Smithwick's"),
-                React.createElement("h4", null, "Non-Alcoholic / Gluten-Free"),
-                React.createElement("p", null, "Heineken 0.0 (non-alcoholic)"),
-                React.createElement("p", null, "Redbridge Amber (gluten-free)")),
-            React.createElement("div", { className: 'beverages-middle' },
-                React.createElement("h4", null, "American Craft Beers"),
-                React.createElement("p", null, "3 Daughter's Beach Blonde Ale"),
-                React.createElement("p", null, "3 Daughter's Rod Bender Red Ale"),
-                React.createElement("p", null, "Cycle Brewing Cream & Sugar, Please Porter"),
-                React.createElement("p", null, "Kona Big Wave Golden Ale"),
-                React.createElement("p", null, "Kona Longboard Lager"),
-                React.createElement("p", null, "Sierra Nevada Pale Ale"),
-                React.createElement("p", null, "Cigar City Jai Alai IPA"),
-                React.createElement("p", null, "SweetWater 420 Strain G13 IPA"),
-                React.createElement("p", null, "New Belgium Voodoo Ranger IPA"),
-                React.createElement("p", null, "Elysian Space Dust IPA"),
-                React.createElement("h4", null, "Ciders / Other"),
-                React.createElement("p", null, "3 Daughter's Key Lime Cider"),
-                React.createElement("p", null, "Angry Orchard Cider"),
-                React.createElement("p", null, "Smirnoff Ice"),
-                React.createElement("p", null, "Bud Lite Seltzer"),
-                React.createElement("p", null, "White Claw"),
-                React.createElement("p", null, "High Noon"),
-                React.createElement("p", null, "Wicked Weed Burst Watermelon Dragonfruit Sour"),
-                React.createElement("p", null, "Cutwater Tiki Rum Mai Tai (12.5%) (GF)")),
-            React.createElement("div", { className: 'beverages-right' },
-                React.createElement("h4", null, "House Wines"),
-                React.createElement("p", null, "White Zinfandel"),
-                React.createElement("p", null, "Pinot Grigio | Chardonnay"),
-                React.createElement("p", null, "Merlot | Cabernet | Pinot Noir"),
-                React.createElement("h4", null, "White Wine"),
-                React.createElement("p", null, "Kendall Jackson Chardonnay"),
-                React.createElement("p", null, "Toasted Head Chardonnay"),
-                React.createElement("p", null, "Ruffino Pinot Grigio"),
-                React.createElement("p", null, "Kim Crawford Sauvignon Blanc"),
-                React.createElement("p", null, "Oyster Bay Sauvignon Blanc"),
-                React.createElement("h4", null, "Red Wine"),
-                React.createElement("p", null, "Murphy-Goode Cabernet Sauvignon"),
-                React.createElement("p", null, "Sea Glass Pinot Noir"),
-                React.createElement("p", null, "Kenwood Merlot"),
-                React.createElement("p", null, "Cardos Malbec"),
-                React.createElement("h4", null, "Sparkling"),
-                React.createElement("p", null, "J. Roget Brut Champagne Split"),
-                React.createElement("p", null, "Moet Chandon Champagne Split"))),
-        React.createElement("div", { className: 'menu-happy-hour' },
-            React.createElement("div", { className: 'happy-hour-left' },
-                React.createElement("video", { id: 'hh-img', autoPlay: true, loop: true },
-                    React.createElement("source", { src: pouring_mp4_1.default, type: "video/mp4" }),
+    return (react_1.default.createElement("div", { className: 'menu-container', style: { backgroundImage: `url(${mesh_webp_1.default})` } },
+        react_1.default.createElement("div", { className: 'white-menu' },
+            react_1.default.createElement("img", { src: menu1_webp_1.default }),
+            react_1.default.createElement("img", { src: menu2_webp_1.default, loading: 'lazy' })),
+        react_1.default.createElement("div", { className: 'cocktails-parallax', style: { backgroundImage: `url(${wood_webp_1.default})` } },
+            react_1.default.createElement("div", { className: 'cocktails' },
+                react_1.default.createElement("h1", null, "Cocktails"),
+                react_1.default.createElement("div", { className: 'cocktails-left' },
+                    react_1.default.createElement("div", { className: 'cocktails-left-item' },
+                        react_1.default.createElement("h4", null, "Aloha Punch"),
+                        react_1.default.createElement("p", null, "Light rum, pineapple rum and coconut rum with pineapple & cranberry juice topped with fresh coconut flakes and a fresh rum soaked pineapple")),
+                    react_1.default.createElement("div", { className: 'cocktails-left-item' },
+                        react_1.default.createElement("h4", null, "BAJA Berry Blaster"),
+                        react_1.default.createElement("p", null, "Smirnoff Blueberry vodka with lemonade and splash of club soda, blueberry syrup and booze soaked blueberries")),
+                    react_1.default.createElement("div", { className: 'cocktails-left-item' },
+                        react_1.default.createElement("h4", null, "Quarantini"),
+                        react_1.default.createElement("p", null, "Malibu rum, blue curacao and pineapple juice topped with fresh rum soaked pineapples"))),
+                react_1.default.createElement("div", { className: 'cocktails-right' },
+                    react_1.default.createElement("div", { className: 'cocktails-right-item' },
+                        react_1.default.createElement("h4", null, "Maui Mai Tai"),
+                        react_1.default.createElement("p", null, "Bacardi gold rum, lime juice, orgeat, orange curacao, simple syrup, served with fresh orange & cherry")),
+                    react_1.default.createElement("div", { className: 'cocktails-right-item' },
+                        react_1.default.createElement("h4", null, "Hula Punch"),
+                        react_1.default.createElement("p", null, "Captain Morgan spiced and pineapple rums, peach schnapps, cranberry and pineapple juices garnished with fresh boozy pineapple chunks and cherry")),
+                    react_1.default.createElement("div", { className: 'cocktails-right-item' },
+                        react_1.default.createElement("h3", null, "Order your cocktail in one of our take home tiki mugs!"))))),
+        react_1.default.createElement("div", { className: 'beverages' },
+            react_1.default.createElement("h1", { id: 'first-h1' }),
+            react_1.default.createElement("h1", { id: 'second-h1' }),
+            react_1.default.createElement("span", null, "*List subject to change*"),
+            react_1.default.createElement("div", { className: 'beverages-left' },
+                react_1.default.createElement("h4", null, "Domestics"),
+                react_1.default.createElement("p", null, "Bud / Bud Light / Bud Light Lime"),
+                react_1.default.createElement("p", null, "Coors Light"),
+                react_1.default.createElement("p", null, "Miller Lite / Miller High Life"),
+                react_1.default.createElement("p", null, "Michelob Ultra"),
+                react_1.default.createElement("p", null, "Pabst Blue Ribbon"),
+                react_1.default.createElement("p", null, "Busch Light"),
+                react_1.default.createElement("p", null, "Natty Light"),
+                react_1.default.createElement("p", null, "Yuengling"),
+                react_1.default.createElement("p", null, "Blue Moon Light Sky"),
+                react_1.default.createElement("h4", null, "Imports"),
+                react_1.default.createElement("p", null, "Corona / Corona Light / Corona Premier"),
+                react_1.default.createElement("p", null, "Heineken"),
+                react_1.default.createElement("p", null, "Stella Artois"),
+                react_1.default.createElement("p", null, "Guinness"),
+                react_1.default.createElement("p", null, "Smithwick's"),
+                react_1.default.createElement("h4", null, "Non-Alcoholic / Gluten-Free"),
+                react_1.default.createElement("p", null, "Heineken 0.0 (non-alcoholic)"),
+                react_1.default.createElement("p", null, "Redbridge Amber (gluten-free)")),
+            react_1.default.createElement("div", { className: 'beverages-middle' },
+                react_1.default.createElement("h4", null, "American Craft Beers"),
+                react_1.default.createElement("p", null, "3 Daughter's Beach Blonde Ale"),
+                react_1.default.createElement("p", null, "3 Daughter's Rod Bender Red Ale"),
+                react_1.default.createElement("p", null, "Cycle Brewing Cream & Sugar, Please Porter"),
+                react_1.default.createElement("p", null, "Kona Big Wave Golden Ale"),
+                react_1.default.createElement("p", null, "Kona Longboard Lager"),
+                react_1.default.createElement("p", null, "Sierra Nevada Pale Ale"),
+                react_1.default.createElement("p", null, "Cigar City Jai Alai IPA"),
+                react_1.default.createElement("p", null, "SweetWater 420 Strain G13 IPA"),
+                react_1.default.createElement("p", null, "New Belgium Voodoo Ranger IPA"),
+                react_1.default.createElement("p", null, "Elysian Space Dust IPA"),
+                react_1.default.createElement("h4", null, "Ciders / Other"),
+                react_1.default.createElement("p", null, "3 Daughter's Key Lime Cider"),
+                react_1.default.createElement("p", null, "Angry Orchard Cider"),
+                react_1.default.createElement("p", null, "Smirnoff Ice"),
+                react_1.default.createElement("p", null, "Bud Lite Seltzer"),
+                react_1.default.createElement("p", null, "White Claw"),
+                react_1.default.createElement("p", null, "High Noon"),
+                react_1.default.createElement("p", null, "Wicked Weed Burst Watermelon Dragonfruit Sour"),
+                react_1.default.createElement("p", null, "Cutwater Tiki Rum Mai Tai (12.5%) (GF)")),
+            react_1.default.createElement("div", { className: 'beverages-right' },
+                react_1.default.createElement("h4", null, "House Wines"),
+                react_1.default.createElement("p", null, "White Zinfandel"),
+                react_1.default.createElement("p", null, "Pinot Grigio | Chardonnay"),
+                react_1.default.createElement("p", null, "Merlot | Cabernet | Pinot Noir"),
+                react_1.default.createElement("h4", null, "White Wine"),
+                react_1.default.createElement("p", null, "Kendall Jackson Chardonnay"),
+                react_1.default.createElement("p", null, "Toasted Head Chardonnay"),
+                react_1.default.createElement("p", null, "Ruffino Pinot Grigio"),
+                react_1.default.createElement("p", null, "Kim Crawford Sauvignon Blanc"),
+                react_1.default.createElement("p", null, "Oyster Bay Sauvignon Blanc"),
+                react_1.default.createElement("h4", null, "Red Wine"),
+                react_1.default.createElement("p", null, "Murphy-Goode Cabernet Sauvignon"),
+                react_1.default.createElement("p", null, "Sea Glass Pinot Noir"),
+                react_1.default.createElement("p", null, "Kenwood Merlot"),
+                react_1.default.createElement("p", null, "Cardos Malbec"),
+                react_1.default.createElement("h4", null, "Sparkling"),
+                react_1.default.createElement("p", null, "J. Roget Brut Champagne Split"),
+                react_1.default.createElement("p", null, "Moet Chandon Champagne Split"))),
+        react_1.default.createElement("div", { className: 'menu-happy-hour' },
+            react_1.default.createElement("div", { className: 'happy-hour-left' },
+                react_1.default.createElement("video", { id: 'hh-img', autoPlay: true, loop: true },
+                    react_1.default.createElement("source", { src: pouring_mp4_1.default, type: "video/mp4" }),
                     "Your browser does not support the video tag."),
-                React.createElement("p", { id: 'hh-p' }, "Happy Hour")),
-            React.createElement("div", { className: 'happy-hour-right' },
-                React.createElement("h1", null, "All Day Every Day"),
-                React.createElement("p", null, "$13 Domestic Beer Buckets"),
-                React.createElement("p", null, "$4 Fireball Shots"),
-                React.createElement("p", null, "$5 House Wines"),
-                React.createElement("p", null, "$5 Captain Morgan, Bacardi & Smirnoff")))));
+                react_1.default.createElement("p", { id: 'hh-p' }, "Happy Hour")),
+            react_1.default.createElement("div", { className: 'happy-hour-right' },
+                react_1.default.createElement("h1", null, "All Day Every Day"),
+                react_1.default.createElement("p", null, "$13 Domestic Beer Buckets"),
+                react_1.default.createElement("p", null, "$4 Fireball Shots"),
+                react_1.default.createElement("p", null, "$5 House Wines"),
+                react_1.default.createElement("p", null, "$5 Captain Morgan, Bacardi & Smirnoff")))));
 };
 exports.default = Menu;
 
@@ -18979,55 +18902,36 @@ exports.default = Menu;
 
 "use strict";
 
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const React = __importStar(__webpack_require__(7294));
+const react_1 = __importDefault(__webpack_require__(7294));
 const react_router_dom_1 = __webpack_require__(886);
 const tiki_webp_1 = __importDefault(__webpack_require__(7676));
 const Nav = () => {
     const TopOfPage = () => {
         window.scrollTo(0, 0);
     };
-    return (React.createElement(React.Fragment, null,
-        React.createElement("div", { className: 'nav-container', id: 'to-nav-on-click' },
-            React.createElement("div", { className: 'blankdiv' }),
-            React.createElement("div", { className: 'nav-logo' },
-                React.createElement(react_router_dom_1.NavLink, { exact: true, activeClassName: 'active', to: '/', onClick: TopOfPage },
-                    React.createElement("img", { alt: 'twisted tiki logo', src: tiki_webp_1.default }))),
-            React.createElement("div", { className: 'nav' },
-                React.createElement(react_router_dom_1.NavLink, { exact: true, activeClassName: 'active', to: '/', onClick: TopOfPage },
-                    React.createElement("span", null, "Home")),
-                React.createElement("p", { className: 'seperator' }, "|"),
-                React.createElement(react_router_dom_1.NavLink, { activeClassName: 'active', to: '/menu', onClick: TopOfPage },
-                    React.createElement("span", null, "Menu")),
-                React.createElement("p", { className: 'seperator' }, "|"),
-                React.createElement(react_router_dom_1.NavLink, { activeClassName: 'active', to: '/events', onClick: TopOfPage },
-                    React.createElement("span", { id: 'EventsNHappenings' }, "Events")),
-                React.createElement("p", { className: 'seperator' }, "|"),
-                React.createElement(react_router_dom_1.NavLink, { activeClassName: 'active', to: '/contact', onClick: TopOfPage },
-                    React.createElement("span", null, "Contact Us"))),
-            React.createElement("div", { className: 'blankdiv' }))));
+    return (react_1.default.createElement(react_1.default.Fragment, null,
+        react_1.default.createElement("div", { className: 'nav-container', id: 'to-nav-on-click' },
+            react_1.default.createElement("div", { className: 'blankdiv' }),
+            react_1.default.createElement("div", { className: 'nav-logo' },
+                react_1.default.createElement(react_router_dom_1.NavLink, { exact: true, activeClassName: 'active', to: '/', onClick: TopOfPage },
+                    react_1.default.createElement("img", { alt: 'twisted tiki logo', src: tiki_webp_1.default }))),
+            react_1.default.createElement("div", { className: 'nav' },
+                react_1.default.createElement(react_router_dom_1.NavLink, { exact: true, activeClassName: 'active', to: '/', onClick: TopOfPage },
+                    react_1.default.createElement("span", null, "Home")),
+                react_1.default.createElement("p", { className: 'seperator' }, "|"),
+                react_1.default.createElement(react_router_dom_1.NavLink, { activeClassName: 'active', to: '/menu', onClick: TopOfPage },
+                    react_1.default.createElement("span", null, "Menu")),
+                react_1.default.createElement("p", { className: 'seperator' }, "|"),
+                react_1.default.createElement(react_router_dom_1.NavLink, { activeClassName: 'active', to: '/events', onClick: TopOfPage },
+                    react_1.default.createElement("span", { id: 'EventsNHappenings' }, "Events")),
+                react_1.default.createElement("p", { className: 'seperator' }, "|"),
+                react_1.default.createElement(react_router_dom_1.NavLink, { activeClassName: 'active', to: '/contact', onClick: TopOfPage },
+                    react_1.default.createElement("span", null, "Contact Us"))),
+            react_1.default.createElement("div", { className: 'blankdiv' }))));
 };
 exports.default = Nav;
 
@@ -19039,35 +18943,16 @@ exports.default = Nav;
 
 "use strict";
 
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const React = __importStar(__webpack_require__(7294));
+const react_1 = __importDefault(__webpack_require__(7294));
 const react_dom_1 = __webpack_require__(3935);
 __webpack_require__(7279);
 __webpack_require__(5789);
 const App_1 = __importDefault(__webpack_require__(8957));
-react_dom_1.render(React.createElement(App_1.default, null), document.querySelector('#root'));
+react_dom_1.render(react_1.default.createElement(App_1.default, null), document.querySelector('#root'));
 
 
 /***/ })

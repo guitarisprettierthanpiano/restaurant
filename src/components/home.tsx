@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import MainTiki from './img/maintiki.webp'
@@ -14,7 +14,7 @@ import Shirt1 from './img/shirt1.webp'
 import Shirt2 from './img/shirt2.webp'
 import Shirt3 from './img/shirt3.webp'
 
-const Home: React.FC = () => {
+const Home = () => {
 
     //scroll to top of page on clicking a nav link
     const TopOfPage = () => {

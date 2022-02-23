@@ -1,10 +1,8 @@
-import * as React from 'react';
-import { useState } from 'react';
-
+import React, { useState } from 'react';
 import MapGL from 'react-map-gl';
 import Wood from './img/wood.webp';
 
-const Contact: React.FC = () => {
+const Contact = () => {
 
     //settings for mapgl, default generic raleigh zoomed out. mapStyle is from https://docs.mapbox.com/api/maps/styles/#list-styles 
     const [viewport, setViewport] = useState({

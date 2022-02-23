@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 import Mesh from './img/mesh.webp'
 import Wood from './img/wood.webp'
@@ -7,7 +7,7 @@ import Menu2 from './img/menu2.webp'
 import Pouring from './img/pouring.mp4'
 
 //                <img id='hh-img' src={Pouring} loading='lazy'/>
-const Menu: React.FC = () => {
+const Menu = () => {
 
     return (
     <div className='menu-container' style={{backgroundImage: `url(${Mesh})`}}>

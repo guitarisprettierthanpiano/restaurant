@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Switch, HashRouter, Route } from 'react-router-dom';
 
 import Nav from './components/nav'
