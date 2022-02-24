@@ -18424,7 +18424,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const react_1 = __importStar(__webpack_require__(7294));
+const react_1 = __importDefault(__webpack_require__(7294));
 const react_router_dom_1 = __webpack_require__(886);
 const nav_1 = __importDefault(__webpack_require__(6682));
 const Spinner_1 = __importDefault(__webpack_require__(4204));
@@ -18434,18 +18434,9 @@ const Events = react_1.default.lazy(() => Promise.resolve().then(() => __importS
 const Contact = react_1.default.lazy(() => Promise.resolve().then(() => __importStar(__webpack_require__(3003))));
 const Footer = react_1.default.lazy(() => Promise.resolve().then(() => __importStar(__webpack_require__(7554))));
 const App = () => {
-    const [isLoading, setIsLoading] = react_1.useState(true);
-    react_1.useState(() => {
-        function greet() {
-            setIsLoading(false);
-        }
-        setTimeout(greet, 2000);
-    });
-    if (isLoading === true) {
-        return react_1.default.createElement(Spinner_1.default, null);
-    }
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(react_router_dom_1.HashRouter, null,
+            react_1.default.createElement(Spinner_1.default, null),
             react_1.default.createElement(nav_1.default, null),
             react_1.default.createElement(react_router_dom_1.Switch, null,
                 react_1.default.createElement(react_1.default.Suspense, { fallback: react_1.default.createElement("p", { className: 'loading' }, "Loading page...") },
@@ -18472,8 +18463,29 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const react_1 = __importDefault(__webpack_require__(7294));
 const Spinner = () => {
-    return (react_1.default.createElement("div", { className: 'spinner' },
-        react_1.default.createElement("h1", null, "SPINNERSPINNERSPINNERSPINNERSPINNERSPINNERSPINNERSPINNERSPINNERSPINNERSPINNERSPINNERSPINNERSPINNERSPINNERSPINNERSPINNERSPINNERSPINNERSPINNERSPINNERSPINNERSPINNERSPINNERSPINNER")));
+    return (react_1.default.createElement(react_1.default.Fragment, null,
+        react_1.default.createElement("div", { className: 'spinner' },
+            react_1.default.createElement("h1", null,
+                "SPINNERS",
+                react_1.default.createElement("br", null),
+                "PINNERSPINNE",
+                react_1.default.createElement("br", null),
+                "RSPINNERSPINNERSP",
+                react_1.default.createElement("br", null),
+                "INNERSPINNERSPINNERSPINNER",
+                react_1.default.createElement("br", null),
+                "SPINNE",
+                react_1.default.createElement("br", null),
+                "RSPINNERSPINNERSPINNERS",
+                react_1.default.createElement("br", null),
+                "PINNERSPINNERSPINNERSPINNERSPINN",
+                react_1.default.createElement("br", null),
+                react_1.default.createElement("br", null),
+                "ERSPINNER",
+                react_1.default.createElement("br", null),
+                "SPINNER",
+                react_1.default.createElement("br", null),
+                "SPINNERSPINNERSPINNERSPINNERSPINNER"))));
 };
 exports.default = Spinner;
 
@@ -18691,6 +18703,13 @@ const shirt1_webp_1 = __importDefault(__webpack_require__(8190));
 const shirt2_webp_1 = __importDefault(__webpack_require__(2958));
 const shirt3_webp_1 = __importDefault(__webpack_require__(9634));
 const Home = () => {
+    const selectit = document.querySelector('.spinner');
+    function QuietNow() {
+        selectit.style.display = 'none';
+    }
+    setTimeout(() => {
+        QuietNow();
+    }, 1000);
     //scroll to top of page on clicking a nav link
     const TopOfPage = () => {
         window.scrollTo(0, 0);

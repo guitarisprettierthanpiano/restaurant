@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react';
+import React from 'react';
 import { Switch, HashRouter, Route } from 'react-router-dom';
 
 import Nav from './components/nav'
@@ -12,26 +12,12 @@ const Footer = React.lazy(() => import("./components/footer"));
 
 const App: React.FC = () => {
 
-
-
-
-    const [isLoading, setIsLoading] = useState(true)
-
-    useState(() =>{
-      function greet(){
-        setIsLoading(false);
-      }
-      
-      setTimeout(greet, 2000);
-    })
-    
-    if (isLoading===true){
-      return <Spinner />
-    }
    
     return(
     <>
     <HashRouter>
+
+        <Spinner />
 
         <Nav />
 

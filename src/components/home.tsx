@@ -16,6 +16,25 @@ import Shirt3 from './img/shirt3.webp'
 
 const Home = () => {
 
+    const selectit:HTMLDivElement = document.querySelector('.spinner');
+
+    function QuietNow(){
+      selectit.style.display = 'none'
+    }
+    setTimeout(() => {
+      QuietNow()
+    }, 1000);
+
+
+
+
+
+
+
+
+
+
+
     //scroll to top of page on clicking a nav link
     const TopOfPage = () => {
         window.scrollTo(0, 0)

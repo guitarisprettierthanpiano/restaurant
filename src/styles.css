@@ -1,8 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Manjari&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merienda&display=swap');
+
 .spinner{
     background-color: darkred;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+    overflow: hidden;
 }
+
 @keyframes fade{
     0%{
         filter:brightness(50%)
