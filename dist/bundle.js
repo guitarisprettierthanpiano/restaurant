@@ -18464,7 +18464,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 const react_1 = __importDefault(__webpack_require__(7294));
 const Spinner = () => {
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement("div", { className: 'spinner' },
+        react_1.default.createElement("div", { id: 'spinner' },
             react_1.default.createElement("h1", null,
                 "SPINNERS",
                 react_1.default.createElement("br", null),
@@ -18684,11 +18684,30 @@ exports.default = Footer;
 
 "use strict";
 
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const react_1 = __importDefault(__webpack_require__(7294));
+const react_1 = __importStar(__webpack_require__(7294));
 const react_router_dom_1 = __webpack_require__(886);
 const maintiki_webp_1 = __importDefault(__webpack_require__(5666));
 const tiki11_webp_1 = __importDefault(__webpack_require__(8796));
@@ -18703,118 +18722,139 @@ const shirt1_webp_1 = __importDefault(__webpack_require__(8190));
 const shirt2_webp_1 = __importDefault(__webpack_require__(2958));
 const shirt3_webp_1 = __importDefault(__webpack_require__(9634));
 const Home = () => {
-    const selectit = document.querySelector('.spinner');
-    function QuietNow() {
-        selectit.style.display = 'none';
-    }
-    setTimeout(() => {
-        QuietNow();
-    }, 1000);
+    // const selectit:HTMLDivElement = document.querySelector('.spinner');
+    const [loading, setLoading] = react_1.useState(true);
+    const CC = document.getElementById('contact-container');
+    const spinner = document.getElementById('spinner');
+    // useEffect(() =>{
+    //     setLoading(true)
+    //     setTimeout(()=>{
+    //         // selectit.style.display = 'none'
+    //         setLoading(false)
+    //     },2000)
+    //     console.log('is loading')
+    // },[])
+    const imageLoaded = () => {
+        spinner.style.display = 'none';
+        console.log('loaded.');
+        setLoading(false);
+    };
+    // const CC = document.getElementById('contact-container')
+    // useEffect(() =>{
+    //     setLoading(false)
+    //     console.log('it loaded')
+    // },[CC])
+    // useEffect(() =>{
+    //     setCounter(counter => counter + 1)
+    //     console.log('old counter' +counter)
+    // },[counter])
     //scroll to top of page on clicking a nav link
     const TopOfPage = () => {
         window.scrollTo(0, 0);
     };
-    return (react_1.default.createElement("div", { className: 'contact-container' },
-        react_1.default.createElement("div", { className: "parallax", style: { backgroundImage: `url(${wood_webp_1.default})` } },
-            react_1.default.createElement("div", { className: 'main-landing', style: { backgroundImage: `url(${maintiki_webp_1.default})` } },
-                react_1.default.createElement("div", null),
-                react_1.default.createElement("h1", null, "Welcome to Twisted Tiki!"),
-                react_1.default.createElement("h2", null, "a Polynesian-inspired Bar & Grille"),
-                react_1.default.createElement("div", null))),
-        react_1.default.createElement("div", { className: 'tikis', style: { backgroundImage: `url(${mesh_webp_1.default})` } },
-            react_1.default.createElement("div", { id: 'tiki-1', className: 'ALLTIKIS left' },
-                react_1.default.createElement("img", { loading: 'lazy', src: tiki11_webp_1.default }),
-                react_1.default.createElement("div", { className: "tiki-layer" },
+    return (react_1.default.createElement(react_1.default.Fragment, null,
+        react_1.default.createElement("div", { className: 'contact-container', id: 'contact-container' },
+            react_1.default.createElement("div", { className: "parallax", style: { backgroundImage: `url(${wood_webp_1.default})` } },
+                react_1.default.createElement("div", { className: 'main-landing', style: { backgroundImage: `url(${maintiki_webp_1.default})` } },
                     react_1.default.createElement("div", null),
-                    react_1.default.createElement("h2", null, "Ke aloha"),
-                    react_1.default.createElement("br", null),
-                    react_1.default.createElement("h3", null, "Cheers"),
+                    react_1.default.createElement("h1", null, "Welcome to Twisted Tiki!"),
+                    react_1.default.createElement("h2", null, "a Polynesian-inspired Bar & Grille"),
                     react_1.default.createElement("div", null))),
-            react_1.default.createElement("div", { id: 'tiki-2', className: 'ALLTIKIS right' },
-                react_1.default.createElement("img", { loading: 'lazy', src: tiki22_webp_1.default }),
-                react_1.default.createElement("div", { className: "tiki-layer" },
+            react_1.default.createElement("div", { className: 'tikis', style: { backgroundImage: `url(${mesh_webp_1.default})` } },
+                react_1.default.createElement("div", { id: 'tiki-1', className: 'ALLTIKIS left' },
+                    react_1.default.createElement("img", { loading: 'lazy', src: tiki11_webp_1.default }),
+                    react_1.default.createElement("div", { className: "tiki-layer" },
+                        react_1.default.createElement("div", null),
+                        react_1.default.createElement("h2", null, "Ke aloha"),
+                        react_1.default.createElement("br", null),
+                        react_1.default.createElement("h3", null, "Cheers"),
+                        react_1.default.createElement("div", null))),
+                react_1.default.createElement("div", { id: 'tiki-2', className: 'ALLTIKIS right' },
+                    react_1.default.createElement("img", { loading: 'lazy', src: tiki22_webp_1.default }),
+                    react_1.default.createElement("div", { className: "tiki-layer" },
+                        react_1.default.createElement("div", null),
+                        react_1.default.createElement("h2", null, "Aloha"),
+                        react_1.default.createElement("br", null),
+                        react_1.default.createElement("h3", null, "Hello or Goodbye"),
+                        react_1.default.createElement("div", null))),
+                react_1.default.createElement("div", { id: 'tiki-3', className: 'ALLTIKIS left' },
+                    react_1.default.createElement("img", { loading: 'lazy', src: tiki33_webp_1.default }),
+                    react_1.default.createElement("div", { className: "tiki-layer" },
+                        react_1.default.createElement("div", null),
+                        react_1.default.createElement("h2", null, "I le\u02BBale\u02BBa k\u0101u"),
+                        react_1.default.createElement("br", null),
+                        react_1.default.createElement("h3", null, "Have Fun"),
+                        react_1.default.createElement("div", null))),
+                react_1.default.createElement("div", { id: 'tiki-4', className: 'ALLTIKIS right' },
+                    react_1.default.createElement("img", { loading: 'lazy', src: tiki44_webp_1.default }),
+                    react_1.default.createElement("div", { className: "tiki-layer" },
+                        react_1.default.createElement("div", null),
+                        react_1.default.createElement("h2", null, "E hele k\u0101ua"),
+                        react_1.default.createElement("br", null),
+                        react_1.default.createElement("h3", null, "Let's Party"),
+                        react_1.default.createElement("div", null)))),
+            react_1.default.createElement("div", { className: 'parallax2', style: { backgroundImage: `url(${tikibg_webp_1.default})` } },
+                react_1.default.createElement("div", { className: 'hours-container' },
+                    react_1.default.createElement("div", { className: 'hours' },
+                        react_1.default.createElement("h1", null, "Hours"),
+                        react_1.default.createElement("ul", null,
+                            react_1.default.createElement("li", null, "Mon - Thurs:  11:30am - 11pm-ish"),
+                            react_1.default.createElement("li", null, "Fri Sat:  11:30am - midnight-ish"),
+                            react_1.default.createElement("li", null, "Sunday:  11am - 11pm-ish"),
+                            react_1.default.createElement("li", null, "Brunch served 11am"))),
+                    react_1.default.createElement("div", { className: 'happy-hour' },
+                        react_1.default.createElement("h1", null, "Happy Hour"),
+                        react_1.default.createElement("div", null),
+                        react_1.default.createElement("h4", { className: 'happy-hour-h4' }, "Everyday Day All Day!"),
+                        react_1.default.createElement("div", null),
+                        react_1.default.createElement("ul", { className: 'happy-hour-ul' },
+                            react_1.default.createElement("li", null, "$13 Domestic Beer Buckets"),
+                            react_1.default.createElement("li", null, "$4 Fireball Shots "),
+                            react_1.default.createElement("li", null, "$5 House Wines"),
+                            react_1.default.createElement("li", null, "$5 Captain Morgan, Bacardi, Smirnoff"),
+                            react_1.default.createElement("li", null, "$15 keep the mug with a drink of choice, take a piece of Hawaii home with you! ")),
+                        react_1.default.createElement("div", null)))),
+            react_1.default.createElement("div", { className: 'come-on-in' },
+                react_1.default.createElement("div", { className: 'come-on-in-left' },
+                    react_1.default.createElement("video", { className: 'pineapple-mp4', autoPlay: true, loop: true },
+                        react_1.default.createElement("source", { src: pineapple_mp4_1.default, type: "video/mp4" }),
+                        "Your browser does not support the video tag.")),
+                react_1.default.createElement("div", { className: 'come-on-in-right' },
                     react_1.default.createElement("div", null),
-                    react_1.default.createElement("h2", null, "Aloha"),
-                    react_1.default.createElement("br", null),
-                    react_1.default.createElement("h3", null, "Hello or Goodbye"),
+                    react_1.default.createElement("div", null),
+                    react_1.default.createElement("h1", { className: 'first-h1' }, "...Come On In!"),
+                    react_1.default.createElement("div", null),
+                    react_1.default.createElement("h1", { className: 'second-h1' }, "Tropical Vibes Inside"),
+                    react_1.default.createElement("div", null),
+                    react_1.default.createElement("p", null,
+                        "Get ready to experience the tropical vibe at Twisted Tiki. Our Polynesian-inspired cocktails along with our eclectic tiki d\u00E9cor are your ticket to paradise!",
+                        react_1.default.createElement("br", null),
+                        react_1.default.createElement("br", null),
+                        "What's a tropical tiki bar without some music? Expect to find the area's best bands and musicians here at Twisted Tiki along with other fun events like Art Night, Paint Night, Trivia Night and more!",
+                        react_1.default.createElement("br", null),
+                        react_1.default.createElement("br", null),
+                        "Every day is a day in paradise at The Twisted Tiki. Aloha!"),
+                    react_1.default.createElement("div", null),
+                    react_1.default.createElement(react_router_dom_1.NavLink, { activeClassName: 'active', to: '/events', onClick: TopOfPage },
+                        react_1.default.createElement("button", { id: 'button1' }, "See What's Happening @ Twisted Tiki!")),
+                    react_1.default.createElement("div", null),
                     react_1.default.createElement("div", null))),
-            react_1.default.createElement("div", { id: 'tiki-3', className: 'ALLTIKIS left' },
-                react_1.default.createElement("img", { loading: 'lazy', src: tiki33_webp_1.default }),
-                react_1.default.createElement("div", { className: "tiki-layer" },
-                    react_1.default.createElement("div", null),
-                    react_1.default.createElement("h2", null, "I le\u02BBale\u02BBa k\u0101u"),
-                    react_1.default.createElement("br", null),
-                    react_1.default.createElement("h3", null, "Have Fun"),
-                    react_1.default.createElement("div", null))),
-            react_1.default.createElement("div", { id: 'tiki-4', className: 'ALLTIKIS right' },
-                react_1.default.createElement("img", { loading: 'lazy', src: tiki44_webp_1.default }),
-                react_1.default.createElement("div", { className: "tiki-layer" },
-                    react_1.default.createElement("div", null),
-                    react_1.default.createElement("h2", null, "E hele k\u0101ua"),
-                    react_1.default.createElement("br", null),
-                    react_1.default.createElement("h3", null, "Let's Party"),
-                    react_1.default.createElement("div", null)))),
-        react_1.default.createElement("div", { className: 'parallax2', style: { backgroundImage: `url(${tikibg_webp_1.default})` } },
-            react_1.default.createElement("div", { className: 'hours-container' },
-                react_1.default.createElement("div", { className: 'hours' },
-                    react_1.default.createElement("h1", null, "Hours"),
-                    react_1.default.createElement("ul", null,
-                        react_1.default.createElement("li", null, "Mon - Thurs:  11:30am - 11pm-ish"),
-                        react_1.default.createElement("li", null, "Fri Sat:  11:30am - midnight-ish"),
-                        react_1.default.createElement("li", null, "Sunday:  11am - 11pm-ish"),
-                        react_1.default.createElement("li", null, "Brunch served 11am"))),
-                react_1.default.createElement("div", { className: 'happy-hour' },
-                    react_1.default.createElement("h1", null, "Happy Hour"),
-                    react_1.default.createElement("div", null),
-                    react_1.default.createElement("h4", { className: 'happy-hour-h4' }, "Everyday Day All Day!"),
-                    react_1.default.createElement("div", null),
-                    react_1.default.createElement("ul", { className: 'happy-hour-ul' },
-                        react_1.default.createElement("li", null, "$13 Domestic Beer Buckets"),
-                        react_1.default.createElement("li", null, "$4 Fireball Shots "),
-                        react_1.default.createElement("li", null, "$5 House Wines"),
-                        react_1.default.createElement("li", null, "$5 Captain Morgan, Bacardi, Smirnoff"),
-                        react_1.default.createElement("li", null, "$15 keep the mug with a drink of choice, take a piece of Hawaii home with you! ")),
-                    react_1.default.createElement("div", null)))),
-        react_1.default.createElement("div", { className: 'come-on-in' },
-            react_1.default.createElement("div", { className: 'come-on-in-left' },
-                react_1.default.createElement("video", { className: 'pineapple-mp4', autoPlay: true, loop: true },
-                    react_1.default.createElement("source", { src: pineapple_mp4_1.default, type: "video/mp4" }),
-                    "Your browser does not support the video tag.")),
-            react_1.default.createElement("div", { className: 'come-on-in-right' },
-                react_1.default.createElement("div", null),
-                react_1.default.createElement("div", null),
-                react_1.default.createElement("h1", { className: 'first-h1' }, "...Come On In!"),
-                react_1.default.createElement("div", null),
-                react_1.default.createElement("h1", { className: 'second-h1' }, "Tropical Vibes Inside"),
-                react_1.default.createElement("div", null),
-                react_1.default.createElement("p", null,
-                    "Get ready to experience the tropical vibe at Twisted Tiki. Our Polynesian-inspired cocktails along with our eclectic tiki d\u00E9cor are your ticket to paradise!",
-                    react_1.default.createElement("br", null),
-                    react_1.default.createElement("br", null),
-                    "What's a tropical tiki bar without some music? Expect to find the area's best bands and musicians here at Twisted Tiki along with other fun events like Art Night, Paint Night, Trivia Night and more!",
-                    react_1.default.createElement("br", null),
-                    react_1.default.createElement("br", null),
-                    "Every day is a day in paradise at The Twisted Tiki. Aloha!"),
-                react_1.default.createElement("div", null),
-                react_1.default.createElement(react_router_dom_1.NavLink, { activeClassName: 'active', to: '/events', onClick: TopOfPage },
-                    react_1.default.createElement("button", { id: 'button1' }, "See What's Happening @ Twisted Tiki!")),
-                react_1.default.createElement("div", null),
-                react_1.default.createElement("div", null))),
-        react_1.default.createElement("div", { className: "pineapplebg-parallax" },
-            react_1.default.createElement("div", { className: 'pineapplebg-bluebg' },
-                react_1.default.createElement("h1", null,
-                    "Get the ",
-                    react_1.default.createElement("span", { id: 'S1' }, "S"),
-                    react_1.default.createElement("span", { id: 'S2' }, "w"),
-                    react_1.default.createElement("span", { id: 'S3' }, "a"),
-                    react_1.default.createElement("span", { id: 'S4' }, "g")),
-                react_1.default.createElement("div", { className: 'pineapplebg-images' },
-                    react_1.default.createElement("div", null),
-                    react_1.default.createElement("img", { alt: 'twisted tiki merch', loading: 'lazy', src: shirt1_webp_1.default }),
-                    react_1.default.createElement("img", { alt: 'twisted tiki merch', loading: 'lazy', src: shirt2_webp_1.default }),
-                    react_1.default.createElement("img", { alt: 'twisted tiki merch', loading: 'lazy', src: shirt3_webp_1.default }),
-                    react_1.default.createElement("div", null)),
-                react_1.default.createElement("p", null, "Get Twisted with our Twisted Tiki merch! Women's Tees, Men's Tees, Tumblers, Koozies and Stickers available now!")))));
+            react_1.default.createElement("div", { className: "pineapplebg-parallax" },
+                react_1.default.createElement("div", { className: 'pineapplebg-bluebg' },
+                    react_1.default.createElement("h1", null,
+                        "Get the ",
+                        react_1.default.createElement("span", { id: 'S1' }, "S"),
+                        react_1.default.createElement("span", { id: 'S2' }, "w"),
+                        react_1.default.createElement("span", { id: 'S3' }, "a"),
+                        react_1.default.createElement("span", { id: 'S4' }, "g")),
+                    react_1.default.createElement("div", { className: 'pineapplebg-images' },
+                        react_1.default.createElement("div", null),
+                        react_1.default.createElement("img", { alt: 'twisted tiki merch', loading: 'lazy', src: shirt1_webp_1.default }),
+                        react_1.default.createElement("img", { alt: 'twisted tiki merch', loading: 'lazy', src: shirt2_webp_1.default }),
+                        react_1.default.createElement("img", { alt: 'twisted tiki merch', loading: 'lazy', src: shirt3_webp_1.default, onLoad: imageLoaded }),
+                        react_1.default.createElement("div", null)),
+                    react_1.default.createElement("p", null, "Get Twisted with our Twisted Tiki merch! Women's Tees, Men's Tees, Tumblers, Koozies and Stickers available now!")))),
+        imageLoaded));
 };
 exports.default = Home;
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import MainTiki from './img/maintiki.webp'
@@ -14,23 +14,45 @@ import Shirt1 from './img/shirt1.webp'
 import Shirt2 from './img/shirt2.webp'
 import Shirt3 from './img/shirt3.webp'
 
-const Home = () => {
-
-    const selectit:HTMLDivElement = document.querySelector('.spinner');
-
-    function QuietNow(){
-      selectit.style.display = 'none'
-    }
-    setTimeout(() => {
-      QuietNow()
-    }, 1000);
+import Spinner from '../Spinner';
 
 
+const Home = () => { 
 
 
+    // const selectit:HTMLDivElement = document.querySelector('.spinner');
 
+    const [loading, setLoading] = useState(true)
+    const CC = document.getElementById('contact-container')
+    const spinner = document.getElementById('spinner')
 
+    // useEffect(() =>{
+    //     setLoading(true)
+    //     setTimeout(()=>{
+    //         // selectit.style.display = 'none'
+    //         setLoading(false)
+            
+    //     },2000)
+    //     console.log('is loading')
+    // },[])
 
+    const imageLoaded = () => {
+        spinner.style.display = 'none'
+        console.log('loaded.')
+        setLoading(false)
+    }   
+
+    // const CC = document.getElementById('contact-container')
+    // useEffect(() =>{
+    //     setLoading(false)
+    //     console.log('it loaded')
+    // },[CC])
+
+    // useEffect(() =>{
+    //     setCounter(counter => counter + 1)
+    //     console.log('old counter' +counter)
+    // },[counter])
+     
 
 
 
@@ -40,8 +62,12 @@ const Home = () => {
         window.scrollTo(0, 0)
     };
 
+
+
     return (
-    <div className='contact-container'>
+    <>
+
+    <div className='contact-container' id='contact-container'>
 
         <div className="parallax" style={{backgroundImage: `url(${Wood})`}}>
             <div className='main-landing' style={{backgroundImage: `url(${MainTiki})`}}>
@@ -166,17 +192,18 @@ const Home = () => {
                 <h1>Get the <span id='S1'>S</span><span id='S2'>w</span><span id='S3'>a</span><span id='S4'>g</span></h1>
                 <div className='pineapplebg-images'>
                     <div></div>
-                    <img alt='twisted tiki merch' loading='lazy' src={Shirt1}/>
+                    <img alt='twisted tiki merch' loading='lazy' src={Shirt1} />
                     <img alt='twisted tiki merch' loading='lazy' src={Shirt2}/>
-                    <img alt='twisted tiki merch' loading='lazy' src={Shirt3}/>
+                    <img alt='twisted tiki merch' loading='lazy' src={Shirt3} onLoad={imageLoaded}/>
                     <div></div>
                 </div>
                 <p>Get Twisted with our Twisted Tiki merch!
                 Women's Tees, Men's Tees, Tumblers, Koozies and Stickers available now!</p>
             </div>
         </div>
-
     </div>
+    {imageLoaded}
+    </>
     )
 }
 
