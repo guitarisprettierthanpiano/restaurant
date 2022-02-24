@@ -18463,29 +18463,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const react_1 = __importDefault(__webpack_require__(7294));
 const Spinner = () => {
+    const Close = function () {
+        document.getElementById('spinner').style.display = 'none';
+    };
+    setTimeout(Close, 500);
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement("div", { id: 'spinner' },
-            react_1.default.createElement("h1", null,
-                "SPINNERS",
-                react_1.default.createElement("br", null),
-                "PINNERSPINNE",
-                react_1.default.createElement("br", null),
-                "RSPINNERSPINNERSP",
-                react_1.default.createElement("br", null),
-                "INNERSPINNERSPINNERSPINNER",
-                react_1.default.createElement("br", null),
-                "SPINNE",
-                react_1.default.createElement("br", null),
-                "RSPINNERSPINNERSPINNERS",
-                react_1.default.createElement("br", null),
-                "PINNERSPINNERSPINNERSPINNERSPINN",
-                react_1.default.createElement("br", null),
-                react_1.default.createElement("br", null),
-                "ERSPINNER",
-                react_1.default.createElement("br", null),
-                "SPINNER",
-                react_1.default.createElement("br", null),
-                "SPINNERSPINNERSPINNERSPINNERSPINNER"))));
+        react_1.default.createElement("div", { id: 'spinner' })));
 };
 exports.default = Spinner;
 
@@ -18684,30 +18667,11 @@ exports.default = Footer;
 
 "use strict";
 
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const react_1 = __importStar(__webpack_require__(7294));
+const react_1 = __importDefault(__webpack_require__(7294));
 const react_router_dom_1 = __webpack_require__(886);
 const maintiki_webp_1 = __importDefault(__webpack_require__(5666));
 const tiki11_webp_1 = __importDefault(__webpack_require__(8796));
@@ -18722,38 +18686,12 @@ const shirt1_webp_1 = __importDefault(__webpack_require__(8190));
 const shirt2_webp_1 = __importDefault(__webpack_require__(2958));
 const shirt3_webp_1 = __importDefault(__webpack_require__(9634));
 const Home = () => {
-    // const selectit:HTMLDivElement = document.querySelector('.spinner');
-    const [loading, setLoading] = react_1.useState(true);
-    const CC = document.getElementById('contact-container');
-    const spinner = document.getElementById('spinner');
-    // useEffect(() =>{
-    //     setLoading(true)
-    //     setTimeout(()=>{
-    //         // selectit.style.display = 'none'
-    //         setLoading(false)
-    //     },2000)
-    //     console.log('is loading')
-    // },[])
-    const imageLoaded = () => {
-        spinner.style.display = 'none';
-        console.log('loaded.');
-        setLoading(false);
-    };
-    // const CC = document.getElementById('contact-container')
-    // useEffect(() =>{
-    //     setLoading(false)
-    //     console.log('it loaded')
-    // },[CC])
-    // useEffect(() =>{
-    //     setCounter(counter => counter + 1)
-    //     console.log('old counter' +counter)
-    // },[counter])
     //scroll to top of page on clicking a nav link
     const TopOfPage = () => {
         window.scrollTo(0, 0);
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement("div", { className: 'contact-container', id: 'contact-container' },
+        react_1.default.createElement("div", { className: 'contact-container' },
             react_1.default.createElement("div", { className: "parallax", style: { backgroundImage: `url(${wood_webp_1.default})` } },
                 react_1.default.createElement("div", { className: 'main-landing', style: { backgroundImage: `url(${maintiki_webp_1.default})` } },
                     react_1.default.createElement("div", null),
@@ -18851,10 +18789,9 @@ const Home = () => {
                         react_1.default.createElement("div", null),
                         react_1.default.createElement("img", { alt: 'twisted tiki merch', loading: 'lazy', src: shirt1_webp_1.default }),
                         react_1.default.createElement("img", { alt: 'twisted tiki merch', loading: 'lazy', src: shirt2_webp_1.default }),
-                        react_1.default.createElement("img", { alt: 'twisted tiki merch', loading: 'lazy', src: shirt3_webp_1.default, onLoad: imageLoaded }),
+                        react_1.default.createElement("img", { alt: 'twisted tiki merch', loading: 'lazy', src: shirt3_webp_1.default }),
                         react_1.default.createElement("div", null)),
-                    react_1.default.createElement("p", null, "Get Twisted with our Twisted Tiki merch! Women's Tees, Men's Tees, Tumblers, Koozies and Stickers available now!")))),
-        imageLoaded));
+                    react_1.default.createElement("p", null, "Get Twisted with our Twisted Tiki merch! Women's Tees, Men's Tees, Tumblers, Koozies and Stickers available now!"))))));
 };
 exports.default = Home;
 
@@ -18876,7 +18813,6 @@ const wood_webp_1 = __importDefault(__webpack_require__(4165));
 const menu1_webp_1 = __importDefault(__webpack_require__(4481));
 const menu2_webp_1 = __importDefault(__webpack_require__(3312));
 const pouring_mp4_1 = __importDefault(__webpack_require__(1731));
-//                <img id='hh-img' src={Pouring} loading='lazy'/>
 const Menu = () => {
     return (react_1.default.createElement("div", { className: 'menu-container', style: { backgroundImage: `url(${mesh_webp_1.default})` } },
         react_1.default.createElement("div", { className: 'white-menu' },

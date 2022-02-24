@@ -6,9 +6,7 @@ import Menu1 from './img/menu1.webp'
 import Menu2 from './img/menu2.webp'
 import Pouring from './img/pouring.mp4'
 
-//                <img id='hh-img' src={Pouring} loading='lazy'/>
 const Menu = () => {
-
     return (
     <div className='menu-container' style={{backgroundImage: `url(${Mesh})`}}>
         <div className='white-menu'>

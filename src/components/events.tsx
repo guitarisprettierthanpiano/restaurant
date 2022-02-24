@@ -7,7 +7,6 @@ import Art from './img/art.webp';
 import Music from './img/music.webp';
 
 const Events = () => {
-
     return (
     <div className='events-container'>
 

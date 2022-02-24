@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import MainTiki from './img/maintiki.webp'
@@ -14,49 +14,8 @@ import Shirt1 from './img/shirt1.webp'
 import Shirt2 from './img/shirt2.webp'
 import Shirt3 from './img/shirt3.webp'
 
-import Spinner from '../Spinner';
-
 
 const Home = () => { 
-
-
-    // const selectit:HTMLDivElement = document.querySelector('.spinner');
-
-    const [loading, setLoading] = useState(true)
-    const CC = document.getElementById('contact-container')
-    const spinner = document.getElementById('spinner')
-
-    // useEffect(() =>{
-    //     setLoading(true)
-    //     setTimeout(()=>{
-    //         // selectit.style.display = 'none'
-    //         setLoading(false)
-            
-    //     },2000)
-    //     console.log('is loading')
-    // },[])
-
-    const imageLoaded = () => {
-        spinner.style.display = 'none'
-        console.log('loaded.')
-        setLoading(false)
-    }   
-
-    // const CC = document.getElementById('contact-container')
-    // useEffect(() =>{
-    //     setLoading(false)
-    //     console.log('it loaded')
-    // },[CC])
-
-    // useEffect(() =>{
-    //     setCounter(counter => counter + 1)
-    //     console.log('old counter' +counter)
-    // },[counter])
-     
-
-
-
-
     //scroll to top of page on clicking a nav link
     const TopOfPage = () => {
         window.scrollTo(0, 0)
@@ -67,7 +26,7 @@ const Home = () => {
     return (
     <>
 
-    <div className='contact-container' id='contact-container'>
+    <div className='contact-container'>
 
         <div className="parallax" style={{backgroundImage: `url(${Wood})`}}>
             <div className='main-landing' style={{backgroundImage: `url(${MainTiki})`}}>
@@ -194,7 +153,7 @@ const Home = () => {
                     <div></div>
                     <img alt='twisted tiki merch' loading='lazy' src={Shirt1} />
                     <img alt='twisted tiki merch' loading='lazy' src={Shirt2}/>
-                    <img alt='twisted tiki merch' loading='lazy' src={Shirt3} onLoad={imageLoaded}/>
+                    <img alt='twisted tiki merch' loading='lazy' src={Shirt3}/>
                     <div></div>
                 </div>
                 <p>Get Twisted with our Twisted Tiki merch!
@@ -202,7 +161,6 @@ const Home = () => {
             </div>
         </div>
     </div>
-    {imageLoaded}
     </>
     )
 }

@@ -3,7 +3,6 @@ import MapGL from 'react-map-gl';
 import Wood from './img/wood.webp';
 
 const Contact = () => {
-
     //settings for mapgl, default generic raleigh zoomed out. mapStyle is from https://docs.mapbox.com/api/maps/styles/#list-styles 
     const [viewport, setViewport] = useState({
         latitude: 35.787743,
