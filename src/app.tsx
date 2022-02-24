@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState} from 'react';
 import { Switch, HashRouter, Route } from 'react-router-dom';
 
 import Nav from './components/nav'
+import Spinner from './Spinner';
 
 const Home = React.lazy(() => import("./components/home"));
 const Menu = React.lazy(() => import("./components/menu"));
@@ -10,6 +11,23 @@ const Contact = React.lazy(() => import("./components/contact"));
 const Footer = React.lazy(() => import("./components/footer"));
 
 const App: React.FC = () => {
+
+
+
+
+    const [isLoading, setIsLoading] = useState(true)
+
+    useState(() =>{
+      function greet(){
+        setIsLoading(false);
+      }
+      
+      setTimeout(greet, 2000);
+    })
+    
+    if (isLoading===true){
+      return <Spinner />
+    }
    
     return(
     <>

@@ -18424,15 +18424,26 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const react_1 = __importDefault(__webpack_require__(7294));
+const react_1 = __importStar(__webpack_require__(7294));
 const react_router_dom_1 = __webpack_require__(886);
 const nav_1 = __importDefault(__webpack_require__(6682));
+const Spinner_1 = __importDefault(__webpack_require__(4204));
 const Home = react_1.default.lazy(() => Promise.resolve().then(() => __importStar(__webpack_require__(9269))));
 const Menu = react_1.default.lazy(() => Promise.resolve().then(() => __importStar(__webpack_require__(1548))));
 const Events = react_1.default.lazy(() => Promise.resolve().then(() => __importStar(__webpack_require__(7474))));
 const Contact = react_1.default.lazy(() => Promise.resolve().then(() => __importStar(__webpack_require__(3003))));
 const Footer = react_1.default.lazy(() => Promise.resolve().then(() => __importStar(__webpack_require__(7554))));
 const App = () => {
+    const [isLoading, setIsLoading] = react_1.useState(true);
+    react_1.useState(() => {
+        function greet() {
+            setIsLoading(false);
+        }
+        setTimeout(greet, 2000);
+    });
+    if (isLoading === true) {
+        return react_1.default.createElement(Spinner_1.default, null);
+    }
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(react_router_dom_1.HashRouter, null,
             react_1.default.createElement(nav_1.default, null),
@@ -18446,6 +18457,25 @@ const App = () => {
                 react_1.default.createElement(Footer, null)))));
 };
 exports.default = App;
+
+
+/***/ }),
+
+/***/ 4204:
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+const react_1 = __importDefault(__webpack_require__(7294));
+const Spinner = () => {
+    return (react_1.default.createElement("div", { className: 'spinner' },
+        react_1.default.createElement("h1", null, "SPINNERSPINNERSPINNERSPINNERSPINNERSPINNERSPINNERSPINNERSPINNERSPINNERSPINNERSPINNERSPINNERSPINNERSPINNERSPINNERSPINNERSPINNERSPINNERSPINNERSPINNERSPINNERSPINNERSPINNERSPINNER")));
+};
+exports.default = Spinner;
 
 
 /***/ }),
