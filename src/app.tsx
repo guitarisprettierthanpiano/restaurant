@@ -22,7 +22,7 @@ const App: React.FC = () => {
         <Nav />
 
         <Switch>
-            <React.Suspense fallback={<p className='loading'>Loading page...</p>}>
+            <React.Suspense fallback={<Spinner />}>
                 <Route exact path='/'
                 component={Home}/>
 

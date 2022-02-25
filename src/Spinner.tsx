@@ -5,7 +5,7 @@ const Spinner = () => {
   const Close = function(){
     document.getElementById('spinner').style.display = 'none';
   };
-  setTimeout(Close, 500);
+  setTimeout(Close, 700);
 
   return (
     <>

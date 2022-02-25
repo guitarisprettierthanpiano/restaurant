@@ -39,7 +39,7 @@ const Home = () => {
 
         <div className='tikis' style={{backgroundImage: `url(${Mesh})`}}>
 
-            <div id='tiki-1' className='ALLTIKIS left'>
+            <div id='tiki-1' className='left ALLTIKIS'>
                 <img loading='lazy' src={Tiki1}/>
                 <div className="tiki-layer">
                     <div></div>    
@@ -50,7 +50,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <div id='tiki-2' className='ALLTIKIS right'>
+            <div id='tiki-2' className='right ALLTIKIS '>
                 <img loading='lazy' src={Tiki2}/>
                 <div className="tiki-layer">
                     <div></div>    
@@ -61,7 +61,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <div id='tiki-3' className='ALLTIKIS left'>
+            <div id='tiki-3' className='left ALLTIKIS'>
                 <img loading='lazy' src={Tiki3}/>
                 <div className="tiki-layer">
                     <div></div>    
@@ -72,7 +72,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <div id='tiki-4' className='ALLTIKIS right'>
+            <div id='tiki-4' className='right ALLTIKIS '>
                 <img loading='lazy' src={Tiki4}/>
                 <div className="tiki-layer">
                     <div></div>    

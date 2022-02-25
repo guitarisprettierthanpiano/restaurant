@@ -17,11 +17,11 @@ module.exports = {
       observers: './src/observers.js',
     },
 
-    mode: "production",
-    devtool: "source-map",
+    // mode: "production",
+    // devtool: "source-map",
 
-    // mode: "development",
-    // devtool: "inline-source-map",
+    mode: "development",
+    devtool: "inline-source-map",
 
     output: {
         filename: '[name].js',
