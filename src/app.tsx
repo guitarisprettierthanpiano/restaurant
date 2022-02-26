@@ -12,7 +12,6 @@ const Footer = React.lazy(() => import("./components/footer"));
 
 const App: React.FC = () => {
 
-   
     return(
     <>
     <HashRouter>

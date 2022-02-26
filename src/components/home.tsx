@@ -15,13 +15,12 @@ import Shirt2 from './img/shirt2.webp'
 import Shirt3 from './img/shirt3.webp'
 
 
-const Home = () => { 
+const Home: React.FC = () => { 
+    
     //scroll to top of page on clicking a nav link
-    const TopOfPage = () => {
+    const TopOfPage: () => void = () => {
         window.scrollTo(0, 0)
-    };
-
-
+    }
 
     return (
     <>
@@ -40,7 +39,7 @@ const Home = () => {
         <div className='tikis' style={{backgroundImage: `url(${Mesh})`}}>
 
             <div id='tiki-1' className='left ALLTIKIS'>
-                <img loading='lazy' src={Tiki1}/>
+                <img loading='lazy' src={Tiki1} alt='tiki-totem'/>
                 <div className="tiki-layer">
                     <div></div>    
                     <h2>Ke aloha</h2>
@@ -51,7 +50,7 @@ const Home = () => {
             </div>
 
             <div id='tiki-2' className='right ALLTIKIS '>
-                <img loading='lazy' src={Tiki2}/>
+                <img loading='lazy' src={Tiki2} alt='tiki-totem'/>
                 <div className="tiki-layer">
                     <div></div>    
                     <h2>Aloha</h2>
@@ -62,7 +61,7 @@ const Home = () => {
             </div>
 
             <div id='tiki-3' className='left ALLTIKIS'>
-                <img loading='lazy' src={Tiki3}/>
+                <img loading='lazy' src={Tiki3} alt='tiki-totem'/>
                 <div className="tiki-layer">
                     <div></div>    
                     <h2>I leʻaleʻa kāu</h2>
@@ -73,7 +72,7 @@ const Home = () => {
             </div>
 
             <div id='tiki-4' className='right ALLTIKIS '>
-                <img loading='lazy' src={Tiki4}/>
+                <img loading='lazy' src={Tiki4} alt='tiki-totem'/>
                 <div className="tiki-layer">
                     <div></div>    
                     <h2>E hele kāua</h2>

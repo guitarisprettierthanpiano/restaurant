@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 import Logo from './img/tiki.webp';
 
-const Nav = () => {
+const Nav: React.FC = () => {
 
     const TopOfPage = () => {
         window.scrollTo(0, 0)

@@ -18467,8 +18467,7 @@ const Spinner = () => {
         document.getElementById('spinner').style.display = 'none';
     };
     setTimeout(Close, 700);
-    return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement("div", { id: 'spinner' })));
+    return (react_1.default.createElement("div", { id: 'spinner' }));
 };
 exports.default = Spinner;
 
@@ -18700,7 +18699,7 @@ const Home = () => {
                     react_1.default.createElement("div", null))),
             react_1.default.createElement("div", { className: 'tikis', style: { backgroundImage: `url(${mesh_webp_1.default})` } },
                 react_1.default.createElement("div", { id: 'tiki-1', className: 'left ALLTIKIS' },
-                    react_1.default.createElement("img", { loading: 'lazy', src: tiki11_webp_1.default }),
+                    react_1.default.createElement("img", { loading: 'lazy', src: tiki11_webp_1.default, alt: 'tiki-totem' }),
                     react_1.default.createElement("div", { className: "tiki-layer" },
                         react_1.default.createElement("div", null),
                         react_1.default.createElement("h2", null, "Ke aloha"),
@@ -18708,7 +18707,7 @@ const Home = () => {
                         react_1.default.createElement("h3", null, "Cheers"),
                         react_1.default.createElement("div", null))),
                 react_1.default.createElement("div", { id: 'tiki-2', className: 'right ALLTIKIS ' },
-                    react_1.default.createElement("img", { loading: 'lazy', src: tiki22_webp_1.default }),
+                    react_1.default.createElement("img", { loading: 'lazy', src: tiki22_webp_1.default, alt: 'tiki-totem' }),
                     react_1.default.createElement("div", { className: "tiki-layer" },
                         react_1.default.createElement("div", null),
                         react_1.default.createElement("h2", null, "Aloha"),
@@ -18716,7 +18715,7 @@ const Home = () => {
                         react_1.default.createElement("h3", null, "Hello or Goodbye"),
                         react_1.default.createElement("div", null))),
                 react_1.default.createElement("div", { id: 'tiki-3', className: 'left ALLTIKIS' },
-                    react_1.default.createElement("img", { loading: 'lazy', src: tiki33_webp_1.default }),
+                    react_1.default.createElement("img", { loading: 'lazy', src: tiki33_webp_1.default, alt: 'tiki-totem' }),
                     react_1.default.createElement("div", { className: "tiki-layer" },
                         react_1.default.createElement("div", null),
                         react_1.default.createElement("h2", null, "I le\u02BBale\u02BBa k\u0101u"),
@@ -18724,7 +18723,7 @@ const Home = () => {
                         react_1.default.createElement("h3", null, "Have Fun"),
                         react_1.default.createElement("div", null))),
                 react_1.default.createElement("div", { id: 'tiki-4', className: 'right ALLTIKIS ' },
-                    react_1.default.createElement("img", { loading: 'lazy', src: tiki44_webp_1.default }),
+                    react_1.default.createElement("img", { loading: 'lazy', src: tiki44_webp_1.default, alt: 'tiki-totem' }),
                     react_1.default.createElement("div", { className: "tiki-layer" },
                         react_1.default.createElement("div", null),
                         react_1.default.createElement("h2", null, "E hele k\u0101ua"),

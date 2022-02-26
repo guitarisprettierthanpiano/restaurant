@@ -6,10 +6,10 @@ import Trivia from './img/trivia.webp';
 import Art from './img/art.webp';
 import Music from './img/music.webp';
 
-const Events = () => {
+const Events: React.FC = () => {
+
     return (
     <div className='events-container'>
-
         <div className='events-parallax' style={{backgroundImage: `url(${Mural})`}}>
             <div className='upcoming-events'>
                 <h2>Events & Entertainment</h2>

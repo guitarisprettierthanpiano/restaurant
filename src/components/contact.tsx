@@ -2,9 +2,17 @@ import React, { useState } from 'react';
 import MapGL from 'react-map-gl';
 import Wood from './img/wood.webp';
 
-const Contact = () => {
+interface Props{
+    latitude: number,
+    longitude: number,
+    zoom: number,
+    bearing: number,
+    pitch: number
+}
+
+const Contact: React.FC<Props> = () => {
     //settings for mapgl, default generic raleigh zoomed out. mapStyle is from https://docs.mapbox.com/api/maps/styles/#list-styles 
-    const [viewport, setViewport] = useState({
+    const [viewport, setViewport] = useState<Props>({
         latitude: 35.787743,
         longitude: -78.644257,
         zoom: 12,
@@ -13,9 +21,9 @@ const Contact = () => {
     });
 
     //clears inputs on submit button click, style button green or transparent
-    const ClearInputs = () =>{
-        const allinputs = document.querySelectorAll('input')
-        const submitbutton:HTMLElement = document.querySelector('#submit-btn')
+    const ClearInputs: () => void = () =>{
+        const allinputs: NodeListOf<HTMLInputElement> = document.querySelectorAll('input')
+        const submitbutton: HTMLButtonElement = document.querySelector('#submit-btn')
 
         submitbutton.style.backgroundColor = "rgba(0, 0, 0, 0)"
 
@@ -30,7 +38,6 @@ const Contact = () => {
     }
 
     return(
-
     <div className='contact-us-container'>
         <div className='contact-us-div'>
 

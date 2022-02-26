@@ -3,9 +3,9 @@ import { NavLink } from 'react-router-dom';
 
 import Logo from './img/tiki.webp'
 
-const Footer = () => {
+const Footer: React.FC = () => {
     
-    const TopOfPage = () => {
+    const TopOfPage: () => void = () => {
         window.scrollTo(0, 0)
     };
 

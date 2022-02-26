@@ -6,7 +6,8 @@ import Menu1 from './img/menu1.webp'
 import Menu2 from './img/menu2.webp'
 import Pouring from './img/pouring.mp4'
 
-const Menu = () => {
+const Menu: React.FC = () => {
+    
     return (
     <div className='menu-container' style={{backgroundImage: `url(${Mesh})`}}>
         <div className='white-menu'>
