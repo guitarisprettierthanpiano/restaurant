@@ -19,30 +19,30 @@ const Events: React.FC = () => {
 
                 <h4>February</h4>
                 <div className='left-events'>
-                        <p>1 - Game Show Night 7pm</p>
-                        <p>2 - Trivia 7pm</p>
-                        <p>4 - Jason Alan 7pm - 11pm</p>
-                        <p>5 - tba</p>
+                        <p>1 - John Kyle Rodhe 7pm - 11pm</p>
+                        <p>2 - Country with HorsesWild 4pm</p>
+                        <p>3 - Jason Alan 4pm - 8pm</p>
+                        <p>4 - Trivia 7pm</p>
                         <p>6 - Corey Ave. Market / One Kin Roof Fundraiser 2pm - 6pm</p>
-                        <p>7 - Trivia 7pm</p>
-                        <p>8 - Kevin Toon 5pm - pm</p>
-                        <p>9 - Paint Night 6:30pm</p>
-                        <p>11 - HighLife Band 7pm - 11pm</p>
-                        <p>12 - Pete & Dean 3pm - 7pm</p>
-                        <p>13 - Super Bowl 6pm</p>
+                        <p>9 - Reggae Night with Jahfari 7pm - 11pm</p>
+                        <p>11 - Trivia 7pm</p>
+                        <p>13 - Game Show Night 7pm</p>
+                        <p>14 - Paint Night 6:30pm</p>
+                        <p>15 - tba</p>
+                        <p>16 - Pete & Dean 3pm - 7pm / Doug South 7pm - 10pm</p>
                 </div>
                 <div className='right-events'>
-                        <p>14 - Trivia 7pm</p>
-                        <p>18 - tba</p>
-                        <p>19 - HorsesWild Band 3pm - 7pm - Guest Bartenders!</p>
+                        <p>17 - Easter Egg Charity Hunt 3pm</p>
+                        <p>18 - Trivia 7pm</p>
+                        <p>19 - Kevin Toon 5pm - 9pm</p>
                         <p>20 - tba</p>
-                        <p>21 - Trivia 7pm</p>
-                        <p>22 - Kevin Toon 5pm - 9pm</p>
-                        <p>23 - Game Show Night 7pm</p>
-                        <p>24 - Paint Nite 6:30pm</p>
-                        <p>25 - tba</p>
-                        <p>26 - tba</p>
-                        <p>28 - Trivia 7pm</p>
+                        <p>22 - Jason Alan 7pm - 11pm</p>
+                        <p>23 - Corey Ave. Craft Festival</p>
+                        <p>24 - Corey Ave. Craft Festival / HorsesWild 5pm - 9pm</p>
+                        <p>26 - Paint Night 6:30pm</p>
+                        <p>27 - Game Show Night 7pm</p>
+                        <p>29 - John Kyle Rodhe 7pm - 11pm</p>
+                        <p>30 - HorsesWild 7pm</p>
                 </div> 
 
                 <h3>Happy Hour 7 Days A Week!</h3>
