@@ -18573,7 +18573,7 @@ const Events = () => {
                 react_1.default.createElement("h2", null, "Events & Entertainment"),
                 react_1.default.createElement("h5", null, "Music Times"),
                 react_1.default.createElement("p", null, "Fri & Sat 7pm to 11pm, Sunday 3pm to 7pm.  Local musicians every other Tuesday 5pm to 9pm. (Unless otherwise specified below)."),
-                react_1.default.createElement("h4", null, "February"),
+                react_1.default.createElement("h4", null, "April"),
                 react_1.default.createElement("div", { className: 'left-events' },
                     react_1.default.createElement("p", null, "1 - John Kyle Rodhe 7pm - 11pm"),
                     react_1.default.createElement("p", null, "2 - Country with HorsesWild 4pm"),

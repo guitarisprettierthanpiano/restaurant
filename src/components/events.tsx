@@ -17,7 +17,7 @@ const Events: React.FC = () => {
                 <h5>Music Times</h5>
                 <p>Fri & Sat 7pm to 11pm, Sunday 3pm to 7pm.  Local musicians every other Tuesday 5pm to 9pm. (Unless otherwise specified below).</p>
 
-                <h4>February</h4>
+                <h4>April</h4>
                 <div className='left-events'>
                         <p>1 - John Kyle Rodhe 7pm - 11pm</p>
                         <p>2 - Country with HorsesWild 4pm</p>
