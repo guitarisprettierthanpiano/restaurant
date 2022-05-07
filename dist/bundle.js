@@ -18487,7 +18487,6 @@ const react_1 = __importDefault(__webpack_require__(7294));
 const react_map_gl_1 = __importDefault(__webpack_require__(2401));
 const wood_webp_1 = __importDefault(__webpack_require__(4165));
 const Contact = () => {
-    //settings for mapgl, default generic raleigh zoomed out. mapStyle is from https://docs.mapbox.com/api/maps/styles/#list-styles
     const [viewport, setViewport] = react_1.default.useState({
         latitude: 35.787743,
         longitude: -78.644257,
@@ -18495,7 +18494,6 @@ const Contact = () => {
         bearing: 0,
         pitch: 0,
     });
-    //clears inputs on submit button click, style button green or transparent
     const ClearInputs = () => {
         const allinputs = document.querySelectorAll('input');
         const submitbutton = document.querySelector('#submit-btn');
@@ -18554,31 +18552,30 @@ const Events = () => {
                 react_1.default.createElement("h2", null, "Events & Entertainment"),
                 react_1.default.createElement("h5", null, "Music Times"),
                 react_1.default.createElement("p", null, "Fri & Sat 7pm to 11pm, Sunday 3pm to 7pm. Local musicians every other Tuesday 5pm to 9pm. (Unless otherwise specified below)."),
-                react_1.default.createElement("h4", null, "April"),
+                react_1.default.createElement("h4", null, "May"),
                 react_1.default.createElement("div", { className: "left-events" },
-                    react_1.default.createElement("p", null, "1 - John Kyle Rodhe 7pm - 11pm"),
-                    react_1.default.createElement("p", null, "2 - Country with HorsesWild 4pm"),
-                    react_1.default.createElement("p", null, "3 - Jason Alan 4pm - 8pm"),
-                    react_1.default.createElement("p", null, "4 - Trivia 7pm"),
-                    react_1.default.createElement("p", null, "6 - Corey Ave. Market / One Kin Roof Fundraiser 2pm - 6pm"),
-                    react_1.default.createElement("p", null, "9 - Reggae Night with Jahfari 7pm - 11pm"),
-                    react_1.default.createElement("p", null, "11 - Trivia 7pm"),
-                    react_1.default.createElement("p", null, "13 - Game Show Night 7pm"),
-                    react_1.default.createElement("p", null, "14 - Paint Night 6:30pm"),
-                    react_1.default.createElement("p", null, "15 - tba"),
-                    react_1.default.createElement("p", null, "16 - Pete & Dean 3pm - 7pm / Doug South 7pm - 10pm")),
+                    react_1.default.createElement("p", null, "1 - Sunday Market"),
+                    react_1.default.createElement("p", null, "2 - Trivia Night 7pm / TB Lightning vs. Maple Leafs "),
+                    react_1.default.createElement("p", null, "3 - Kevin Toon 5pm - 9pm"),
+                    react_1.default.createElement("p", null, "5 - Cinco de Mayo Party! "),
+                    react_1.default.createElement("p", null, "7 - Dusty Roads 7pm - 11pm"),
+                    react_1.default.createElement("p", null, "8 - Mother's Day Specials"),
+                    react_1.default.createElement("p", null, "9 - Trivia Night 7pm"),
+                    react_1.default.createElement("p", null, "11 - Paint Nite 6:30pm"),
+                    react_1.default.createElement("p", null, "12 - Game Show Night"),
+                    react_1.default.createElement("p", null, "13 - Jahfari (Reggae) 7pm - 11pm")),
                 react_1.default.createElement("div", { className: "right-events" },
-                    react_1.default.createElement("p", null, "17 - Easter Egg Charity Hunt 3pm"),
-                    react_1.default.createElement("p", null, "18 - Trivia 7pm"),
-                    react_1.default.createElement("p", null, "19 - Kevin Toon 5pm - 9pm"),
-                    react_1.default.createElement("p", null, "20 - tba"),
-                    react_1.default.createElement("p", null, "22 - Jason Alan 7pm - 11pm"),
-                    react_1.default.createElement("p", null, "23 - Corey Ave. Craft Festival"),
-                    react_1.default.createElement("p", null, "24 - Corey Ave. Craft Festival / HorsesWild 5pm - 9pm"),
-                    react_1.default.createElement("p", null, "26 - Paint Night 6:30pm"),
-                    react_1.default.createElement("p", null, "27 - Game Show Night 7pm"),
-                    react_1.default.createElement("p", null, "29 - John Kyle Rodhe 7pm - 11pm"),
-                    react_1.default.createElement("p", null, "30 - HorsesWild 7pm")),
+                    react_1.default.createElement("p", null, "14 - John Kyle Rhode 7pm - 11pm"),
+                    react_1.default.createElement("p", null, "16 - Trivia Night 7pm"),
+                    react_1.default.createElement("p", null, "17 - Kevin Toon 5pm - 9pm"),
+                    react_1.default.createElement("p", null, "20 - Bandingo! 7pm"),
+                    react_1.default.createElement("p", null, "21 - 80's Costume Party w/ DJ 7pm - 11pm"),
+                    react_1.default.createElement("p", null, "23 - Trivia Night 7pm"),
+                    react_1.default.createElement("p", null, "26 - Paint Nite 6:30pm"),
+                    react_1.default.createElement("p", null, "27 - John Kyle Rhode 7pm - 11pm"),
+                    react_1.default.createElement("p", null, "28 - Horses Wild 7pm - 11pm"),
+                    react_1.default.createElement("p", null, "29 - I-Ruption (Reggae) 5pm - 9pm"),
+                    react_1.default.createElement("p", null, "30 - Trivia Night 7pm")),
                 react_1.default.createElement("h3", null, "Happy Hour 7 Days A Week!"),
                 react_1.default.createElement("h6", null, "Every Day All Day!"),
                 react_1.default.createElement("div", { className: "events-happy-list" },
@@ -18621,7 +18618,6 @@ const react_1 = __importDefault(__webpack_require__(7294));
 const react_router_dom_1 = __webpack_require__(886);
 const tiki_webp_1 = __importDefault(__webpack_require__(7676));
 const Footer = () => {
-    //goto contact page on click
     const TopOfPage = () => {
         window.scrollTo(0, 0);
     };
@@ -18667,7 +18663,6 @@ const shirt1_webp_1 = __importDefault(__webpack_require__(8190));
 const shirt2_webp_1 = __importDefault(__webpack_require__(2958));
 const shirt3_webp_1 = __importDefault(__webpack_require__(9634));
 const Home = () => {
-    //scroll to top of page on clicking a nav link
     const TopOfPage = () => {
         window.scrollTo(0, 0);
     };

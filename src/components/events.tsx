@@ -22,32 +22,31 @@ const Events: React.FC = () => {
             other Tuesday 5pm to 9pm. (Unless otherwise specified below).
           </p>
 
-          <h4>April</h4>
+          <h4>May</h4>
           <div className="left-events">
-            <p>1 - John Kyle Rodhe 7pm - 11pm</p>
-            <p>2 - Country with HorsesWild 4pm</p>
-            <p>3 - Jason Alan 4pm - 8pm</p>
-            <p>4 - Trivia 7pm</p>
-            <p>6 - Corey Ave. Market / One Kin Roof Fundraiser 2pm - 6pm</p>
-            <p>9 - Reggae Night with Jahfari 7pm - 11pm</p>
-            <p>11 - Trivia 7pm</p>
-            <p>13 - Game Show Night 7pm</p>
-            <p>14 - Paint Night 6:30pm</p>
-            <p>15 - tba</p>
-            <p>16 - Pete & Dean 3pm - 7pm / Doug South 7pm - 10pm</p>
+            <p>1 - Sunday Market</p>
+            <p>2 - Trivia Night 7pm / TB Lightning vs. Maple Leafs </p>
+            <p>3 - Kevin Toon 5pm - 9pm</p>
+            <p>5 - Cinco de Mayo Party! </p>
+            <p>7 - Dusty Roads 7pm - 11pm</p>
+            <p>8 - Mother's Day Specials</p>
+            <p>9 - Trivia Night 7pm</p>
+            <p>11 - Paint Nite 6:30pm</p>
+            <p>12 - Game Show Night</p>
+            <p>13 - Jahfari (Reggae) 7pm - 11pm</p>
           </div>
           <div className="right-events">
-            <p>17 - Easter Egg Charity Hunt 3pm</p>
-            <p>18 - Trivia 7pm</p>
-            <p>19 - Kevin Toon 5pm - 9pm</p>
-            <p>20 - tba</p>
-            <p>22 - Jason Alan 7pm - 11pm</p>
-            <p>23 - Corey Ave. Craft Festival</p>
-            <p>24 - Corey Ave. Craft Festival / HorsesWild 5pm - 9pm</p>
-            <p>26 - Paint Night 6:30pm</p>
-            <p>27 - Game Show Night 7pm</p>
-            <p>29 - John Kyle Rodhe 7pm - 11pm</p>
-            <p>30 - HorsesWild 7pm</p>
+            <p>14 - John Kyle Rhode 7pm - 11pm</p>
+            <p>16 - Trivia Night 7pm</p>
+            <p>17 - Kevin Toon 5pm - 9pm</p>
+            <p>20 - Bandingo! 7pm</p>
+            <p>21 - 80's Costume Party w/ DJ 7pm - 11pm</p>
+            <p>23 - Trivia Night 7pm</p>
+            <p>26 - Paint Nite 6:30pm</p>
+            <p>27 - John Kyle Rhode 7pm - 11pm</p>
+            <p>28 - Horses Wild 7pm - 11pm</p>
+            <p>29 - I-Ruption (Reggae) 5pm - 9pm</p>
+            <p>30 - Trivia Night 7pm</p>
           </div>
 
           <h3>Happy Hour 7 Days A Week!</h3>
